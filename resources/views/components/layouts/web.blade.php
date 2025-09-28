@@ -69,14 +69,14 @@
 <!--==============================
 Header Area
 ==============================-->
-@include('layouts.web.partials.header')
+@include('components.layouts.web.partials.header')
 
-@livewire('web.pages.home-page')
+{{ $slot }}
 
 <!--==============================
     Footer Area
 ==============================-->
-@include('layouts.web.partials.footer')
+@include('components.layouts.web.partials.footer')
 
 <!--********************************
         Code End  Here

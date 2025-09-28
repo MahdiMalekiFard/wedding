@@ -1,7 +1,6 @@
 <?php
 
+use App\Livewire\Web\Pages\HomePage;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('layouts.web.web');
-});
+Route::get('/', HomePage::class);
