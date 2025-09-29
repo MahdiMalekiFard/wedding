@@ -27,7 +27,6 @@
     }
     .footer-menu-area {
         text-align: center;
-        border-bottom: 1px solid #E8DFDC;
         border-top: 1px solid #E8DFDC;
         padding: 14.5px 0;
         .footer-menu-list {
@@ -200,11 +199,11 @@
     .widget-about .footer-logo {
         margin-bottom: 42px;
     }
-    .footer-widget.widget_meta ul, 
-    .footer-widget.widget_pages ul, 
-    .footer-widget.widget_archive ul, 
-    .footer-widget.widget_recent_entries ul, 
-    .footer-widget.widget_categories ul, 
+    .footer-widget.widget_meta ul,
+    .footer-widget.widget_pages ul,
+    .footer-widget.widget_archive ul,
+    .footer-widget.widget_recent_entries ul,
+    .footer-widget.widget_categories ul,
     .footer-widget.widget_nav_menu ul {
         margin-top: -3px;
     }
@@ -238,7 +237,7 @@
                 &:not(:last-child) {
                     border-right: 1px solid #4B4D49;
                 }
-                &:before, 
+                &:before,
                 &:after {
                     border-top: 49px solid var(--title-color);
                     border-bottom: 49px solid var(--title-color);
@@ -265,7 +264,7 @@
 @include xl {
     .footer-layout3 .footer-bottom .social-link a {
         padding: 29px 30px;
-        &:before, 
+        &:before,
         &:after {
             border-top: 40px solid var(--title-color);
             border-bottom: 40px solid var(--title-color);

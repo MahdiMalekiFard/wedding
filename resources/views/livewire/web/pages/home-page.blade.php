@@ -1,7 +1,7 @@
 <div>
     <!--==============================
-Hero Area
-==============================-->
+    Hero Area
+    ==============================-->
     <div class="hero-wrapper hero-1" id="hero">
         <div class="global-carousel" id="heroSlider1" data-fade="true" data-slide-show="1" data-lg-slide-show="1" data-md-slide-show="1" data-sm-slide-show="1" data-xs-slide-show="1" data-arrows="false">
             <div class="hero-slider" data-bg-src="assets/img/hero/hero_bg_1_1.png">
@@ -18,11 +18,7 @@ Hero Area
                             <div class="hero-style1">
                                 <span class="hero-subtitle" data-ani="slideindown" data-ani-delay="0.5s">December 29</span>
                                 <span class="hero-subtitle2" data-ani="slideindown" data-ani-delay="0.4s">Are getting married! Save the date:</span>
-                                <h1 class="hero-title" data-ani="slideindown" data-ani-delay="0.1s">MARY & PETE</h1>
-                                <h1 class="hero-title" data-ani="slideinup" data-ani-delay="0.1s">LAVISH WEDDING</h1>
-                                <div class="btn-group" data-ani="slideinup" data-ani-delay="0.4s">
-                                    <a href="reservation.html" class="btn style2">MAKE RESERVATION </a>
-                                </div>
+                                <h1 class="hero-title" data-ani="slideinup" data-ani-delay="0.1s">MARY & PETE</h1>
                             </div>
                         </div>
                         <div class="col-lg-6 align-self-end">
@@ -46,13 +42,9 @@ Hero Area
 
                         <div class="col-lg-6 col-md-12">
                             <div class="hero-style1">
-                                <span class="hero-subtitle" data-ani="slideindown" data-ani-delay="0.5s">December 29</span>
+                                <span class="hero-subtitle" data-ani="slideindown" data-ani-delay="0.5s">September 13</span>
                                 <span class="hero-subtitle2" data-ani="slideindown" data-ani-delay="0.4s">Are getting married! Save the date:</span>
-                                <h1 class="hero-title" data-ani="slideindown" data-ani-delay="0.1s">MARY & PETE</h1>
-                                <h1 class="hero-title" data-ani="slideinup" data-ani-delay="0.1s">LAVISH WEDDING</h1>
-                                <div class="btn-group" data-ani="slideinup" data-ani-delay="0.4s">
-                                    <a href="reservation.html" class="btn style2">MAKE RESERVATION </a>
-                                </div>
+                                <h1 class="hero-title" data-ani="slideinup" data-ani-delay="0.1s">David & Olivia</h1>
                             </div>
                         </div>
                         <div class="col-lg-6 align-self-end">
@@ -65,7 +57,6 @@ Hero Area
             </div>
         </div>
     </div>
-    <!--======== / Hero Section ========-->
 
     <!--==============================
     About Area
@@ -81,13 +72,13 @@ Hero Area
                 <div class="col-lg-5">
                     <div class="about-content-wrap title-anim">
                         <div class="title-area mb-0">
-                            <span class="sub-title">OUR WEDDING</span>
+                            <span class="sub-title">ABOUT US</span>
                             <h2 class="sec-title">OUR <br> WEDDING STORY TO DATE</h2>
                             <p class="sec-text">Lorem ipsum dolor sit amet consectetur adipiscing elit sociosqu integer, suscipit nascetur aliquet posuere aptent vehicula ligula pulvinar praesent.
                             </p>
                         </div>
                         <div class="btn-wrap mt-40">
-                            <a href="reservation.html" class="btn">MAKE RESERVATION</a>
+                            <a href="reservation.html" class="btn">DISCOVER MORE</a>
                         </div>
                     </div>
                 </div>
@@ -265,7 +256,73 @@ Hero Area
     </div>
 
     <!--==============================
-        Portfolio Area
+    Blog Area
+    ==============================-->
+    <section class="blog-area space">
+        <div class="container">
+            <div class="title-area text-center title-anim">
+                <span class="sub-title style2">Our Blog Posts
+                </span>
+                <h2 class="sec-title">Latest from our Journal</h2>
+            </div>
+
+            <div class="row flex-row-reverse">
+                <div class="col-lg-4 mb-30 mb-lg-0">
+                    <div class="blog-grid style2 style-big title-anim">
+                        <div class="blog-img">
+                            <img src="assets/img/blog/blog_1_3.png" alt="blog image">
+                        </div>
+                        <div class="blog-content">
+                            <div class="post-meta-item blog-meta">
+                                <a href="blog.html">15 JAN, 2023</a>
+                                <a href="blog.html">BY HARSH ARKA</a>
+                            </div>
+                            <h3 class="blog-title"><a href="blog-details.html">Enthusiast's Handbook: From Manicures
+                                    to Nail Health</a></h3>
+                            <a href="blog-details.html" class="link-btn style2">Continue Reading <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="blog-grid style2 style-small title-anim">
+                        <div>
+                            <div class="blog-img">
+                                <img src="assets/img/blog/blog_1_1.png" alt="blog image">
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="post-meta-item blog-meta">
+                                <a href="blog.html">15 JAN, 2023</a>
+                                <a href="blog.html">BY HARSH ARKA</a>
+                            </div>
+                            <h3 class="blog-title"><a href="blog-details.html">Enthusiast's Handbook: From Manicures
+                                    to Nail Health</a></h3>
+                            <a href="blog-details.html" class="link-btn style2">Continue Reading <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="blog-grid style2 style-small title-anim">
+                        <div>
+                            <div class="blog-img">
+                                <img src="assets/img/blog/blog_1_2.png" alt="blog image">
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="post-meta-item blog-meta">
+                                <a href="blog.html">15 JAN, 2023</a>
+                                <a href="blog.html">BY HARSH ARKA</a>
+                            </div>
+                            <h3 class="blog-title"><a href="blog-details.html">Enthusiast's Handbook: From Manicures
+                                    to Nail Health</a></h3>
+                            <a href="blog-details.html" class="link-btn style2">Continue Reading <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--==============================
+    Portfolio Area
     ==============================-->
     <div class="portfolio-area-1 space overflow-hidden" data-bg-src="assets/img/bg/portfolio-1-bg.png">
         <div class="portfolio-shape1_1 shape-mockup jump d-lg-block d-none" data-top="0%" data-right="-10%">
@@ -323,170 +380,9 @@ Hero Area
     </div>
 
     <!--==============================
-    Product Area
-    ==============================-->
-    <div class="product-area-1 space overflow-hidden">
-        <div class="container">
-            <div class="title-area text-center title-anim">
-                <span class="sub-title style2">THERE IS SOMETHING FOR EVERYONE</span>
-                <h2 class="sec-title">Our Popular Products</h2>
-            </div>
-            <div class="row gy-4">
-                <div class="col-lg-3 col-md-6">
-                    <div class="product-card title-anim">
-                        <div class="product-img">
-                            <img src="assets/img/product/1.png" alt="Product Image">
-                            <div class="actions">
-                                <a href="#" class="btn">Add TO Cart</a>
-                            </div>
-                        </div>
-                        <div class="product-content">
-                            <span class="price">$250.00</span>
-                            <h3 class="product-title"><a href="shop-details.html">Glossy Lip Plumper</a></h3>
-                            <div class="star-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="product-card title-anim">
-                        <div class="product-img">
-                            <img src="assets/img/product/2.png" alt="Product Image">
-                            <div class="actions">
-                                <a href="#" class="btn">Add TO Cart</a>
-                            </div>
-                        </div>
-                        <div class="product-content">
-                            <span class="price">$250.00</span>
-                            <h3 class="product-title"><a href="shop-details.html">Glossy Lip Plumper</a></h3>
-                            <div class="star-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="product-card title-anim">
-                        <div class="product-img">
-                            <img src="assets/img/product/3.png" alt="Product Image">
-                            <div class="actions">
-                                <a href="#" class="btn">Add TO Cart</a>
-                            </div>
-                        </div>
-                        <div class="product-content">
-                            <span class="price">$250.00</span>
-                            <h3 class="product-title"><a href="shop-details.html">Glossy Lip Plumper</a></h3>
-                            <div class="star-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="product-card title-anim">
-                        <div class="product-img">
-                            <img src="assets/img/product/4.png" alt="Product Image">
-                            <div class="actions">
-                                <a href="#" class="btn">Add TO Cart</a>
-                            </div>
-                        </div>
-                        <div class="product-content">
-                            <span class="price">$250.00</span>
-                            <h3 class="product-title"><a href="shop-details.html">Glossy Lip Plumper</a></h3>
-                            <div class="star-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--==============================
-        Contact Area
-    ==============================-->
-    <div class="contact-area-1 space overflow-hidden" data-bg-src="assets/img/bg/contact-1-bg.png">
-        <div class="contact-shape1_1 shape-mockup jump d-lg-block d-none" data-top="0%" data-right="-8%">
-            <img src="assets/img/normal/contact-shape_1-1.png" alt="img">
-        </div>
-        <div class="contact-shape1_2 shape-mockup jump-reverse d-lg-block d-none" data-bottom="-3%" data-left="-12%">
-            <img src="assets/img/normal/contact-shape_1-2.png" alt="img">
-        </div>
-        <div class="container-fluid p-0">
-            <div class="contact-form-area space">
-                <div class="title-area text-center title-anim">
-                    <span class="sub-title style2 text-white">LET US KNOW IF YOU COMING
-                    </span>
-                    <h2 class="sec-title text-white">WE CANT WAIT TO SEE YOU!</h2>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <form action="mail.php" method="POST" class="contact-form ajax-contact">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="form-group form-icon-left">
-                                        <i class="far fa-user"></i>
-                                        <input type="text" class="form-control style-border" name="name" id="name" placeholder="Enter full name">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group form-icon-left">
-                                        <i class="far fa-envelope"></i>
-                                        <input type="text" class="form-control style-border" name="email" id="email" placeholder="Enter email address">
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="form-group form-icon-left">
-                                        <i class="far fa-calendar"></i>
-                                        <input type="date" class="form-control style-border" name="date" id="date">
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="form-group form-icon-left">
-                                        <i class="far fa-calendar"></i>
-                                        <input type="text" class="form-control style-border" name="number" id="number" placeholder="Number of guest">
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="form-group form-icon-left">
-                                        <i class="far fa-calendar"></i>
-                                        <input type="text" class="form-control style-border" name="message" id="meal" placeholder="Meal preference">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-btn col-12 text-center">
-                                <button type="submit" class="btn">MAKE RESERVATION</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--==============================
     Testimonial Area
     ==============================-->
-    <div class="testimonial-area-1 space-top overflow-hidden">
+    <div class="testimonial-area-1 space-top space-bottom overflow-hidden">
         <div class="container">
             <div class="title-area title-anim">
                 <span class="sub-title style2">Feedbacks</span>
@@ -572,68 +468,66 @@ Hero Area
     </div>
 
     <!--==============================
-    Blog Area
+    Contact Area
     ==============================-->
-    <section class="blog-area space">
-        <div class="container">
-            <div class="title-area text-center title-anim">
-                <span class="sub-title style2">Our Blog Posts
-                </span>
-                <h2 class="sec-title">Latest from our Journal</h2>
-            </div>
-
-            <div class="row flex-row-reverse">
-                <div class="col-lg-4 mb-30 mb-lg-0">
-                    <div class="blog-grid style2 style-big title-anim">
-                        <div class="blog-img">
-                            <img src="assets/img/blog/blog_1_3.png" alt="blog image">
-                        </div>
-                        <div class="blog-content">
-                            <div class="post-meta-item blog-meta">
-                                <a href="blog.html">15 JAN, 2023</a>
-                                <a href="blog.html">BY HARSH ARKA</a>
-                            </div>
-                            <h3 class="blog-title"><a href="blog-details.html">Enthusiast's Handbook: From Manicures
-                                    to Nail Health</a></h3>
-                            <a href="blog-details.html" class="link-btn style2">Continue Reading <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
+    <div class="contact-area-1 space overflow-hidden" data-bg-src="assets/img/bg/contact-1-bg.png">
+        <div class="contact-shape1_1 shape-mockup jump d-lg-block d-none" data-top="0%" data-right="-8%">
+            <img src="assets/img/normal/contact-shape_1-1.png" alt="img">
+        </div>
+        <div class="contact-shape1_2 shape-mockup jump-reverse d-lg-block d-none" data-bottom="-3%" data-left="-12%">
+            <img src="assets/img/normal/contact-shape_1-2.png" alt="img">
+        </div>
+        <div class="container-fluid p-0">
+            <div class="contact-form-area space">
+                <div class="title-area text-center title-anim">
+                    <span class="sub-title style2 text-white">LET US KNOW IF YOU COMING
+                    </span>
+                    <h2 class="sec-title text-white">WE CANT WAIT TO SEE YOU!</h2>
                 </div>
-                <div class="col-lg-8">
-                    <div class="blog-grid style2 style-small title-anim">
-                        <div>
-                            <div class="blog-img">
-                                <img src="assets/img/blog/blog_1_1.png" alt="blog image">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <form action="mail.php" method="POST" class="contact-form ajax-contact">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group form-icon-left">
+                                        <i class="far fa-user"></i>
+                                        <input type="text" class="form-control style-border" name="name" id="name" placeholder="Enter full name">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group form-icon-left">
+                                        <i class="far fa-envelope"></i>
+                                        <input type="text" class="form-control style-border" name="email" id="email" placeholder="Enter email address">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group form-icon-left">
+                                        <i class="far fa-calendar"></i>
+                                        <input type="date" class="form-control style-border" name="date" id="date">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group form-icon-left">
+                                        <i class="far fa-calendar"></i>
+                                        <input type="text" class="form-control style-border" name="number" id="number" placeholder="Number of guest">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group form-icon-left">
+                                        <i class="far fa-calendar"></i>
+                                        <input type="text" class="form-control style-border" name="message" id="meal" placeholder="Meal preference">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="blog-content">
-                            <div class="post-meta-item blog-meta">
-                                <a href="blog.html">15 JAN, 2023</a>
-                                <a href="blog.html">BY HARSH ARKA</a>
+
+                            <div class="form-btn col-12 text-center">
+                                <button type="submit" class="btn">MAKE RESERVATION</button>
                             </div>
-                            <h3 class="blog-title"><a href="blog-details.html">Enthusiast's Handbook: From Manicures
-                                    to Nail Health</a></h3>
-                            <a href="blog-details.html" class="link-btn style2">Continue Reading <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="blog-grid style2 style-small title-anim">
-                        <div>
-                            <div class="blog-img">
-                                <img src="assets/img/blog/blog_1_2.png" alt="blog image">
-                            </div>
-                        </div>
-                        <div class="blog-content">
-                            <div class="post-meta-item blog-meta">
-                                <a href="blog.html">15 JAN, 2023</a>
-                                <a href="blog.html">BY HARSH ARKA</a>
-                            </div>
-                            <h3 class="blog-title"><a href="blog-details.html">Enthusiast's Handbook: From Manicures
-                                    to Nail Health</a></h3>
-                            <a href="blog-details.html" class="link-btn style2">Continue Reading <i class="fas fa-arrow-right"></i></a>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+
 </div>

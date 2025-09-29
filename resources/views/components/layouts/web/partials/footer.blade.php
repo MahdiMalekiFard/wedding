@@ -43,16 +43,14 @@
                         <h3 class="widget_title">Information</h3>
                         <div class="menu-all-pages-container list-column2">
                             <ul class="menu">
-                                <li><a href="team.html">Our Team</a></li>
+                                <li><a href="team.html">Our Teams</a></li>
                                 <li><a href="faq.html">Faq’s</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                                <li><a href="project.html">What we do</a></li>
+                                <li><a href="contact.html">Get in touch</a></li>
+                                <li><a href="project.html">Services</a></li>
                             </ul>
                             <ul class="menu">
                                 <li><a href="about.html">About</a></li>
-                                <li><a href="project.html">Services</a></li>
-                                <li><a href="contact.html">Get in touch</a></li>
-                                <li><a href="project.html">Agency</a></li>
+                                <li><a href="blog.html">Our Blogs</a></li>
                             </ul>
                         </div>
                     </div>
@@ -72,35 +70,16 @@
             </div>
         </div>
         <div class="footer-menu-area">
-            <ul class="footer-menu-list">
-                <li>
-                    <a href="index.html">HOME</a>
-                </li>
-                <li>
-                    <a href="about.html">PAGES</a>
-                </li>
-                <li>
-                    <a href="project.html">PORTFOLIO</a>
-                </li>
-                <li>
-                    <a href="blog.html">BLOG</a>
-                </li>
-                <li>
-                    <a href="shop.html">SHOP</a>
-                </li>
-                <li>
-                    <a href="contact.html">CONTACT</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="copyright-wrap text-center">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-auto align-self-center">
-                    <p class="copyright-text">© 2023 </p>
-                    <p class="copyright-text"><a href="#">Ovation.</a> All Rights Reserved.</p></div>
+            <div class="copyright-wrap text-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-auto align-self-center">
+                            <p class="copyright-text">© 2025 </p>
+                            <p class="copyright-text"><a href="#">Ovation.</a> All Rights Reserved.</p></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
 </footer>
