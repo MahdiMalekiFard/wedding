@@ -3,7 +3,7 @@
     <div class="flex grow flex-col gap-y-5 overflow-y-auto px-6 pb-4">
         <div class="flex h-16 shrink-0 items-center">
             <img class="h-8 w-auto"
-                 src="{{ asset('assets/images/logo/logo-light.png') }}"
+                 src="{{ asset('assets/admin/img/logo/logo-light.png') }}"
                  alt="Your Company">
         </div>
         <x-menu activate-by-route active-bg-color="bg-gray-800 dark:bg-gray-800 text-white hover:text-white"

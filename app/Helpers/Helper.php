@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 use Illuminate\Http\Resources\Json\JsonResource;
 
 if (!function_exists('generateCacheKey')) {
