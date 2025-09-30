@@ -32,7 +32,7 @@ return [
                 'redirect_to' => null,
                 'robots_meta' => SeoRobotsMetaEnum::NOINDEX_FOLLOW,
             ],
-            'path'          => public_path('assets/images/blog/01.jpg'),
+            'path'          => public_path('assets/img/blog/blog_1_1.png'),
             'tags'          => [
                 'mobile', 'tablet', 'iPhone', 'iPad', 'Android',
             ],
@@ -64,7 +64,7 @@ return [
                 'redirect_to' => null,
                 'robots_meta' => SeoRobotsMetaEnum::NOINDEX_FOLLOW,
             ],
-            'path'          => public_path('assets/images/blog/02.jpg'),
+            'path'          => public_path('assets/img/blog/blog_1_2.png'),
             'tags'          => [
                 'iPad', 'Android',
             ],
@@ -98,7 +98,7 @@ return [
                 'redirect_to' => null,
                 'robots_meta' => SeoRobotsMetaEnum::NOINDEX_FOLLOW,
             ],
-            'path'          => public_path('assets/images/blog/03.jpg'),
+            'path'          => public_path('assets/img/blog/blog_1_3.png'),
             'tags'          => [
                 'tablet', 'iPhone',
             ],
@@ -127,7 +127,7 @@ return [
             'languages'   => [
                 'en',
             ],
-            'path'        => public_path('images/test/categories/laravel-cat.png'),
+            'path'        => public_path('test/category/laravel-cat.png'),
         ],
         [
             'title'       => 'Faq Category',
@@ -150,7 +150,7 @@ return [
             'languages'   => [
                 'en',
             ],
-            'path'        => public_path('images/test/categories/laravel-cat.png'),
+            'path'        => public_path('test/category/laravel.jpg'),
         ],
     ],
 ];
