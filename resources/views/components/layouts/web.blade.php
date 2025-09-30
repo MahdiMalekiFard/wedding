@@ -13,9 +13,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Favicons - Place favicon.ico in the root directory -->
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/img/favicons/favicon.png') }}">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="assets/img/favicons/ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="{{ asset('assets/img/favicons/ms-icon-144x144.png') }}">
     <meta name="theme-color" content="#ffffff">
 
     <!--==============================
@@ -30,17 +30,17 @@
 	    All CSS File
 	============================== -->
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
     <!-- Fontawesome Icon -->
-    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}">
     <!-- Magnific Popup -->
-    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.min.css') }}">
     <!-- Slick Slider -->
-    <link rel="stylesheet" href="assets/css/slick.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/slick.min.css') }}">
     <!-- Odometer -->
-    <link rel="stylesheet" href="assets/css/odometer.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/odometer.css') }}">
     <!-- Theme Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
     @livewireStyles
 </head>
@@ -61,7 +61,7 @@
 ==============================-->
 <div class="preloader ">
     <div class="preloader-inner">
-        <img src="assets/img/logo-white.svg" alt="ovation">
+        <img src="{{ asset('assets/img/logo-white.svg') }}" alt="ovation">
         <span class="loader"></span>
     </div>
 </div>
@@ -93,32 +93,32 @@ Header Area
 All Js File
 ============================== -->
 <!-- Jquery -->
-<script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+<script src="{{ asset('assets/js/vendor/jquery-3.6.0.min.js') }}"></script>
 <!-- Slick Slider -->
-<script src="assets/js/slick.min.js"></script>
+<script src="{{ asset('assets/js/slick.min.js') }}"></script>
 <!-- Bootstrap -->
-<script src="assets/js/bootstrap.min.js"></script>
+<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
 <!-- Magnific Popup -->
-<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
 <!-- Counter Up -->
-<script src="assets/js/jquery.counterup.min.js"></script>
+<script src="{{ asset('assets/js/jquery.counterup.min.js') }}"></script>
 <!-- Range Slider -->
-<script src="assets/js/jquery-ui.min.js"></script>
+<script src="{{ asset('assets/js/jquery-ui.min.js') }}"></script>
 <!-- odometer -->
-<script src="assets/js/odometer.min.js"></script>
-<script src="assets/js/viewport.jquery.js"></script>
+<script src="{{ asset('assets/js/odometer.min.js') }}"></script>
+<script src="{{ asset('assets/js/viewport.jquery.js') }}"></script>
 
 <!-- Isotope Filter -->
-<script src="assets/js/imagesloaded.pkgd.min.js"></script>
-<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="{{ asset('assets/js/imagesloaded.pkgd.min.js') }}"></script>
+<script src="{{ asset('assets/js/isotope.pkgd.min.js') }}"></script>
 <!-- gsap -->
-<script src="assets/js/gsap.min.js"></script>
-<script src="assets/js/ScrollSmoother.min.js"></script>
-<script src="assets/js/ScrollTrigger.min.js"></script>
-<script src="assets/js/SplitText.min.js"></script>
+<script src="{{ asset('assets/js/gsap.min.js') }}"></script>
+<script src="{{ asset('assets/js/ScrollSmoother.min.js') }}"></script>
+<script src="{{ asset('assets/js/ScrollTrigger.min.js') }}"></script>
+<script src="{{ asset('assets/js/SplitText.min.js') }}"></script>
 
 <!-- Main Js File -->
-<script src="assets/js/main.js"></script>
+<script src="{{ asset('assets/js/main.js') }}"></script>
 @livewireScripts
 </body>
 

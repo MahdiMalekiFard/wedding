@@ -1,3 +1,5 @@
+@use(App\Helpers\Constants)
+
 <div>
     <!--==============================
     Hero Area
@@ -223,36 +225,6 @@
                 </div>
             </div>
         </div>
-{{--        <div class="container-fluid p-0">--}}
-{{--            <div class="marquee-wrap">--}}
-{{--                <div class="marquee__group">--}}
-{{--                    <div class="m-item">--}}
-{{--                        Lets find some beautiful place to get lost--}}
-{{--                    </div>--}}
-{{--                    <div class="m-item">--}}
-{{--                        Lets find some beautiful place to get lost--}}
-{{--                    </div>--}}
-{{--                    <div class="m-item">--}}
-{{--                        Lets find some beautiful place to get lost--}}
-{{--                    </div>--}}
-{{--                    <div class="m-item">--}}
-{{--                        Lets find some beautiful place to get lost--}}
-{{--                    </div>--}}
-{{--                    <div class="m-item">--}}
-{{--                        Lets find some beautiful place to get lost--}}
-{{--                    </div>--}}
-{{--                    <div class="m-item">--}}
-{{--                        Lets find some beautiful place to get lost--}}
-{{--                    </div>--}}
-{{--                    <div class="m-item">--}}
-{{--                        Lets find some beautiful place to get lost--}}
-{{--                    </div>--}}
-{{--                    <div class="m-item">--}}
-{{--                        Lets find some beautiful place to get lost--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
     </div>
 
     <!--==============================
@@ -266,57 +238,48 @@
                 <h2 class="sec-title">Latest from our Journal</h2>
             </div>
 
+            @php
+                $featured = $blogs->first();
+                $secondary = $blogs->skip(1)->take(2);
+            @endphp
+
             <div class="row flex-row-reverse">
-                <div class="col-lg-4 mb-30 mb-lg-0">
-                    <div class="blog-grid style2 style-big title-anim">
-                        <div class="blog-img">
-                            <img src="assets/img/blog/blog_1_3.png" alt="blog image">
-                        </div>
-                        <div class="blog-content">
-                            <div class="post-meta-item blog-meta">
-                                <a href="blog.html">15 JAN, 2023</a>
-                                <a href="blog.html">BY HARSH ARKA</a>
-                            </div>
-                            <h3 class="blog-title"><a href="blog-details.html">Enthusiast's Handbook: From Manicures
-                                    to Nail Health</a></h3>
-                            <a href="blog-details.html" class="link-btn style2">Continue Reading <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <div class="blog-grid style2 style-small title-anim">
-                        <div>
+                @if($featured)
+                    <div class="col-lg-4 mb-30 mb-lg-0">
+                        <div class="blog-grid style2 style-big title-anim">
                             <div class="blog-img">
-                                <img src="assets/img/blog/blog_1_1.png" alt="blog image">
+                                <img src="{{ $featured->getFirstMediaUrl('image', Constants::RESOLUTION_854_480) }}" alt="blog image">
                             </div>
-                        </div>
-                        <div class="blog-content">
-                            <div class="post-meta-item blog-meta">
-                                <a href="blog.html">15 JAN, 2023</a>
-                                <a href="blog.html">BY HARSH ARKA</a>
+                            <div class="blog-content">
+                                <div class="post-meta-item blog-meta">
+                                    <a href="blog.html">{{ $featured->updated_at->format('d M, Y') }}</a>
+                                    <a href="blog.html">BY {{ strtoupper($featured->user->name ?? 'ADMIN') }}</a>
+                                </div>
+                                <h3 class="blog-title"><a href="blog-details.html">{{ $featured->title }}</a></h3>
+                                <a href="blog-details.html" class="link-btn style2">Continue Reading <i class="fas fa-arrow-right"></i></a>
                             </div>
-                            <h3 class="blog-title"><a href="blog-details.html">Enthusiast's Handbook: From Manicures
-                                    to Nail Health</a></h3>
-                            <a href="blog-details.html" class="link-btn style2">Continue Reading <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
-                    <div class="blog-grid style2 style-small title-anim">
-                        <div>
-                            <div class="blog-img">
-                                <img src="assets/img/blog/blog_1_2.png" alt="blog image">
+                    <div class="col-lg-8">
+                        @foreach($secondary as $blog)
+                            <div class="blog-grid style2 style-small title-anim">
+                                <div>
+                                    <div class="blog-img">
+                                        <img src="{{ $blog->getFirstMediaUrl('image', Constants::RESOLUTION_854_480) }}" alt="blog image">
+                                    </div>
+                                </div>
+                                <div class="blog-content">
+                                    <div class="post-meta-item blog-meta">
+                                        <a href="blog.html">{{ $blog->updated_at->format('d M, Y') }}</a>
+                                        <a href="blog.html">BY {{ strtoupper($blog->user->name ?? 'ADMIN') }}</a>
+                                    </div>
+                                    <h3 class="blog-title"><a href="blog-details.html">{{ $blog->title }}</a></h3>
+                                    <a href="blog-details.html" class="link-btn style2">Continue Reading <i class="fas fa-arrow-right"></i></a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="blog-content">
-                            <div class="post-meta-item blog-meta">
-                                <a href="blog.html">15 JAN, 2023</a>
-                                <a href="blog.html">BY HARSH ARKA</a>
-                            </div>
-                            <h3 class="blog-title"><a href="blog-details.html">Enthusiast's Handbook: From Manicures
-                                    to Nail Health</a></h3>
-                            <a href="blog-details.html" class="link-btn style2">Continue Reading <i class="fas fa-arrow-right"></i></a>
-                        </div>
+                        @endforeach
                     </div>
-                </div>
+                @endif
             </div>
         </div>
     </section>
@@ -529,5 +492,4 @@
             </div>
         </div>
     </div>
-
 </div>

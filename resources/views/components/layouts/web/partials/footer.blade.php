@@ -1,16 +1,16 @@
-<footer class="footer-wrapper footer-layout1 overflow-hidden" data-bg-src="assets/img/bg/footer-1-bg.png">
+<footer class="footer-wrapper footer-layout1 overflow-hidden" data-bg-src="{{ asset('assets/img/bg/footer-1-bg.png') }}">
     <div class="shape-mockup footer1-shape1 jump" data-top="20%" data-left="-2%">
-        <img src="assets/img/normal/footer-1-shape1.png" alt="img">
+        <img src="{{ asset('assets/img/normal/footer-1-shape1.png') }}" alt="img">
     </div>
     <div class="shape-mockup footer1-shape2 jump-reverse" data-top="-10%" data-right="-10%">
-        <img src="assets/img/normal/footer-1-shape2.png" alt="img">
+        <img src="{{ asset('assets/img/normal/footer-1-shape2.png') }}" alt="img">
     </div>
     <div class="container">
         <div class="footer-top">
             <div class="row align-items-center justify-content-between">
                 <div class="col-sm-auto">
                     <div class="footer-logo mb-40 mb-sm-0">
-                        <a href="index.html"><img src="assets/img/logo.svg" alt="logo"></a>
+                        <a href="index.html"><img src="{{ asset('assets/img/logo.svg') }}" alt="logo"></a>
                     </div>
                 </div>
                 <div class="col-sm-auto">

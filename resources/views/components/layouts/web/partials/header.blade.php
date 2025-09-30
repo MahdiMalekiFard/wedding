@@ -7,7 +7,7 @@ Menu
         <div class="widget footer-widget">
             <div class="widget-about">
                 <div class="footer-logo">
-                    <a href="index.html"><img src="assets/img/logo-white.svg" alt="Ovation"></a>
+                    <a href="index.html"><img src="{{ asset('assets/img/logo-white.svg') }}" alt="Ovation"></a>
                 </div>
                 <p class="about-text">Lorem ipsum dolor sit amet consectetur adipiscing elit sociosqu integer, suscipit nascetur aliquet posuere aptent vehicula ligula pulvinar praesent.</p>
                 <div class="social-btn style2">
@@ -38,7 +38,7 @@ Mobile Menu
     <div class="mobile-menu-area text-center">
         <button class="menu-toggle"><i class="fas fa-times"></i></button>
         <div class="mobile-logo">
-            <a href="index.html"><img src="assets/img/logo-white.svg" alt="Ovation"></a>
+            <a href="index.html"><img src="{{ asset('assets/img/logo-white.svg') }}" alt="Ovation"></a>
         </div>
         <div class="mobile-menu">
             <ul>
@@ -106,7 +106,7 @@ Mobile Menu
                 <div class="row align-items-center justify-content-between">
                     <div class="col-auto">
                         <div class="header-logo">
-                            <a href="index.html"><img src="assets/img/logo.svg" alt="logo"></a>
+                            <a href="index.html"><img src="{{ asset('assets/img/logo.svg') }}" alt="logo"></a>
                         </div>
                     </div>
                     <div class="col-auto">
@@ -122,7 +122,7 @@ Mobile Menu
                                     <a href="#">Portfolio</a>
                                 </li>
                                 <li class="menu-item-has-children">
-                                    <a href="#">Blog</a>
+                                    <a href="{{ route('blog-page') }}">Blog</a>
                                 </li>
                                 <li>
                                     <a href="contact.html">Contact</a>
