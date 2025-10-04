@@ -4,6 +4,7 @@ namespace App\View\Composers;
 
 use App\Models\Blog;
 use App\Models\Category;
+use App\Models\Page;
 use App\Models\User;
 use App\Services\Permissions\PermissionsService;
 use Illuminate\View\View;
@@ -85,6 +86,31 @@ class NavbarComposer
             ],
         ];
 
+        $pageMgmt = [
+            'icon'     => 'lucide.layers',
+            'title'    => trans('_menu.page_management'),
+            'access'   => $user->hasAnyPermission(PermissionsService::generatePermissionsByModel(Page::class, 'Store', 'Index')),
+            'sub_menu' => [
+                [
+                    'icon'       => 's-list-bullet',
+                    'route_name' => 'admin.page.index',
+                    'exact'      => true,
+                    'params'     => [],
+                    'title'      => trans('_menu.page.all'),
+                    'access'     => $user->hasAnyPermission(PermissionsService::generatePermissionsByModel(Page::class, 'Index')),
+                ],
+                [
+                    'icon'           => 's-plus-circle',
+                    'route_name'     => 'admin.page.create',
+                    'noWireNavigate' => true,
+                    'exact'          => true,
+                    'params'         => [],
+                    'title'          => trans('_menu.page.create'),
+                    'access'         => $user->hasAnyPermission(PermissionsService::generatePermissionsByModel(Page::class, 'Store')),
+                ],
+            ],
+        ];
+
         $menus = [
             [
                 'icon'       => 's-home',
@@ -110,6 +136,7 @@ class NavbarComposer
                 'sub_menu' => [
                     $categoryMgmt,
                     $blogMgmt,
+                    $pageMgmt
                 ],
             ],
         ];

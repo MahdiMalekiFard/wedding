@@ -7,25 +7,25 @@ Menu
         <div class="widget footer-widget">
             <div class="widget-about">
                 <div class="footer-logo">
-                    <a href="index.html"><img src="{{ asset('assets/img/logo-white.svg') }}" alt="Ovation"></a>
+                    <a href="{{ route('home') }}"><img src="{{ asset('assets/img/logo-white.svg') }}" alt="Ovation"></a>
                 </div>
                 <p class="about-text">Lorem ipsum dolor sit amet consectetur adipiscing elit sociosqu integer, suscipit nascetur aliquet posuere aptent vehicula ligula pulvinar praesent.</p>
                 <div class="social-btn style2">
-                    <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
-                    <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
-                    <a href="https://pinterest.com/"><i class="fab fa-pinterest-p"></i></a>
-                    <a href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/#"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com/#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://pinterest.com/#"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="https://instagram.com/#"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
         <div class="widget widget_nav_menu footer-widget">
-            <h3 class="widget_title">Quick Links</h3>
+            <h3 class="widget_title">Hurtige links</h3>
             <ul class="menu">
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="project-details.html">Our Blogs</a></li>
-                <li><a href="team.html">Meet The Teams</a></li>
-                <li><a href="project.html">FAQ Page</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="{{ route('about-us-page') }}">Om os</a></li>
+                <li><a href="{{ route('blog-page') }}">Vores blogs</a></li>
+                <li><a href="#">Mød holdene</a></li>
+                <li><a href="#">FAQ-side</a></li>
+                <li><a href="{{ route('contact-us-page') }}">Kontakt os</a></li>
             </ul>
         </div>
     </div>
@@ -38,24 +38,24 @@ Mobile Menu
     <div class="mobile-menu-area text-center">
         <button class="menu-toggle"><i class="fas fa-times"></i></button>
         <div class="mobile-logo">
-            <a href="index.html"><img src="{{ asset('assets/img/logo-white.svg') }}" alt="Ovation"></a>
+            <a href="{{ route('home') }}"><img src="{{ asset('assets/img/logo-white.svg') }}" alt="Ovation"></a>
         </div>
         <div class="mobile-menu">
             <ul>
                 <li class="menu-item-has-children">
-                    <a href="#">Home</a>
+                    <a href="{{ route('home') }}">Hjem</a>
                 </li>
                 <li class="menu-item-has-children">
-                    <a href="#">About Us</a>
+                    <a href="{{ route('about-us-page') }}">Om os</a>
                 </li>
                 <li class="menu-item-has-children">
-                    <a href="#">Portfolio</a>
+                    <a href="{{ route('portfolio-page') }}">Portefølje</a>
                 </li>
                 <li class="menu-item-has-children">
-                    <a href="#">Blog</a>
+                    <a href="{{ route('blog-page') }}">Blog</a>
                 </li>
                 <li>
-                    <a href="contact.html">Contact</a>
+                    <a href="{{ route('contact-us-page') }}">Kontakte</a>
                 </li>
             </ul>
         </div>
@@ -69,28 +69,21 @@ Mobile Menu
                 <div class="col-auto d-none d-lg-block">
                     <div class="header-links">
                         <ul>
-                            <li><i class="far fa-clock"></i>Working: 8.00am - 5.00pm</li>
-                            <li><i class="far fa-envelope"></i><a href="mailto:info@gmail.com">wedding@ovation.com</a></li>
+                            <li><i class="far fa-clock"></i>Arbejder: 8.00am - 5.00pm</li>
+                            <li><i class="far fa-envelope"></i><a href="mailto:info@gmail.com">info@uranus-partyhouse.dk</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-auto">
                     <div class="header-links">
                         <ul>
-{{--                            <li class="d-none d-sm-block">--}}
-{{--                                <ul class="header-sub-links">--}}
-{{--                                    <li><a href="contact.html">Help</a></li>--}}
-{{--                                    <li><a href="contact.html">Support</a></li>--}}
-{{--                                    <li><a href="contact.html">Contact</a></li>--}}
-{{--                                </ul>--}}
-{{--                            </li>--}}
                             <li>
                                 <div class="social-links">
-                                    <span class="me-2">Visit Us:</span>
-                                    <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
-                                    <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
-                                    <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                                    <span class="me-2">Besøg os:</span>
+                                    <a href="https://www.facebook.com/#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="https://www.twitter.com/#"><i class="fab fa-twitter"></i></a>
+                                    <a href="https://www.linkedin.com/#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="https://www.instagram.com/#"><i class="fab fa-instagram"></i></a>
                                 </div>
                             </li>
                         </ul>
@@ -106,26 +99,26 @@ Mobile Menu
                 <div class="row align-items-center justify-content-between">
                     <div class="col-auto">
                         <div class="header-logo">
-                            <a href="index.html"><img src="{{ asset('assets/img/logo.svg') }}" alt="logo"></a>
+                            <a href="{{ route('home') }}"><img src="{{ asset('assets/img/logo2.png') }}" alt="logo"></a>
                         </div>
                     </div>
                     <div class="col-auto">
                         <nav class="main-menu d-none d-lg-inline-block">
                             <ul>
                                 <li class="menu-item-has-children">
-                                    <a href="#">Home</a>
+                                    <a href="{{ route('home') }}">Hjem</a>
                                 </li>
                                 <li class="menu-item-has-children">
-                                    <a href="#">About Us</a>
+                                    <a href="{{ route('about-us-page') }}">Om os</a>
                                 </li>
                                 <li class="menu-item-has-children">
-                                    <a href="#">Portfolio</a>
+                                    <a href="{{ route('portfolio-page') }}">Portefølje</a>
                                 </li>
                                 <li class="menu-item-has-children">
                                     <a href="{{ route('blog-page') }}">Blog</a>
                                 </li>
                                 <li>
-                                    <a href="contact.html">Contact</a>
+                                    <a href="{{ route('contact-us-page') }}">Kontakte</a>
                                 </li>
                             </ul>
                         </nav>
@@ -136,7 +129,7 @@ Mobile Menu
                     <div class="col-auto d-none d-lg-block">
                         <div class="header-button">
                             <a href="contact.html" class="btn d-none d-xl-block">
-                                MAKE RESERVATION
+                                FORETAG RESERVATION
                             </a>
                             <button type="button" class="sidebar-btn sideMenuToggler">
                                 Menu

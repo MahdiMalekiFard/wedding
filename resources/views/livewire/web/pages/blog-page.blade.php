@@ -15,7 +15,7 @@
                 </div>
                 <div class="col-md-4">
                     <ul class="breadcumb-menu text-md-end">
-                        <li><a href="{{ route('home') }}">Home</a></li>
+                        <li><a href="{{ route('home') }}">Hjem</a></li>
                         <li class="active">Blog</li>
                     </ul>
                 </div>
@@ -41,7 +41,7 @@
                                         <div class="post-contents with-thum-img blog-content">
                                             <div class="post-meta-item blog-meta">
                                                 <a href="#">{{ $blog?->updated_at->format('d M, Y') }}</a>
-                                                <a href="#">BY {{ strtoupper($blog?->user->name ?? 'ADMIN') }}</a>
+                                                <a href="#">VED {{ strtoupper($blog?->user->name ?? 'ADMIN') }}</a>
                                             </div>
                                             <h3 class="post-title blog-title">
                                                 <a href="{{ route('blog-detail-page', ['slug' => $blog?->slug]) }}">
@@ -56,7 +56,7 @@
                                                 </div>
                                             @endif
                                             <div class="post-button">
-                                                <a href="{{ route('blog-detail-page', ['slug' => $blog?->slug]) }}" class="link-btn style2">Continue Reading <i class="fas fa-arrow-right"></i></a>
+                                                <a href="{{ route('blog-detail-page', ['slug' => $blog?->slug]) }}" class="link-btn style2">Fortsæt læsning <i class="fas fa-arrow-right"></i></a>
                                             </div>
                                         </div>
                                     </article>
@@ -64,7 +64,7 @@
                             @endforeach
                         @else
                             <div class="col-12 single-post-item">
-                                No related blogs found!
+                                Ingen relaterede blogs fundet!
                             </div>
                         @endif
                     </div>
@@ -82,13 +82,13 @@
                     <aside class="sidebar-sticky-area sidebar-area">
                         <div class="widget widget_search">
                             <form class="search-form">
-                                <input type="text" placeholder="Search Here">
+                                <input type="text" placeholder="Søg her">
                                 <button type="submit"><i class="fas fa-search"></i></button>
                             </form>
                         </div>
 
                         <div class="widget widget_categories">
-                            <h3 class="widget_title">Categories</h3>
+                            <h3 class="widget_title">Kategorier</h3>
                             <ul>
                                 @foreach($categories as $category)
                                     <li>
@@ -99,12 +99,12 @@
                         </div>
 
                         <div class="widget">
-                            <h3 class="widget_title">Latest Posts</h3>
+                            <h3 class="widget_title">Seneste indlæg</h3>
                             <div class="recent-post-wrap">
                                 @foreach($recentBlogs as $recentBlog)
                                     <div class="recent-post">
                                         <div class="media-img">
-                                            <img src="{{ $recentBlog?->getFirstMediaUrl('image', Constants::RESOLUTION_100_SQUARE) }}" alt="thumb Image">
+                                            <img src="{{ $recentBlog?->getFirstMediaUrl('image', Constants::RESOLUTION_100_SQUARE) }}" alt="tommelfingerbillede">
                                         </div>
                                         <div class="media-body">
                                             <div class="recent-post-meta">
@@ -122,7 +122,7 @@
                         </div>
 
                         <div class="widget widget_tag_cloud">
-                            <h3 class="widget_title">Popular Tags</h3>
+                            <h3 class="widget_title">Populære tags</h3>
                             <div class="tagcloud">
                                 @foreach($tags as $tag)
                                     <a href="{{ route('blog-page', ['tag' => $tag?->name]) }}">{{ $tag?->name }}</a>

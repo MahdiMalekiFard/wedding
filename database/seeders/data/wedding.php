@@ -6,14 +6,14 @@ use App\Enums\SeoRobotsMetaEnum;
 return [
     'blogs' => [
         [
-            'title'         => 'Häufige Smartphone-Probleme und ihre Lösungen',
-            'description'   => 'Erfahren Sie, welche Handyprobleme am häufigsten auftreten und wie sie schnell behoben werden können.',
+            'title'         => 'Almindelige smartphoneproblemer og deres løsninger',
+            'description'   => 'Lær om de mest almindelige mobiltelefonproblemer, og hvordan du hurtigt kan løse dem.',
             'body'          => '
-<p>Smartphones sind aus unserem Alltag nicht mehr wegzudenken. Doch wie jedes technische Gerät sind auch sie anfällig für Defekte. Die häufigsten Probleme sind <strong>gesprungene Displays</strong>, <strong>schwache Akkus</strong> und <strong>Wasserschäden</strong>. Ein Displaybruch passiert oft durch Stürze, während Akkus mit der Zeit an Leistung verlieren. Wasserschäden entstehen häufig durch Unachtsamkeit im Alltag.</p>
+<p>Smartphones er blevet en uundværlig del af vores hverdag. Men ligesom alle tekniske enheder er de modtagelige for defekter. De mest almindelige problemer er revnede skærme, svage batterier og vandskader. Skærme går ofte i stykker på grund af fald, mens batterier mister strøm over tid. Vandskader opstår ofte på grund af uforsigtighed i hverdagen.</p>
 
-<p>Zum Glück können diese Schäden in der Regel schnell behoben werden. Mit professionellen Ersatzteilen und erfahrenen Technikern wird Ihr Smartphone wieder wie neu. <em>Wichtig ist, Reparaturen nicht hinauszuzögern</em>, da sich kleine Probleme oft verschlimmern.</p>
+<p>Heldigvis kan disse skader normalt repareres hurtigt. Med professionelle reservedele og erfarne teknikere vil din smartphone blive som ny igen. <em>Det er vigtigt ikke at forsinke reparationer</em>, da små problemer ofte bliver værre.</p>
 ',
-            'slug'          => 'haeufige-smartphone-probleme-und-loesungen',
+            'slug'          => 'Almindelige-smartphoneproblemer-og-løsninger',
             'published'     => true,
             'published_at'  => now(),
             'user_id'       => 2,
@@ -22,11 +22,11 @@ return [
             'comment_count' => 1,
             'wish_count'    => 2,
             'languages'     => [
-                'en',
+                'da',
             ],
             'seo_options'   => [
-                'title'       => 'Häufige Smartphone-Probleme und ihre Lösungen',
-                'description' => 'Erfahren Sie, welche Handyprobleme am häufigsten auftreten und wie sie schnell behoben werden können.',
+                'title'       => 'Almindelige smartphoneproblemer og deres løsninger',
+                'description' => 'Lær om de mest almindelige mobiltelefonproblemer, og hvordan du hurtigt kan løse dem.',
                 'canonical'   => null,
                 'old_url'     => null,
                 'redirect_to' => null,
@@ -34,18 +34,18 @@ return [
             ],
             'path'          => public_path('assets/img/blog/blog_1_1.png'),
             'tags'          => [
-                'mobile', 'tablet', 'iPhone', 'iPad', 'Android',
+                'mobil', 'tablet', 'iPhone', 'iPad', 'Android',
             ],
         ],
         [
-            'title'         => 'Warum eine Handyreparatur besser ist als ein Neukauf',
-            'description'   => 'Entdecken Sie die Vorteile einer Reparatur gegenüber dem Kauf eines neuen Smartphones.',
+            'title'         => 'Hvorfor det er bedre at reparere din telefon end at købe en ny',
+            'description'   => 'Opdag fordelene ved at reparere din smartphone i forhold til at købe en ny.',
             'body'          => '
-<p>Viele Nutzer stehen vor der Frage: <strong>Reparatur oder Neukauf?</strong> Oft lohnt es sich, das Smartphone reparieren zu lassen. Zum einen sparen Sie bares Geld, da Reparaturen meist deutlich günstiger sind als ein neues Gerät. Zum anderen leisten Sie einen Beitrag zum <em>Umweltschutz</em>, indem Sie Elektroschrott vermeiden.</p>
+<p>Mange brugere står over for spørgsmålet: <strong>Reparation eller nyt køb?</strong> Det kan ofte betale sig at få din smartphone repareret. For det første sparer du penge, da reparationer normalt er betydeligt billigere end en ny enhed. For det andet bidrager du til <em>Miljøbeskyttelse</em>, ved at undgå elektronisk affald.</p>
 
-<p>Eine Reparatur verlängert die Lebensdauer Ihres Geräts erheblich, besonders wenn Original- oder Premium-Ersatzteile verwendet werden. Zudem behalten Sie Ihre gespeicherten Daten und müssen sich nicht an ein neues System gewöhnen. Deshalb ist eine Reparatur häufig die nachhaltigere und wirtschaftlichere Wahl.</p>
+<p>En reparation forlænger levetiden på din enhed betydeligt, især når der anvendes originale eller premium reservedele. Derudover bevarer du dine gemte data og behøver ikke at vænne dig til et nyt system. Derfor er en reparation ofte det mere bæredygtige og økonomiske valg.</p>
 ',
-            'slug'          => 'handyreparatur-besser-als-neukauf',
+            'slug'          => 'Mobiltelefonreparation-er-bedre-end-at-købe-en-ny',
             'published'     => true,
             'published_at'  => now(),
             'user_id'       => 3,
@@ -54,11 +54,11 @@ return [
             'comment_count' => 1,
             'wish_count'    => 2,
             'languages'     => [
-                'en',
+                'da',
             ],
             'seo_options'   => [
-                'title'       => 'Warum eine Handyreparatur besser ist als ein Neukauf',
-                'description' => 'Entdecken Sie die Vorteile einer Reparatur gegenüber dem Kauf eines neuen Smartphones.',
+                'title'       => 'Hvorfor det er bedre at reparere din telefon end at købe en ny',
+                'description' => 'Opdag fordelene ved at reparere din smartphone i forhold til at købe en ny.',
                 'canonical'   => null,
                 'old_url'     => null,
                 'redirect_to' => null,
@@ -70,16 +70,16 @@ return [
             ],
         ],
         [
-            'title'         => 'Tipps zur Pflege Ihres Smartphones für eine längere Lebensdauer',
-            'description'   => 'Mit diesen einfachen Tipps bleibt Ihr Smartphone länger funktionsfähig und zuverlässig.',
+            'title'         => 'Tips til at passe på din smartphone for at få en længere levetid',
+            'description'   => 'Med disse enkle tips vil din smartphone forblive funktionel og pålidelig i længere tid.',
             'body'          => '
-<p>Ein Smartphone begleitet uns täglich – umso wichtiger ist es, es richtig zu pflegen. Verwenden Sie immer eine <strong>Schutzhülle</strong> und <strong>Panzerglas</strong>, um Displaybrüche zu vermeiden. Laden Sie den Akku nicht permanent bis 100 %, sondern zwischen 20 % und 80 %, um die Lebensdauer zu erhöhen.</p>
+<p>En smartphone følger os hver dag – det er endnu vigtigere at passe ordentligt på den. Brug altid en <strong>beskyttelsesdæksel</strong> og <strong>skudsikkert glas</strong>, For at undgå at skærmen beskadiges, må batteriet ikke oplades kontinuerligt til 100%, men i stedet mellem 20% og 80% for at forlænge dets levetid.</p>
 
-<p>Achten Sie darauf, Ihr Gerät nicht extremen Temperaturen auszusetzen, da Hitze und Kälte den Akku stark belasten können. Regelmäßige <em>Software-Updates</em> sorgen zudem für Sicherheit und bessere Leistung.</p>
+<p>Pas på ikke at udsætte din enhed for ekstreme temperaturer, da varme og kulde kan belaste batteriet. Fast <em>Softwareopdateringer</em> også sikre sikkerhed og bedre ydeevne.</p>
 
-<p>Mit diesen einfachen Maßnahmen sparen Sie nicht nur Reparaturkosten, sondern haben auch länger Freude an Ihrem Smartphone.</p>
+<p>Med disse enkle foranstaltninger sparer du ikke kun på reparationsomkostninger, men du vil også have glæde af din smartphone i længere tid.</p>
 ',
-            'slug'          => 'smartphone-pflege-tipps-laengere-lebensdauer',
+            'slug'          => 'smartphone-plejetips-længere-levetid',
             'published'     => true,
             'published_at'  => now(),
             'user_id'       => 3,
@@ -88,11 +88,11 @@ return [
             'comment_count' => 1,
             'wish_count'    => 2,
             'languages'     => [
-                'en',
+                'da',
             ],
             'seo_options'   => [
-                'title'       => 'Tipps zur Pflege Ihres Smartphones für eine längere Lebensdauer',
-                'description' => 'Mit diesen einfachen Tipps bleibt Ihr Smartphone länger funktionsfähig und zuverlässig.',
+                'title'       => 'Tips til at passe på din smartphone for at få en længere levetid',
+                'description' => 'Med disse enkle tips vil din smartphone forblive funktionel og pålidelig i længere tid.',
                 'canonical'   => null,
                 'old_url'     => null,
                 'redirect_to' => null,
