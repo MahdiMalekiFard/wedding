@@ -22,7 +22,7 @@ class BlogPage extends Component
                      ->where('published', true)
                      ->when($this->tag, fn ($query) => $query->withAnyTags([$this->tag]))
                      ->when($this->category_id, fn ($query) => $query->where('category_id', $this->category_id))
-                     ->paginate(6);
+                     ->paginate(4);
 
         return view('livewire.web.pages.blog-page', compact('blogs'))
             ->layout('components.layouts.web');

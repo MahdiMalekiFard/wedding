@@ -5,7 +5,7 @@ use App\Livewire\Web\Pages\BlogPage;
 use App\Livewire\Web\Pages\HomePage;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', HomePage::class);
+Route::get('/', HomePage::class)->name('home');
 
 // pages
 Route::get('blog', BlogPage::class)->name('blog-page');
