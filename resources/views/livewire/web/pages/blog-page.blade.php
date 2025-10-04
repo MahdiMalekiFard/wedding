@@ -15,7 +15,7 @@
                 </div>
                 <div class="col-md-4">
                     <ul class="breadcumb-menu text-md-end">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="{{ route('home') }}">Home</a></li>
                         <li class="active">Blog</li>
                     </ul>
                 </div>
@@ -80,83 +80,54 @@
 
                 <div class="col-xxl-4 col-lg-5 sidebar-widget-area">
                     <aside class="sidebar-sticky-area sidebar-area">
+                        <div class="widget widget_search">
+                            <form class="search-form">
+                                <input type="text" placeholder="Search Here">
+                                <button type="submit"><i class="fas fa-search"></i></button>
+                            </form>
+                        </div>
+
                         <div class="widget widget_categories">
                             <h3 class="widget_title">Categories</h3>
                             <ul>
-                                <li>
-                                    <a href="blog.html">Latest News</a>
-                                </li>
-                                <li>
-                                    <a href="blog.html">Today Best Posts</a>
-                                </li>
-                                <li>
-                                    <a href="blog.html">Design Trend</a>
-                                </li>
-                                <li>
-                                    <a href="blog.html">UI/UX Tips</a>
-                                </li>
-                                <li>
-                                    <a href="blog.html">Brand Design</a>
-                                </li>
+                                @foreach($categories as $category)
+                                    <li>
+                                        <a href="{{ route('blog-page', ['category_id' => $category?->id]) }}">{{ $category?->title }}</a>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
 
                         <div class="widget">
                             <h3 class="widget_title">Latest Posts</h3>
                             <div class="recent-post-wrap">
-                                <div class="recent-post">
-                                    <div class="media-img">
-                                        <a href="blog-details.html"><img src="assets/img/blog/recent-post1.png" alt="Blog Image"></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <div class="recent-post-meta">
-                                            <a href="blog.html"><i class="far fa-clock"></i> SEP 25, 2023</a>
+                                @foreach($recentBlogs as $recentBlog)
+                                    <div class="recent-post">
+                                        <div class="media-img">
+                                            <img src="{{ $recentBlog?->getFirstMediaUrl('image', Constants::RESOLUTION_100_SQUARE) }}" alt="thumb Image">
                                         </div>
-                                        <h4 class="post-title"><a class="text-inherit" href="blog-details.html">Glamour Guide: Beauty Tips and Trends"</a></h4>
-                                    </div>
-                                </div>
-                                <div class="recent-post">
-                                    <div class="media-img">
-                                        <a href="blog-details.html"><img src="assets/img/blog/recent-post2.png" alt="Blog Image"></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <div class="recent-post-meta">
-                                            <a href="blog.html"><i class="far fa-clock"></i> SEP 25, 2023</a>
+                                        <div class="media-body">
+                                            <div class="recent-post-meta">
+                                                <span><i class="far fa-clock"></i> {{ $recentBlog?->updated_at->format('d M, Y') }}</span>
+                                            </div>
+                                            <h4 class="post-title">
+                                                <a class="text-inherit" href="{{ route('blog-detail-page', ['slug' => $recentBlog?->slug]) }}">
+                                                    {{ \Illuminate\Support\Str::words($recentBlog?->title, 6) }}
+                                                </a>
+                                            </h4>
                                         </div>
-                                        <h4 class="post-title"><a class="text-inherit" href="blog-details.html">Glamour Guide: Beauty Tips and Trends"</a></h4>
                                     </div>
-                                </div>
-                                <div class="recent-post">
-                                    <div class="media-img">
-                                        <a href="blog-details.html"><img src="assets/img/blog/recent-post3.png" alt="Blog Image"></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <div class="recent-post-meta">
-                                            <a href="blog.html"><i class="far fa-clock"></i> SEP 25, 2023</a>
-                                        </div>
-                                        <h4 class="post-title"><a class="text-inherit" href="blog-details.html">Glamour Guide: Beauty Tips and Trends"</a></h4>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
 
                         <div class="widget widget_tag_cloud">
                             <h3 class="widget_title">Popular Tags</h3>
                             <div class="tagcloud">
-                                <a href="blog.html">DREAM</a>
-                                <a href="blog.html">RINGS</a>
-                                <a href="blog.html">BIRTHDAY</a>
-                                <a href="blog.html">NEAKLACE</a>
-                                <a href="blog.html">CHAIN</a>
-                                <a href="blog.html">BRACLET</a>
+                                @foreach($tags as $tag)
+                                    <a href="{{ route('blog-page', ['tag' => $tag?->name]) }}">{{ $tag?->name }}</a>
+                                @endforeach
                             </div>
-                        </div>
-
-                        <div class="widget widget_search">
-                            <form class="search-form">
-                                <input type="text" placeholder="Search Here">
-                                <button type="submit"><i class="fas fa-search"></i></button>
-                            </form>
                         </div>
                     </aside>
                 </div>
