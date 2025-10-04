@@ -42,8 +42,8 @@
                         <h3 class="widget_title">Information</h3>
                         <div class="menu-all-pages-container list-column2">
                             <ul class="menu">
-                                <li><a href="team.html">Vores teams</a></li>
-                                <li><a href="faq.html">Faq’s</a></li>
+                                <li><a href="{{ route('team-page') }}">Vores teams</a></li>
+                                <li><a href="{{ route('faq-page') }}">Faq’s</a></li>
                                 <li><a href="{{ route('contact-us-page') }}">Kontakt os</a></li>
                                 <li><a href="{{ route('portfolio-page') }}">Tjenester</a></li>
                             </ul>
@@ -74,7 +74,7 @@
                     <div class="row justify-content-center">
                         <div class="col-auto align-self-center">
                             <p class="copyright-text">© 2025 </p>
-                            <p class="copyright-text"><a href="#">Uranus party house.</a> Alle rettigheder forbeholdes.</p></div>
+                            <p class="copyright-text"><a href="{{ route('home') }}">Uranus party house.</a> Alle rettigheder forbeholdes.</p></div>
                     </div>
                 </div>
             </div>

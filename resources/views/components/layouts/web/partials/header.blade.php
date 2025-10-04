@@ -23,8 +23,8 @@ Menu
             <ul class="menu">
                 <li><a href="{{ route('about-us-page') }}">Om os</a></li>
                 <li><a href="{{ route('blog-page') }}">Vores blogs</a></li>
-                <li><a href="#">Mød holdene</a></li>
-                <li><a href="#">FAQ-side</a></li>
+                <li><a href="{{ route('team-page') }}">Mød holdene</a></li>
+                <li><a href="{{ route('faq-page') }}">FAQ-side</a></li>
                 <li><a href="{{ route('contact-us-page') }}">Kontakt os</a></li>
             </ul>
         </div>
@@ -38,7 +38,7 @@ Mobile Menu
     <div class="mobile-menu-area text-center">
         <button class="menu-toggle"><i class="fas fa-times"></i></button>
         <div class="mobile-logo">
-            <a href="{{ route('home') }}"><img src="{{ asset('assets/img/logo-white.svg') }}" alt="Ovation"></a>
+            <a href="{{ route('home') }}"><img src="{{ asset('assets/img/logo2.png') }}" alt="Ovation"></a>
         </div>
         <div class="mobile-menu">
             <ul>
@@ -128,7 +128,7 @@ Mobile Menu
                     </div>
                     <div class="col-auto d-none d-lg-block">
                         <div class="header-button">
-                            <a href="contact.html" class="btn d-none d-xl-block">
+                            <a href="{{ route('reservation-page') }}" class="btn d-none d-xl-block">
                                 FORETAG RESERVATION
                             </a>
                             <button type="button" class="sidebar-btn sideMenuToggler">
