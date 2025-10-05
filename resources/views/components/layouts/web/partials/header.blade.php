@@ -7,9 +7,12 @@ Menu
         <div class="widget footer-widget">
             <div class="widget-about">
                 <div class="footer-logo">
-                    <a href="{{ route('home') }}"><img src="{{ asset('assets/img/logo-white.svg') }}" alt="Ovation"></a>
+                    <a href="{{ route('home') }}"><img src="{{ asset('assets/img/logo-white.png') }}" alt="Uranus Party House"></a>
                 </div>
-                <p class="about-text">Lorem ipsum dolor sit amet consectetur adipiscing elit sociosqu integer, suscipit nascetur aliquet posuere aptent vehicula ligula pulvinar praesent.</p>
+                <p class="about-text">
+                    Har du spørgsmål, brug for hjælp eller ønsker yderligere information om os? Vi står klar til at hjælpe dig.
+                    Kontakt os via telefon, email eller udfyld kontaktformularen på siden.
+                </p>
                 <div class="social-btn style2">
                     <a href="https://www.facebook.com/#"><i class="fab fa-facebook"></i></a>
                     <a href="https://twitter.com/#"><i class="fab fa-twitter"></i></a>
@@ -21,11 +24,11 @@ Menu
         <div class="widget widget_nav_menu footer-widget">
             <h3 class="widget_title">Hurtige links</h3>
             <ul class="menu">
-                <li><a href="{{ route('about-us-page') }}">Om os</a></li>
-                <li><a href="{{ route('blog-page') }}">Vores blogs</a></li>
-                <li><a href="{{ route('team-page') }}">Mød holdene</a></li>
-                <li><a href="{{ route('faq-page') }}">FAQ-side</a></li>
-                <li><a href="{{ route('contact-us-page') }}">Kontakt os</a></li>
+                <li class="{{ request()->routeIs('about-us-page') ? 'active-menu' : '' }}"><a href="{{ route('about-us-page') }}">Om os</a></li>
+                <li class="{{ request()->routeIs('blog-page') ? 'active-menu' : '' }}"><a href="{{ route('blog-page') }}">Vores blogs</a></li>
+                <li class="{{ request()->routeIs('team-page') ? 'active-menu' : '' }}"><a href="{{ route('team-page') }}">Mød holdene</a></li>
+                <li class="{{ request()->routeIs('faq-page') ? 'active-menu' : '' }}"><a href="{{ route('faq-page') }}">FAQ-side</a></li>
+                <li class="{{ request()->routeIs('contact-us-page') ? 'active-menu' : '' }}"><a href="{{ route('contact-us-page') }}">Kontakt os</a></li>
             </ul>
         </div>
     </div>
@@ -38,23 +41,23 @@ Mobile Menu
     <div class="mobile-menu-area text-center">
         <button class="menu-toggle"><i class="fas fa-times"></i></button>
         <div class="mobile-logo">
-            <a href="{{ route('home') }}"><img src="{{ asset('assets/img/logo2.png') }}" alt="Ovation"></a>
+            <a href="{{ route('home') }}"><img src="{{ asset('assets/img/logo2.png') }}" alt="Uranus Party House"></a>
         </div>
         <div class="mobile-menu">
             <ul>
-                <li class="menu-item-has-children">
+                <li class="menu-item-has-children {{ request()->routeIs('home') ? 'active-menu' : '' }}">
                     <a href="{{ route('home') }}">Hjem</a>
                 </li>
-                <li class="menu-item-has-children">
+                <li class="menu-item-has-children {{ request()->routeIs('about-us-page') ? 'active-menu' : '' }}">
                     <a href="{{ route('about-us-page') }}">Om os</a>
                 </li>
-                <li class="menu-item-has-children">
+                <li class="menu-item-has-children {{ request()->routeIs('portfolio-page') ? 'active-menu' : '' }}">
                     <a href="{{ route('portfolio-page') }}">Portefølje</a>
                 </li>
-                <li class="menu-item-has-children">
+                <li class="menu-item-has-children {{ request()->routeIs('blog-page') ? 'active-menu' : '' }}">
                     <a href="{{ route('blog-page') }}">Blog</a>
                 </li>
-                <li>
+                <li class="{{ request()->routeIs('contact-us-page') ? 'active-menu' : '' }}">
                     <a href="{{ route('contact-us-page') }}">Kontakte</a>
                 </li>
             </ul>
@@ -70,7 +73,7 @@ Mobile Menu
                     <div class="header-links">
                         <ul>
                             <li><i class="far fa-clock"></i>Arbejder: 8.00am - 5.00pm</li>
-                            <li><i class="far fa-envelope"></i><a href="mailto:info@gmail.com">info@uranus-partyhouse.dk</a></li>
+                            <li><i class="far fa-envelope"></i><a href="mailto:info@uranus-partyhouse.dk">info@uranus-partyhouse.dk</a></li>
                         </ul>
                     </div>
                 </div>
@@ -105,19 +108,19 @@ Mobile Menu
                     <div class="col-auto">
                         <nav class="main-menu d-none d-lg-inline-block">
                             <ul>
-                                <li class="menu-item-has-children">
+                                <li class="{{ request()->routeIs('home') ? 'active-menu' : '' }}">
                                     <a href="{{ route('home') }}">Hjem</a>
                                 </li>
-                                <li class="menu-item-has-children">
+                                <li class="{{ request()->routeIs('about-us-page') ? 'active-menu' : '' }}">
                                     <a href="{{ route('about-us-page') }}">Om os</a>
                                 </li>
-                                <li class="menu-item-has-children">
+                                <li class="{{ request()->routeIs('portfolio-page') ? 'active-menu' : '' }}">
                                     <a href="{{ route('portfolio-page') }}">Portefølje</a>
                                 </li>
-                                <li class="menu-item-has-children">
+                                <li class="{{ request()->routeIs('blog-page') ? 'active-menu' : '' }}">
                                     <a href="{{ route('blog-page') }}">Blog</a>
                                 </li>
-                                <li>
+                                <li class="{{ request()->routeIs('contact-us-page') ? 'active-menu' : '' }}">
                                     <a href="{{ route('contact-us-page') }}">Kontakte</a>
                                 </li>
                             </ul>

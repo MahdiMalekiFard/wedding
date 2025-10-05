@@ -37,7 +37,7 @@
     4.6. Blog
     4.7. Comments
     4.8. Hero Area
-    4.9. Error    
+    4.9. Error
     4.00. Popup Search
     4.00. Popup Side Menu
     4.00. Wocommerce
@@ -5795,6 +5795,19 @@ ul.wp-block-latest-posts li:last-child {
   /* Medium Large devices */
   /* Large devices */
   /* Extra small devices */
+}
+.main-menu .active-menu > a {
+    &:before {
+        background: var(--theme-color);
+    }
+    color: var(--theme-color);
+    font-weight: bold;
+}
+.mobile-menu .active-menu > a {
+    color: var(--theme-color);
+}
+.sidemenu-content .menu .active-menu > a {
+    color: var(--theme-color);
 }
 .header-layout1 .sticky-wrapper {
   padding: 0px 68px;

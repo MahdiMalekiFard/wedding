@@ -166,7 +166,7 @@
                         <div class="img-anim">
                             <img src="/assets/img/normal/video_1-1.png" alt="img">
                         </div>
-                        <a href="https://www.youtube.com/watch?v=yfFYBo0jtF0" class="play-btn popup-video background-image">
+                        <a href="{{ asset('assets/vids/video.MOV') }}" class="play-btn popup-video background-image">
                             <i class="fas fa-solid fa-play"></i>
                         </a>
                     </div>
@@ -309,7 +309,7 @@
                         </div>
                         <div class="portfolio-details">
                             <p>Miranda & Malena</p>
-                            <h3><a href="#">Årets bedste ukrudtsrydning</a></h3>
+                            <h3><a href="{{ route('portfolio-detail-page', ['slug' => 'Årets bedste ukrudtsrydning']) }}">Årets bedste ukrudtsrydning</a></h3>
                         </div>
                     </div>
                 </div>
@@ -321,7 +321,7 @@
                         </div>
                         <div class="portfolio-details">
                             <p>Miranda & Malena</p>
-                            <h3><a href="#">Årets bedste ukrudtsrydning</a></h3>
+                            <h3><a href="{{ route('portfolio-detail-page', ['slug' => 'Årets bedste ukrudtsrydning']) }}">Årets bedste ukrudtsrydning</a></h3>
                         </div>
                     </div>
                 </div>
@@ -333,7 +333,7 @@
                         </div>
                         <div class="portfolio-details">
                             <p>Miranda & Malena</p>
-                            <h3><a href="#">Årets bedste ukrudtsrydning</a></h3>
+                            <h3><a href="{{ route('portfolio-detail-page', ['slug' => 'Årets bedste ukrudtsrydning']) }}">Årets bedste ukrudtsrydning</a></h3>
                         </div>
                     </div>
                 </div>

@@ -35,12 +35,12 @@
                 <div class="col-lg-6">
                     <div class="about-content-wrap title-anim text-center">
                         <div class="title-area mb-0">
-                            <span class="sub-title style2">Mere om os</span>
-                            <h2 class="sec-title">VORES BRYLLUPSHISTORIE TIL DATO</h2>
-                            <p class="sec-text">Nec tritani accumsan appellantur in, quo erant invenire in. Magna his et, ullamcorper no mea, ei nam meis philosophia. Est timeam prompta ea, id audire adversarium Has ex fugit eleifend concluda turque. Sale oblique id per, nisl consulatu posidonium his ad.</p>
+                            <h2 class="sec-title">Lad os klare opgaven for dig</h2>
+                            <p class="sec-text">Uanset om du skal have hjælp til det ene eller det andet, stræber vi altid efter at finde den bedste løsning til netop dig.
+                                Finder du ikke netop det, som du skal have hjælp til beskrevet her, så kontakt os endelig.</p>
                         </div>
                         <div class="btn-wrap mt-40 justify-content-center">
-                            <a href="reservation.html" class="btn">LAV EN AFTALE</a>
+                            <a href="{{ route('contact-us-page') }}" class="btn">kontakt os</a>
                         </div>
                     </div>
                 </div>
@@ -113,9 +113,9 @@
                 <div class="col-12">
                     <div class="about-tab-1">
                         <div class="filter-menu-active">
-                            <button data-filter=".cat1" class="active" type="button">Vores mission</button>
-                            <button data-filter=".cat2" type="button">Vores destination</button>
-                            <button data-filter=".cat3" type="button">Vores mål</button>
+                            <button data-filter=".cat1" class="active" type="button">Forstå dig</button>
+                            <button data-filter=".cat2" type="button">Høj kvalitet</button>
+                            <button data-filter=".cat3" type="button">Dygtigt team</button>
                         </div>
                         <div class="filter-active-cat1">
                             <div class="filter-item cat1">
@@ -127,10 +127,16 @@
                                     </div>
                                     <div class="col-lg-7">
                                         <div class="about-content-wrap style3 title-anim">
-                                            <h3 class="title">Modulationssagation</h3>
-                                            <p class="text">Eros purus eget suscipit nostra nullam dignissim orci tincidunt tempor rutrum lobortis quis rhoncus, tristique feugiat curae ac id cras. Parturient primis interdum litora ligula pretium libero pharetra class malesuada sociosqu senectus vehicula penatibus mollis,</p>
+                                            <h3 class="title">Klar kommunikation</h3>
+                                            <p class="text">
+                                                Vi har stor forståelse for, at vores kunders behov og ønsker kan variere, så vi tager altid en indledende snak med dig omkring netop dette.
+                                                På den måde kan vi bedst muligt nå i mål med leveringen af en komplet og skræddersyet løsning.
+                                                Vi spørger grundigt ind til dine forventninger til opgaven, så vi undgår misforståelse.
+                                                Vi holder dig også gerne opdateret fra start til slut, hvis du ønsker det.
+                                                Det er vigtigt for os, at vores kunder føler sig trygge gennem hele forløbet.
+                                            </p>
                                             <div class="btn-wrap mt-50">
-                                                <a href="reservation.html" class="btn">LAV EN AFTALE</a>
+                                                <a href="{{ route('reservation-page') }}" class="btn">LAV EN AFTALE</a>
                                             </div>
                                         </div>
                                     </div>
@@ -140,16 +146,16 @@
                                 <div class="row align-items-center">
                                     <div class="col-lg-5">
                                         <div class="about-thumb fade_left">
-                                            <img src="/assets/img/normal/about_5-1.png" alt="img">
+                                            <img src="/assets/img/normal/about-quality.png" alt="img">
                                         </div>
                                     </div>
                                     <div class="col-lg-7">
                                         <div class="about-content-wrap style3 title-anim">
-                                            <h3 class="title">Modulation Sagation</h3>
-                                            <p class="text">Eros purus eget suscipit nostra nullam dignissim orci tincidunt tempor rutrum lobortis quis rhoncus, tristique feugiat curae ac id cras. Parturient primis interdum litora ligula pretium libero pharetra class malesuada sociosqu senectus vehicula penatibus mollis,</p>
-                                            <div class="btn-wrap mt-50">
-                                                <a href="reservation.html" class="btn">LAV EN AFTALE</a>
-                                            </div>
+                                            <h3 class="title">Pålidelig service</h3>
+                                            <p class="text">
+                                                Hos os kan du altid regne med god service og høj kvalitet. Vi går aldrig fra en opgave, før den 100% færdig, og før begge parter er tilfredse med resultatet.
+                                                Vi overholder alle aftaler og deadlines, så hvis du er på udkig efter kvalitetsløsninger til tiden, så er det os, du skal kontakte.
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -158,16 +164,16 @@
                                 <div class="row align-items-center">
                                     <div class="col-lg-5">
                                         <div class="about-thumb fade_left">
-                                            <img src="/assets/img/normal/about_5-1.png" alt="img">
+                                            <img src="/assets/img/normal/about-team.png" alt="img">
                                         </div>
                                     </div>
                                     <div class="col-lg-7">
                                         <div class="about-content-wrap style3 title-anim">
-                                            <h3 class="title">Modulation Sagation</h3>
-                                            <p class="text">Eros purus eget suscipit nostra nullam dignissim orci tincidunt tempor rutrum lobortis quis rhoncus, tristique feugiat curae ac id cras. Parturient primis interdum litora ligula pretium libero pharetra class malesuada sociosqu senectus vehicula penatibus mollis,</p>
-                                            <div class="btn-wrap mt-50">
-                                                <a href="reservation.html" class="btn">LAV EN AFTALE</a>
-                                            </div>
+                                            <h3 class="title">Ekspertpleje</h3>
+                                            <p class="text">
+                                                Vores medarbejdere har den rette faglige viden og kompetencerne til at levere et veludført stykke arbejde.
+                                                Vi møder dig altid med et smil, og vi besvarer med glæde ethvert spørgsmål, som du måtte have i løbet af projektet.
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -195,7 +201,7 @@
                             <img src="assets/img/team/team-1-1.png" alt="Team Image">
                         </div>
                         <div class="team-card_content">
-                            <h3 class="team-card_title"><a href="team-details.html">Louisa Abadie</a></h3>
+                            <h3 class="team-card_title"><a href="{{ route('team-detail-page', ['slug' => 'Nicholas White']) }}">Louisa Abadie</a></h3>
                             <span class="team-card_desig">Leder</span>
                         </div>
                     </div>
@@ -206,7 +212,7 @@
                             <img src="assets/img/team/team-1-2.png" alt="Team Image">
                         </div>
                         <div class="team-card_content">
-                            <h3 class="team-card_title"><a href="team-details.html">Mike Johnson</a></h3>
+                            <h3 class="team-card_title"><a href="{{ route('team-detail-page', ['slug' => 'Nicholas White']) }}">Mike Johnson</a></h3>
                             <span class="team-card_desig">Leder</span>
                         </div>
                     </div>
@@ -217,7 +223,7 @@
                             <img src="assets/img/team/team-1-3.png" alt="Team Image">
                         </div>
                         <div class="team-card_content">
-                            <h3 class="team-card_title"><a href="team-details.html">Amelia Harper</a></h3>
+                            <h3 class="team-card_title"><a href="{{ route('team-detail-page', ['slug' => 'Nicholas White']) }}">Amelia Harper</a></h3>
                             <span class="team-card_desig">Leder</span>
                         </div>
                     </div>

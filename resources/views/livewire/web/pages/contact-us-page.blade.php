@@ -77,7 +77,7 @@
                 <div class="row gx-0 justify-content-center flex-row-reverse">
                     <div class="col-xl-5">
                         <div class="map-sec">
-                            <iframe src="https://maps.google.com/maps?q=London%20Eye%2C%20London%2C%20United%20Kingdom&t=m&z=10&output=embed&iwloc=near" allowfullscreen="" loading="lazy"></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m19!1m8!1m3!1d289408.2614606667!2d9.468878!3d55.4800622!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x464ca1d5fd39e5a9%3A0xc076fbb899cdcea5!2sHaderslevvej%2093%206000%20Kolding%20Denmark!3m2!1d55.4800622!2d9.468878!5e0!3m2!1sen!2s!4v1759659287893!5m2!1sen!2s" allowfullscreen="" loading="lazy"></iframe>
                         </div>
                     </div>
                     <div class="col-xl-7">

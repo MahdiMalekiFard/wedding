@@ -2,7 +2,7 @@
     <!--==============================
     Breadcrumb
     ============================== -->
-    <div class="breadcumb-wrapper" data-bg-src="assets/img/bg/breadcrumb-bg.png">
+    <div class="breadcumb-wrapper" data-bg-src="/assets/img/bg/breadcrumb-bg.png">
         <!-- bg animated image/ -->
         <div class="container">
             <div class="row justify-content-between align-items-center">

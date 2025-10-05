@@ -61,7 +61,7 @@
 ==============================-->
 <div class="preloader ">
     <div class="preloader-inner">
-        <img src="{{ asset('assets/img/logo2.png') }}" alt="ovation">
+        <img src="{{ asset('assets/img/logo-white.png') }}" alt="ovation">
         <span class="loader"></span>
     </div>
 </div>

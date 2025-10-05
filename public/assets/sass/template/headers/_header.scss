@@ -127,7 +127,7 @@
                 border-radius: 4px;
                 position: relative;
                 top: -1px;
-            } 
+            }
         }
     }
 
@@ -252,7 +252,7 @@
                         top: 0;
                         color: $title-color;
                     }
-                }                
+                }
             }
         }
     }
@@ -358,7 +358,7 @@
     }
     .sidebar-btn {
         color: $white-color;
-        &:before, 
+        &:before,
         &:after {
             background: $white-color;
         }
@@ -406,7 +406,7 @@
     }
     .header-layout2 .sticky-wrapper {
         padding: 0px 49px;
-    }    
+    }
 }
 @include lg {
     .header-layout2 .header-top {
