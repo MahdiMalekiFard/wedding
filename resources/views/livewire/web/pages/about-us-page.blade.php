@@ -36,8 +36,12 @@
                     <div class="about-content-wrap title-anim text-center">
                         <div class="title-area mb-0">
                             <h2 class="sec-title">Lad os klare opgaven for dig</h2>
-                            <p class="sec-text">Uanset om du skal have hjælp til det ene eller det andet, stræber vi altid efter at finde den bedste løsning til netop dig.
-                                Finder du ikke netop det, som du skal have hjælp til beskrevet her, så kontakt os endelig.</p>
+                            <p class="sec-text" style="text-align: justify">
+                                Planlægningen af dit bryllup bør være fyldt med glæde, ikke stress.
+                                I vores bryllupssalon tager vi os af alle detaljer – fra dekoration og design til koordinering og catering –
+                                så du bare kan nyde din særlige dag. Vores dedikerede team sørger for, at alt forløber problemfrit og skaber en atmosfære af skønhed,
+                                kærlighed og fest. Læn dig tilbage, slap af, og lad os forvandle dine drømme til en uforglemmelig oplevelse.
+                            </p>
                         </div>
                         <div class="btn-wrap mt-40 justify-content-center">
                             <a href="{{ route('contact-us-page') }}" class="btn">kontakt os</a>
@@ -128,7 +132,7 @@
                                     <div class="col-lg-7">
                                         <div class="about-content-wrap style3 title-anim">
                                             <h3 class="title">Klar kommunikation</h3>
-                                            <p class="text">
+                                            <p class="text" style="text-align: justify">
                                                 Vi har stor forståelse for, at vores kunders behov og ønsker kan variere, så vi tager altid en indledende snak med dig omkring netop dette.
                                                 På den måde kan vi bedst muligt nå i mål med leveringen af en komplet og skræddersyet løsning.
                                                 Vi spørger grundigt ind til dine forventninger til opgaven, så vi undgår misforståelse.
@@ -152,7 +156,7 @@
                                     <div class="col-lg-7">
                                         <div class="about-content-wrap style3 title-anim">
                                             <h3 class="title">Pålidelig service</h3>
-                                            <p class="text">
+                                            <p class="text" style="text-align: justify">
                                                 Hos os kan du altid regne med god service og høj kvalitet. Vi går aldrig fra en opgave, før den 100% færdig, og før begge parter er tilfredse med resultatet.
                                                 Vi overholder alle aftaler og deadlines, så hvis du er på udkig efter kvalitetsløsninger til tiden, så er det os, du skal kontakte.
                                             </p>
@@ -170,7 +174,7 @@
                                     <div class="col-lg-7">
                                         <div class="about-content-wrap style3 title-anim">
                                             <h3 class="title">Ekspertpleje</h3>
-                                            <p class="text">
+                                            <p class="text" style="text-align: justify">
                                                 Vores medarbejdere har den rette faglige viden og kompetencerne til at levere et veludført stykke arbejde.
                                                 Vi møder dig altid med et smil, og vi besvarer med glæde ethvert spørgsmål, som du måtte have i løbet af projektet.
                                             </p>

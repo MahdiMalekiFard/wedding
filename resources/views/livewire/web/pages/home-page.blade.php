@@ -75,12 +75,14 @@
                     <div class="about-content-wrap title-anim">
                         <div class="title-area mb-0">
                             <span class="sub-title">OM OS</span>
-                            <h2 class="sec-title">VORES <br> BRYLLUPSHISTORIEN TIL DATO</h2>
-                            <p class="sec-text">Lorem ipsum dolor sit amet consectetur adipiscing elit sociosqu integer, suscipit nascetur aliquet posuere aptent vehicula ligula pulvinar praesent.
+                            <h2 class="sec-title">En dag at huske</h2>
+                            <p class="sec-text" style="text-align: justify">
+                                Hver detalje tæller, når I siger ja til hinanden.
+                                Vi skaber en uforglemmelig ramme for jeres store dag — elegant, romantisk og helt jeres egen.
                             </p>
                         </div>
                         <div class="btn-wrap mt-40">
-                            <a href="#" class="btn">OPDAG MERE</a>
+                            <a href="{{ route('about-us-page') }}" class="btn">OPDAG MERE</a>
                         </div>
                     </div>
                 </div>
