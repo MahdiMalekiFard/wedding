@@ -50,6 +50,7 @@
                             <ul class="menu">
                                 <li><a href="{{ route('about-us-page') }}">Om</a></li>
                                 <li><a href="{{ route('blog-page') }}">Vores blogs</a></li>
+                                <li><a href="{{ route('gallery-page') }}">galleri</a></li>
                             </ul>
                         </div>
                     </div>

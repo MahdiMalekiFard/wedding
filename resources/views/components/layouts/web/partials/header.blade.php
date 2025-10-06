@@ -57,6 +57,9 @@ Mobile Menu
                 <li class="menu-item-has-children {{ request()->routeIs('blog-page') ? 'active-menu' : '' }}">
                     <a href="{{ route('blog-page') }}">Blog</a>
                 </li>
+                <li class="menu-item-has-children {{ request()->routeIs('gallery-page') ? 'active-menu' : '' }}">
+                    <a href="{{ route('gallery-page') }}">Galleri</a>
+                </li>
                 <li class="{{ request()->routeIs('contact-us-page') ? 'active-menu' : '' }}">
                     <a href="{{ route('contact-us-page') }}">Kontakte</a>
                 </li>
@@ -119,6 +122,9 @@ Mobile Menu
                                 </li>
                                 <li class="{{ request()->routeIs('blog-page') ? 'active-menu' : '' }}">
                                     <a href="{{ route('blog-page') }}">Blog</a>
+                                </li>
+                                <li class="{{ request()->routeIs('gallery-page') ? 'active-menu' : '' }}">
+                                    <a href="{{ route('gallery-page') }}">Galleri</a>
                                 </li>
                                 <li class="{{ request()->routeIs('contact-us-page') ? 'active-menu' : '' }}">
                                     <a href="{{ route('contact-us-page') }}">Kontakte</a>

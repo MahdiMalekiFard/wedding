@@ -2,7 +2,7 @@
     <!--==============================
     Breadcrumb
     ============================== -->
-    <div class="breadcumb-wrapper" data-bg-src="assets/img/bg/breadcrumb-bg.png">
+    <div class="breadcumb-wrapper" data-bg-src="/assets/img/bg/breadcrumb-bg.png">
         <!-- bg animated image/ -->
         <div class="container">
             <div class="row justify-content-between align-items-center">
@@ -26,27 +26,6 @@
     ==============================-->
     <section class="portfolio-page space">
         <div class="container">
-{{--            <div class="row">--}}
-{{--                <div class="col-lg-12">--}}
-{{--                    <div class="project-tab tab-menu1 filter-menu-active">--}}
-{{--                        <button data-filter="*" class="filter-btn active">--}}
-{{--                            Vis alle--}}
-{{--                        </button>--}}
-{{--                        <button data-filter=".cat1" class="filter-btn">--}}
-{{--                            Bekendtgørelse--}}
-{{--                        </button>--}}
-{{--                        <button data-filter=".cat2" class="filter-btn">--}}
-{{--                            Planlægger--}}
-{{--                        </button>--}}
-{{--                        <button data-filter=".cat3" class="filter-btn">--}}
-{{--                            Historie--}}
-{{--                        </button>--}}
-{{--                        <button data-filter=".cat4" class="filter-btn">--}}
-{{--                            Bryllup--}}
-{{--                        </button>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
             <div class="row gy-4 filter-active mb-60">
                 <div class="col-md-6 col-lg-4 filter-item">
                     <div class="project-box title-anim">
@@ -117,10 +96,10 @@
             </div>
             <div class="pagination">
                 <ul>
-                    <li><a href="blog.html">01</a></li>
-                    <li><a href="blog.html">02</a></li>
-                    <li><a href="blog.html">03</a></li>
-                    <li><a href="blog.html">Next <i class="fas fa-angle-double-right"></i>
+                    <li><a href="#">01</a></li>
+                    <li><a href="#">02</a></li>
+                    <li><a href="#">03</a></li>
+                    <li><a href="#">Næste <i class="fas fa-angle-double-right"></i>
                         </a></li>
                 </ul>
             </div>

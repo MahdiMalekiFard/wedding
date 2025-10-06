@@ -69,12 +69,9 @@
                         @endif
                     </div>
                     <div>
-                        <!-- pagination -->
                         <ul>
                             {{ $blogs->onEachSide(1)->links() }}
                         </ul>
-
-                        <!-- pagination end-->
                     </div>
                 </div>
 

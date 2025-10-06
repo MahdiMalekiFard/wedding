@@ -1,10 +1,12 @@
 <?php
 
+use App\Livewire\GalleryPage;
 use App\Livewire\Web\Pages\AboutUsPage;
 use App\Livewire\Web\Pages\BlogDetailPage;
 use App\Livewire\Web\Pages\BlogPage;
 use App\Livewire\Web\Pages\ContactUsPage;
 use App\Livewire\Web\Pages\FaqPage;
+use App\Livewire\Web\Pages\GalleryDetailPage;
 use App\Livewire\Web\Pages\HomePage;
 use App\Livewire\Web\Pages\PortfolioDetailPage;
 use App\Livewire\Web\Pages\PortfolioPage;
@@ -26,3 +28,5 @@ Route::get('/reservation-page', ReservationPage::class)->name('reservation-page'
 Route::get('/team', TeamPage::class)->name('team-page');
 Route::get('/team-detail-page/{slug}', TeamDetailPage::class)->name('team-detail-page');
 Route::get('/faq', FaqPage::class)->name('faq-page');
+Route::get('/gallery-page', GalleryPage::class)->name('gallery-page');
+Route::get('/gallery-detail-page/{slug}', GalleryDetailPage::class)->name('gallery-detail-page');
