@@ -31,7 +31,7 @@
                     <div class="project-box title-anim">
                         <div class="project-img global-img">
                             <a href="{{ route('gallery-detail-page', ['slug' => 'Årets-bedste-ukrudtsrydning']) }}">
-                                <img src="/assets/img/portfolio/portfolio7_1.png" alt="gallerikategori">
+                                <img src="/assets/img/gallery/gallery-page1.png" alt="gallerikategori">
                             </a>
                         </div>
                         <div class="project-card-details">
@@ -43,7 +43,7 @@
                     <div class="project-box title-anim">
                         <div class="project-img global-img">
                             <a href="{{ route('gallery-detail-page', ['slug' => 'Årets-bedste-ukrudtsrydning']) }}">
-                                <img src="/assets/img/portfolio/portfolio7_2.png" alt="gallerikategori">
+                                <img src="/assets/img/gallery/gallery-page2.png" alt="gallerikategori">
                             </a>
                         </div>
                         <div class="project-card-details">
@@ -55,7 +55,7 @@
                     <div class="project-box title-anim">
                         <div class="project-img global-img">
                             <a href="{{ route('gallery-detail-page', ['slug' => 'Årets-bedste-ukrudtsrydning']) }}">
-                                <img src="/assets/img/portfolio/portfolio7_3.png" alt="gallerikategori">
+                                <img src="/assets/img/gallery/gallery-page3.png" alt="gallerikategori">
                             </a>
                         </div>
                         <div class="project-card-details">
