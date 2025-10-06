@@ -168,7 +168,7 @@
                         <div class="img-anim">
                             <img src="/assets/img/normal/video_1-2.png" alt="img">
                         </div>
-                        <a href="{{ asset('assets/vids/video.MOV') }}" class="play-btn popup-video background-image">
+                        <a href="{{ asset('assets/vids/video.mp4') }}" class="play-btn popup-video background-image">
                             <i class="fas fa-solid fa-play"></i>
                         </a>
                     </div>
