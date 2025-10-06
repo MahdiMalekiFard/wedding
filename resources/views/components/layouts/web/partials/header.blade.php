@@ -137,9 +137,11 @@ Mobile Menu
                     </div>
                     <div class="col-auto d-none d-lg-block">
                         <div class="header-button">
-                            <a href="{{ route('reservation-page') }}" class="btn d-none d-xl-block">
-                                FORETAG RESERVATION
-                            </a>
+                            @if(!request()->routeIs('reservation-page'))
+                                <a href="{{ route('reservation-page') }}" class="btn d-none d-xl-block">
+                                    FORETAG RESERVATION
+                                </a>
+                            @endif
                             <button type="button" class="sidebar-btn sideMenuToggler">
                                 Menu
                             </button>
