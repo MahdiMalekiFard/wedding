@@ -39,13 +39,13 @@ trait EnumToArray
             $item = $case->toArray();
 
             // In create mode → check if a Page of this type already exists
-//            if ( ! $editMode) {
-//                $alreadyExists = \App\Models\Page::where('type', $case->value)->exists();
-//
-//                if ($alreadyExists) {
-//                    $item['disabled'] = true;
-//                }
-//            }
+            if ( ! $editMode) {
+                $alreadyExists = \App\Models\Page::where('type', $case->value)->exists();
+
+                if ($alreadyExists) {
+                    $item['disabled'] = true;
+                }
+            }
 
             $array[] = $item;
         }

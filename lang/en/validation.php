@@ -177,7 +177,7 @@ return [
     |
     */
 
-    'custom'                 => [
+    'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
@@ -194,7 +194,7 @@ return [
     |
     */
 
-    'attributes'             => [
+    'attributes' => [
         'name'                  => 'Name',
         'job'                   => 'Job',
         'family'                => 'Family Name',
@@ -204,6 +204,7 @@ return [
         'last_name'             => 'Last Name',
         'full_name'             => 'Full Name',
         'status'                => 'Status',
+        'experience'            => 'Experience',
         'password'              => 'Password',
         'title'                 => 'Title',
         'address'               => 'Address',

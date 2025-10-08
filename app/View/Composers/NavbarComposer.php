@@ -5,6 +5,7 @@ namespace App\View\Composers;
 use App\Models\Blog;
 use App\Models\Category;
 use App\Models\Page;
+use App\Models\Team;
 use App\Models\User;
 use App\Services\Permissions\PermissionsService;
 use Illuminate\View\View;
@@ -126,6 +127,12 @@ class NavbarComposer
                 'title'    => 'People',
                 'sub_menu' => [
                     $userMgmt,
+                    [
+                        'icon'       => 's-user-group',
+                        'title'      => trans('_menu.teams'),
+                        'access'     => $user->hasAnyPermission(PermissionsService::generatePermissionsByModel(Team::class, 'Store', 'Index')),
+                        'route_name' => 'admin.team.index',
+                    ],
                 ],
             ],
 

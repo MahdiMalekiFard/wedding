@@ -52,7 +52,7 @@ class BlogUpdateOrCreate extends Component
     protected function rules(): array
     {
         return array_merge($this->seoOptionRules(), [
-            'slug'         => 'required|string|unique:blogs,slug,' . $this->model->id,
+            'slug'         => 'required|string|max:255|unique:blogs,slug,' . $this->model->id,
             'title'        => 'required|string|max:255|min:2',
             'description'  => 'required|string|max:255',
             'body'         => 'nullable|string',

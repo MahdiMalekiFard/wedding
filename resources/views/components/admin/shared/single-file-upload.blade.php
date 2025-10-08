@@ -1,4 +1,4 @@
-@props(['default_image'=>'/assets/admin/img/default/user-avatar.png','wire_model'=>'image','accept'=>'image/image','crop_after_change'=>true,'ratio'=>1])
+@props(['default_image'=>'/assets/admin/img/default/user-avatar.png','wire_model'=>'image','accept'=>'image/*','crop_after_change'=>true,'ratio'=>1])
 
 <x-file
         :wire:model="$wire_model"
@@ -7,5 +7,5 @@
         class="w-full flex flex-row justify-center"
         :crop-config="['aspectRatio'=>$ratio,'guides'=>true]"
 >
-        <img src="{{ $default_image }}" class="w-50 rounded-lg" />
+        <img src="{{ $default_image }}" class="w-50 rounded-lg" alt="image"/>
 </x-file>

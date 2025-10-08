@@ -3,7 +3,6 @@
     Breadcrumb
     ============================== -->
     <div class="breadcumb-wrapper" data-bg-src="assets/img/bg/breadcrumb-bg.png">
-        <!-- bg animated image/ -->
         <div class="container">
             <div class="row justify-content-between align-items-center">
                 <div class="col-md-8">
@@ -29,18 +28,15 @@
             <div class="row flex-row-reverse align-items-center justify-content-between">
                 <div class="col-lg-6">
                     <div class="about-thumb mb-5 mb-lg-0 text-lg-end text-center fade_left">
-                        <img class="about-img-1" src="assets/img/normal/about_4-1.png" alt="img">
+                        <img class="about-img-1 image-mask" src="{{ $page?->getFirstMediaUrl('images') }}" alt="img">
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="about-content-wrap title-anim text-center">
                         <div class="title-area mb-0">
-                            <h2 class="sec-title">Lad os klare opgaven for dig</h2>
+                            <h2 class="sec-title">{{ $page?->title }}</h2>
                             <p class="sec-text" style="text-align: justify">
-                                Planlægningen af dit bryllup bør være fyldt med glæde, ikke stress.
-                                I vores bryllupssalon tager vi os af alle detaljer – fra dekoration og design til koordinering og catering –
-                                så du bare kan nyde din særlige dag. Vores dedikerede team sørger for, at alt forløber problemfrit og skaber en atmosfære af skønhed,
-                                kærlighed og fest. Læn dig tilbage, slap af, og lad os forvandle dine drømme til en uforglemmelig oplevelse.
+                                {{ $page?->body }}
                             </p>
                         </div>
                         <div class="btn-wrap mt-40 justify-content-center">
@@ -199,39 +195,21 @@
                 <h2 class="sec-title">Vores besætningsmedlemmer</h2>
             </div>
             <div class="row gy-4 justify-content-lg-between justify-content-center">
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-card title-anim">
-                        <div class="team-card_img global-img">
-                            <img src="assets/img/team/team-1-1.png" alt="Team Image">
-                        </div>
-                        <div class="team-card_content">
-                            <h3 class="team-card_title"><a href="{{ route('team-detail-page', ['slug' => 'Nicholas White']) }}">Louisa Abadie</a></h3>
-                            <span class="team-card_desig">Leder</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-card title-anim">
-                        <div class="team-card_img global-img">
-                            <img src="assets/img/team/team-1-2.png" alt="Team Image">
-                        </div>
-                        <div class="team-card_content">
-                            <h3 class="team-card_title"><a href="{{ route('team-detail-page', ['slug' => 'Nicholas White']) }}">Mike Johnson</a></h3>
-                            <span class="team-card_desig">Leder</span>
+                @foreach($teams as $team)
+                    <div class="col-lg-4 col-md-6">
+                        <div class="team-card title-anim">
+                            <div class="portrait-mask mx-auto">
+                                <a href="{{ route('team-detail-page', ['slug' => $team?->slug]) }}">
+                                    <img src="{{ $team?->getFirstMediaUrl('image') }}" alt="{{ $team?->name }}">
+                                </a>
+                            </div>
+                            <div class="team-card_content">
+                                <h3 class="team-card_title"><a href="{{ route('team-detail-page', ['slug' => $team?->slug]) }}">{{ $team?->name }}</a></h3>
+                                <span class="team-card_desig">{{ $team?->job }}</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-card title-anim">
-                        <div class="team-card_img global-img">
-                            <img src="assets/img/team/team-1-3.png" alt="Team Image">
-                        </div>
-                        <div class="team-card_content">
-                            <h3 class="team-card_title"><a href="{{ route('team-detail-page', ['slug' => 'Nicholas White']) }}">Amelia Harper</a></h3>
-                            <span class="team-card_desig">Leder</span>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

@@ -8,7 +8,7 @@
             <div class="row justify-content-between align-items-center">
                 <div class="col-md-8">
                     <div class="breadcumb-content">
-                        <h1 class="breadcumb-title">Marks Daniel</h1>
+                        <h1 class="breadcumb-title">{{ $team->name }}</h1>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -30,38 +30,37 @@
                 <div class="team-about-card" data-bg-src="/assets/img/bg/team-details-bg.png">
                     <div class="row g-lg-0">
                         <div class="col-xl-5">
-                            <div class="team-about-card_img">
-                                <img class="w-100" src="/assets/img/team/team-details.png" alt="team image">
+                            <div class="team-about-card_img ratio ratio-1x1" style="width:320px; max-width:100%;">
+                                <img class="w-100 h-100 object-fit-cover" src="{{ $team?->getFirstMediaUrl('image') }}" alt="{{ $team?->name }}">
                             </div>
                         </div>
                         <div class="col-xl-7 align-self-center">
                             <div class="team-about-card_box">
-                                <h2 class="team-about-card_title">Marks Daniel</h2>
-                                <h6 class="team-about-card_desig">Forfatter, fotograf, leder</h6>
-                                <p class="team-about-card_text">Gravida congue convallis nibh egestas sollicitudin sem, ante sed bibendum element proin morbi, eros purus auctor sociis placerat.</p>
+                                <h2 class="team-about-card_title">{{ $team?->name }}</h2>
+                                <h6 class="team-about-card_desig">{{ $team?->job }}</h6>
                                 <div class="social-btn">
-                                    <a href="https://facebook.com/#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="https://twitter.com/#"><i class="fab fa-twitter"></i></a>
-                                    <a href="https://linkedin.com/#"><i class="fab fa-linkedin-in"></i></a>
-                                    <a href="https://www.discord.com/#"><i class="fab fa-discord"></i></a>
+                                    <a href="{{ $team?->extra()->get('social_media.facebook') ?? 'https://facebook.com/#' }}"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="{{ $team?->extra()->get('social_media.twitter') ?? 'https://x.com/#' }}"><i class="fab fa-twitter"></i></a>
+                                    <a href="{{ $team?->extra()->get('social_media.linkedin') ?? 'https://linkedin.com/#' }}"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="{{ $team?->extra()->get('social_media.youtube') ?? 'https://youtube.com/#' }}"><i class="fab fa-youtube"></i></a>
                                 </div>
                                 <div class="row gy-30">
                                     <div class="col-md-6">
                                         <div class="team-about-card_info">
                                             <span class="icon"><i class="fas fa-user"></i></span>
-                                            <p><span>Erfaring </span> Mere end 10 år</p>
+                                            <p><span>Erfaring </span> {{ $team?->extra()->get('extra_info.experience') ?? 'Mere end 10 år' }}</p>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="team-about-card_info">
                                             <span class="icon"><i class="fas fa-phone-alt"></i></span>
-                                            <p><span>Telefon </span> +(45) 50 71 25 59</p>
+                                            <p><span>Telefon </span> {{ $team?->extra()->get('extra_info.mobile') ?? '+(45) 50 71 25 59' }}</p>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="team-about-card_info">
                                             <span class="icon"><i class="fas fa-envelope"></i></span>
-                                            <p><span>Email </span> info@uranus-partyhouse.dk</p>
+                                            <p><span>Email </span> {{ $team?->extra()->get('extra_info.email') ?? 'info@uranus-partyhouse.dk' }}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -69,9 +68,8 @@
                         </div>
                     </div>
                 </div>
-                <h3 class="page-subtitle">Om Daniel Digits</h3>
-                <p class="fw-light">Milano er en certificeret netværksingeniør med over 10 års erfaring i design og implementering af netværksløsninger. Hun har specialiseret sig i at konfigurere og optimere netværksenheder og -protokoller for at sikre maksimal ydeevne og sikkerhed. Jane har omfattende erfaring med at arbejde med Cisco- og Juniper-netværksenheder og er altid opdateret med de nyeste netværksteknologier.</p>
-                <p class="mb-n1 fw-light">Vores team har de færdigheder og den ekspertise, der skal til for at levere omfattende og effektive IT-løsninger til små virksomheder. Vi er forpligtet til at levere tjenester af høj kvalitet og opbygge langsigtede partnerskaber med vores kunder.</p>
+                <h3 class="page-subtitle">Om {{ $team?->name }}</h3>
+                {!! $team?->body !!}
             </div>
         </div>
     </div>

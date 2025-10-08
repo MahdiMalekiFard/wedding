@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EditorUploadController;
 use App\Livewire\GalleryPage;
 use App\Livewire\Web\Pages\AboutUsPage;
 use App\Livewire\Web\Pages\BlogDetailPage;
@@ -30,3 +31,5 @@ Route::get('/team-detail-page/{slug}', TeamDetailPage::class)->name('team-detail
 Route::get('/faq', FaqPage::class)->name('faq-page');
 Route::get('/gallery-page', GalleryPage::class)->name('gallery-page');
 Route::get('/gallery-detail-page/{slug}', GalleryDetailPage::class)->name('gallery-detail-page');
+
+Route::post('/mary/upload', [EditorUploadController::class, 'store'])->name('mary.upload');

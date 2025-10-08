@@ -21,5 +21,6 @@ return [
     'page'          => [
     ],
 
-    'media'         => 'Media',
+    'media'  => 'Media',
+    'images' => 'Images',
 ];

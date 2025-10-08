@@ -27,7 +27,11 @@ class SeoOptionService
         $data = $this->prepareSeoData($payload);
 
         if ($operation === 'update') {
-            $model->seoOption()->update($data);
+            if ($model->seoOption()->exists()) {
+                $model->seoOption()->update($data);
+            } else {
+                $model->seoOption()->create($data);
+            }
         } elseif ($operation === 'create') {
             $model->seoOption()->create($data);
         }

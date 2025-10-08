@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'model'         => 'صفحه',
+    'model'         => 'اعضای تیم',
     'permissions'   => [
     ],
     'exceptions'    => [
@@ -14,6 +14,4 @@ return [
     ],
     'page'          => [
     ],
-
-    'images' => 'تصاویر',
 ];

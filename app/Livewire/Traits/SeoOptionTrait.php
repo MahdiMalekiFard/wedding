@@ -54,6 +54,6 @@ trait SeoOptionTrait
         $this->canonical       = $this->model->seoOption->canonical ?? '';
         $this->old_url         = $this->model->seoOption->old_url ?? '';
         $this->redirect_to     = $this->model->seoOption->redirect_to ?? '';
-        $this->robots_meta     = $this->model->seoOption->robots_meta->value ?? '';
+        $this->robots_meta     = $this->model->seoOption->robots_meta->value ?? SeoRobotsMetaEnum::INDEX_FOLLOW->value;
     }
 }

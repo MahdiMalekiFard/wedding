@@ -38,6 +38,13 @@ return [
             'report' => false,
         ],
 
+        'tinymce' => [
+            'driver'     => 'local',
+            'root'       => storage_path('app/public/tinymce'),
+            'url'        => env('APP_URL').'/storage/tinymce',
+            'visibility' => 'public',
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
