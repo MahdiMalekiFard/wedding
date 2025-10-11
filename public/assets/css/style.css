@@ -15434,3 +15434,8 @@ span.select2-selection.select2-selection--single:focus {
     padding: 0px 136px 0px 30px;
   }
 }/*# sourceMappingURL=style.css.map */
+
+/* custom css */
+.about-content-wrap .title-area .home-about-title {
+    font-size: 35px;
+}

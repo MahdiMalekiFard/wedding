@@ -4,51 +4,38 @@ namespace App\Models;
 
 use App\Enums\BooleanEnum;
 use App\Helpers\Constants;
-use App\Traits\HasCategory;
-use App\Traits\HasSeoOption;
+use App\Traits\HasTranslationAuto;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Traits\HasTranslationAuto;
 use Spatie\Image\Enums\Fit;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
-use Spatie\SchemalessAttributes\SchemalessAttributes as SchemalessAttributesAlias;
-use Spatie\SchemalessAttributes\SchemalessAttributesTrait;
 
 /**
  * @property string $title
  * @property string $description
  */
-class Portfolio extends Model implements HasMedia
+class Slider extends Model implements HasMedia
 {
     use HasFactory;
     use HasTranslationAuto;
-    use HasSeoOption;
-    use HasCategory;
     use InteractsWithMedia;
-    use SchemalessAttributesTrait;
+
+    public array $translatable = [
+        'title', 'description', 'subtitle',
+    ];
 
     protected $fillable = [
         'published',
         'languages',
-        'view_count',
-        'category_id',
-        'slug',
     ];
 
     protected $casts = [
-        'published'        => BooleanEnum::class,
-        'languages'        => 'array',
-        'extra_attributes' => 'array',
+        'published' => BooleanEnum::class,
+        'languages' => 'array',
     ];
 
-    public array $translatable = [
-        'title', 'body',
-    ];
-
-    /**
-     * Model Configuration --------------------------------------------------------------------------
-     */
+    /** Model Configuration -------------------------------------------------------------------------- */
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('image')
@@ -61,28 +48,19 @@ class Portfolio extends Model implements HasMedia
              });
     }
 
-
     /**
      * Model Relations --------------------------------------------------------------------------
      */
-
 
     /**
      * Model Scope --------------------------------------------------------------------------
      */
 
-
     /**
      * Model Attributes --------------------------------------------------------------------------
      */
 
-
     /**
      * Model Custom Methods --------------------------------------------------------------------------
      */
-    public function extra(): SchemalessAttributesAlias
-    {
-        return SchemalessAttributesAlias::createForModel($this, 'extra_attributes');
-    }
-
 }

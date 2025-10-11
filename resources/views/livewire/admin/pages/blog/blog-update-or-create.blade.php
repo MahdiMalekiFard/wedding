@@ -2,6 +2,7 @@
     use App\Enums\BooleanEnum;
     use \App\Helpers\Constants;
 @endphp
+
 @if ($errors->any())
     <div class="alert alert-danger" role="alert">
         <ul>

@@ -1,32 +1,51 @@
 <?php
 
-namespace App\Livewire\Admin\Pages\Portfolio;
+namespace App\Livewire\Admin\Pages\Slider;
 
 use App\Enums\BooleanEnum;
 use App\Helpers\PowerGridHelper;
-use App\Models\Portfolio;
+use App\Models\Slider;
 use App\Traits\PowerGridHelperTrait;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\View\View;
-use Livewire\Attributes\Computed;
 use Jenssegers\Agent\Agent;
+use Livewire\Attributes\Computed;
 use PowerComponents\LivewirePowerGrid\Facades\Filter;
 use PowerComponents\LivewirePowerGrid\Facades\PowerGrid;
 use PowerComponents\LivewirePowerGrid\PowerGridComponent;
 use PowerComponents\LivewirePowerGrid\PowerGridFields;
 
-final class PortfolioTable extends PowerGridComponent
+final class SliderTable extends PowerGridComponent
 {
     use PowerGridHelperTrait;
-    public string $tableName = 'index_portfolio_datatable';
+    public string $tableName     = 'index_slider_datatable';
     public string $sortDirection = 'desc';
+
+    public function setUp(): array
+    {
+        $setup = [
+            PowerGrid::header()
+                     ->includeViewOnTop('components.admin.shared.bread-crumbs')
+                     ->showSearchInput(),
+
+            PowerGrid::footer()
+                     ->showPerPage()
+                     ->showRecordCount(),
+        ];
+
+        if ((new Agent)->isMobile()) {
+            $setup[] = PowerGrid::responsive()->fixedColumns('id', 'title', 'actions');
+        }
+
+        return $setup;
+    }
 
     #[Computed(persist: true)]
     public function breadcrumbs(): array
     {
         return [
             ['link' => route('admin.dashboard'), 'icon' => 's-home'],
-            ['label' => trans('general.page.index.title', ['model' => trans('portfolio.model')])],
+            ['label' => trans('general.page.index.title', ['model' => trans('slider.model')])],
         ];
     }
 
@@ -34,33 +53,13 @@ final class PortfolioTable extends PowerGridComponent
     public function breadcrumbsActions(): array
     {
         return [
-            ['link' => route('admin.portfolio.create'), 'icon' => 's-plus', 'label' => trans('general.page.create.title', ['model' => trans('portfolio.model')])],
+            ['link' => route('admin.slider.create'), 'icon' => 's-plus', 'label' => trans('general.page.create.title', ['model' => trans('slider.model')])],
         ];
     }
-
-    public function setUp(): array
-    {
-        $setup = [
-            PowerGrid::header()
-                ->includeViewOnTop("components.admin.shared.bread-crumbs")
-                ->showSearchInput(),
-
-            PowerGrid::footer()
-                ->showPerPage()
-                ->showRecordCount(),
-        ];
-
-        if((new Agent())->isMobile()) {
-            $setup[] = PowerGrid::responsive()->fixedColumns('id', 'title', 'actions');
-        }
-
-        return $setup;
-    }
-
 
     public function datasource(): Builder
     {
-        return Portfolio::query();
+        return Slider::query();
     }
 
     public function relationSearch(): array
@@ -75,10 +74,9 @@ final class PortfolioTable extends PowerGridComponent
     public function fields(): PowerGridFields
     {
         return PowerGrid::fields()
-            ->add('id')
-            ->add('title', fn ($row) => PowerGridHelper::fieldTitle($row))
-            ->add('published_formated', fn ($row) => PowerGridHelper::fieldPublishedAtFormated($row))
-            ->add('created_at_formatted', fn ($row) => PowerGridHelper::fieldCreatedAtFormated($row));
+                        ->add('id')
+                        ->add('title', fn ($row) => PowerGridHelper::fieldTitle($row))
+                        ->add('published_formated', fn ($row) => PowerGridHelper::fieldPublishedAtFormated($row));
     }
 
     public function columns(): array
@@ -87,7 +85,7 @@ final class PortfolioTable extends PowerGridComponent
             PowerGridHelper::columnId(),
             PowerGridHelper::columnTitle(),
             PowerGridHelper::columnPublished(),
-            PowerGridHelper::columnCreatedAT(),
+            PowerGridHelper::columnCreatedAT('created_at'),
             PowerGridHelper::columnAction(),
         ];
     }
@@ -98,14 +96,14 @@ final class PortfolioTable extends PowerGridComponent
             Filter::enumSelect('published_formated', 'published')
                   ->datasource(BooleanEnum::cases()),
 
-            Filter::datepicker('created_at_formatted', 'created_at')
+            Filter::datepicker('created_at', 'created_at')
                   ->params([
                       'maxDate' => now(),
-                  ])
+                  ]),
         ];
     }
 
-    public function actions(Portfolio $row): array
+    public function actions(Slider $row): array
     {
         return [
             PowerGridHelper::btnToggle($row),
@@ -116,9 +114,8 @@ final class PortfolioTable extends PowerGridComponent
 
     public function noDataLabel(): string|View
     {
-        return view('admin.datatable-shared.empty-table',[
-            'link'=>route('admin.portfolio.create')
+        return view('admin.datatable-shared.empty-table', [
+            'link' => route('admin.slider.create'),
         ]);
     }
-
 }

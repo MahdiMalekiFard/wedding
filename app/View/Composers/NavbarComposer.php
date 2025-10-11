@@ -5,6 +5,8 @@ namespace App\View\Composers;
 use App\Models\Blog;
 use App\Models\Category;
 use App\Models\Page;
+use App\Models\Portfolio;
+use App\Models\Slider;
 use App\Models\Team;
 use App\Models\User;
 use App\Services\Permissions\PermissionsService;
@@ -87,6 +89,30 @@ class NavbarComposer
             ],
         ];
 
+        $portfolioMgmt = [
+            'icon'     => 's-briefcase',
+            'title'    => trans('_menu.portfolio_management'),
+            'access'   => $user->hasAnyPermission(PermissionsService::generatePermissionsByModel(Portfolio::class, 'Store', 'Index')),
+            'sub_menu' => [
+                [
+                    'icon'       => 's-list-bullet',
+                    'route_name' => 'admin.portfolio.index',
+                    'exact'      => true,
+                    'params'     => [],
+                    'title'      => trans('_menu.portfolio.all'),
+                    'access'     => $user->hasAnyPermission(PermissionsService::generatePermissionsByModel(Portfolio::class, 'Index')),
+                ],
+                [
+                    'icon'       => 's-plus-circle',
+                    'route_name' => 'admin.portfolio.create',
+                    'exact'      => true,
+                    'params'     => [],
+                    'title'      => trans('_menu.portfolio.create'),
+                    'access'     => $user->hasAnyPermission(PermissionsService::generatePermissionsByModel(Portfolio::class, 'Store')),
+                ],
+            ],
+        ];
+
         $pageMgmt = [
             'icon'     => 'lucide.layers',
             'title'    => trans('_menu.page_management'),
@@ -143,7 +169,14 @@ class NavbarComposer
                 'sub_menu' => [
                     $categoryMgmt,
                     $blogMgmt,
-                    $pageMgmt
+                    $portfolioMgmt,
+                    $pageMgmt,
+                    [
+                        'icon'       => 's-banknotes',
+                        'title'      => trans('_menu.sliders'),
+                        'access'     => $user->hasAnyPermission(PermissionsService::generatePermissionsByModel(Slider::class, 'Store', 'Index')),
+                        'route_name' => 'admin.slider.index',
+                    ],
                 ],
             ],
         ];

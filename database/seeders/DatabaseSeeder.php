@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             // necessary
             RolePermissionSeeder::class,
             AdminSeeder::class,
+            PageSeeder::class,
 
             // fake
             CategorySeeder::class,

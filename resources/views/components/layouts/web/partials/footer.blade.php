@@ -10,7 +10,7 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col-sm-auto">
                     <div class="footer-logo mb-40 mb-sm-0">
-                        <a href="{{ route('home') }}"><img src="{{ asset('assets/img/logo2.png') }}" alt="logo"></a>
+                        <a href="{{ route('home') }}"><img src="{{ asset('assets/img/logo3.png') }}" alt="logo"></a>
                     </div>
                 </div>
                 <div class="col-sm-auto">

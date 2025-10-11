@@ -6,57 +6,35 @@
     ==============================-->
     <div class="hero-wrapper hero-1" id="hero">
         <div class="global-carousel" id="heroSlider1" data-fade="true" data-slide-show="1" data-lg-slide-show="1" data-md-slide-show="1" data-sm-slide-show="1" data-xs-slide-show="1" data-arrows="false">
-            <div class="hero-slider" data-bg-src="assets/img/hero/hero_bg_1_1.png">
-                <div class="hero-shape1_1 shape-mockup movingX" data-bottom="0" data-left="0">
-                    <img src="/assets/img/hero/hero_shape_1_1.png" alt="img">
-                </div>
-                <div class="hero-shape1_2 shape-mockup movingX" data-top="-25%" data-right="35%">
-                    <img src="/assets/img/hero/hero_shape_1_2.png" alt="img">
-                </div>
-                <div class="container">
-                    <div class="row flex-row-reverse">
-
-                        <div class="col-lg-6 col-md-12">
-                            <div class="hero-style1">
-                                <span class="hero-subtitle" data-ani="slideindown" data-ani-delay="0.5s">December 29</span>
-                                <span class="hero-subtitle2" data-ani="slideindown" data-ani-delay="0.4s">Skal giftes! Gem datoen:</span>
-                                <h1 class="hero-title" data-ani="slideinup" data-ani-delay="0.1s">MARY & PETE</h1>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 align-self-end">
-                            <div class="hero-thumb1" data-ani="slideinleft" data-ani-delay="0.1s">
-                                <img src="/assets/img/hero/hero_1_1.png" alt="img">
-                            </div>
-                        </div>
-
+            @foreach($sliders as $slider)
+                <div class="hero-slider" data-bg-src="assets/img/hero/hero_bg_1_1.png">
+                    <div class="hero-shape1_1 shape-mockup movingX" data-bottom="0" data-left="0">
+                        <img src="/assets/img/hero/hero_shape_1_1.png" alt="img">
                     </div>
-                </div>
-            </div>
-            <div class="hero-slider" data-bg-src="assets/img/hero/hero_bg_1_1.png">
-                <div class="hero-shape1_1 shape-mockup movingX" data-bottom="0" data-left="0">
-                    <img src="/assets/img/hero/hero_shape_1_1.png" alt="img">
-                </div>
-                <div class="hero-shape1_2 shape-mockup movingX" data-top="-25%" data-right="35%">
-                    <img src="/assets/img/hero/hero_shape_1_2.png" alt="img">
-                </div>
-                <div class="container">
-                    <div class="row flex-row-reverse">
+                    <div class="hero-shape1_2 shape-mockup movingX" data-top="-25%" data-right="35%">
+                        <img src="/assets/img/hero/hero_shape_1_2.png" alt="img">
+                    </div>
+                    <div class="container">
+                        <div class="row flex-row-reverse">
+                            <div class="col-lg-6 col-md-12">
+                                <div class="hero-style1">
+                                    @if($slider?->subtitle)
+                                        <span class="hero-subtitle" data-ani="slideindown" data-ani-delay="0.5s">{{ $slider?->subtitle }}</span>
+                                    @endif
+                                    <span class="hero-subtitle2" data-ani="slideindown" data-ani-delay="0.4s">{{ $slider?->description }}</span>
+                                    <h1 class="hero-title" data-ani="slideinup" data-ani-delay="0.1s">{{ $slider?->title }}</h1>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 align-self-end">
+                                <div class="hero-thumb1" data-ani="slideinleft" data-ani-delay="0.1s">
+                                    <img src="{{ $slider?->getFirstMediaUrl('image') }}" alt="sliderbillede">
+                                </div>
+                            </div>
 
-                        <div class="col-lg-6 col-md-12">
-                            <div class="hero-style1">
-                                <span class="hero-subtitle" data-ani="slideindown" data-ani-delay="0.5s">September 13</span>
-                                <span class="hero-subtitle2" data-ani="slideindown" data-ani-delay="0.4s">Skal giftes! Gem datoen:</span>
-                                <h1 class="hero-title" data-ani="slideinup" data-ani-delay="0.1s">David & Olivia</h1>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 align-self-end">
-                            <div class="hero-thumb1" data-ani="slideinleft" data-ani-delay="0.1s">
-                                <img src="/assets/img/hero/hero_1_2.png" alt="img">
-                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            @endforeach
         </div>
     </div>
 
@@ -65,20 +43,28 @@
     ==============================-->
     <div class="space">
         <div class="container">
+            @php
+                $images = $aboutUsPage?->getMedia('images');
+
+                if ($images && $images->count() > 1) {
+                    $url = $images[1]->getUrl(); // second
+                } else {
+                    $url = $images?->first()?->getUrl(); // first
+                }
+            @endphp
             <div class="row flex-row-reverse align-items-center justify-content-between">
                 <div class="col-lg-7 ">
                     <div class="about-thumb mb-5 mb-lg-0 text-lg-end fade_left">
-                        <img class="about-img-1" src="/assets/img/normal/about_1-1.png" alt="img">
+                        <img class="about-img-1" src="{{ $url }}" alt="img">
                     </div>
                 </div>
                 <div class="col-lg-5">
                     <div class="about-content-wrap title-anim">
                         <div class="title-area mb-0">
                             <span class="sub-title">OM OS</span>
-                            <h2 class="sec-title">En dag at huske</h2>
+                            <h2 class="sec-title home-about-title">{{ $aboutUsPage?->title }}</h2>
                             <p class="sec-text" style="text-align: justify">
-                                Hver detalje tæller, når I siger ja til hinanden.
-                                Vi skaber en uforglemmelig ramme for jeres store dag — elegant, romantisk og helt jeres egen.
+                                {{ \Illuminate\Support\Str::words($aboutUsPage?->body, 25) }}
                             </p>
                         </div>
                         <div class="btn-wrap mt-40">
@@ -303,42 +289,19 @@
                 </div>
             </div>
             <div class="row gy-30 masonary-active">
-                <div class="col-lg-7 filter-item">
-                    <div class="portfolio-thumb fade_left">
-                        <a class="popup-image icon-btn" href="/assets/img/portfolio/portfolio1_1.png"><i class="far fa-eye"></i></a>
-                        <div class="img-anim">
-                            <img src="/assets/img/portfolio/portfolio1_1.png" alt="portfolio">
-                        </div>
-                        <div class="portfolio-details">
-                            <p>Miranda & Malena</p>
-                            <h3><a href="{{ route('portfolio-detail-page', ['slug' => 'Årets bedste ukrudtsrydning']) }}">Årets bedste ukrudtsrydning</a></h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5 filter-item">
-                    <div class="portfolio-thumb fade_left">
-                        <a class="popup-image icon-btn" href="assets/img/portfolio/portfolio1_2.png"><i class="far fa-eye"></i></a>
-                        <div class="img-anim">
-                            <img src="/assets/img/portfolio/portfolio1_2.png" alt="portfolio">
-                        </div>
-                        <div class="portfolio-details">
-                            <p>Miranda & Malena</p>
-                            <h3><a href="{{ route('portfolio-detail-page', ['slug' => 'Årets bedste ukrudtsrydning']) }}">Årets bedste ukrudtsrydning</a></h3>
+                @foreach($portfolios as $index => $portfolio)
+                    <div class="{{ $index ? 'col-lg-5' : 'col-lg-7' }} filter-item">
+                        <div class="portfolio-thumb fade_left">
+                            <a class="popup-image icon-btn" href="{{ $portfolio?->getFirstMediaUrl('image') }}"><i class="far fa-eye"></i></a>
+                            <div class="img-anim">
+                                <img src="{{ $portfolio?->getFirstMediaUrl('image') }}" alt="portfolio">
+                            </div>
+                            <div class="portfolio-details">
+                                <h3><a href="{{ route('portfolio-detail-page', ['slug' => $portfolio?->slug]) }}">{{ $portfolio?->title }}</a></h3>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-5 filter-item">
-                    <div class="portfolio-thumb fade_left">
-                        <a class="popup-image icon-btn" href="assets/img/portfolio/portfolio1_3.png"><i class="far fa-eye"></i></a>
-                        <div class="img-anim">
-                            <img src="/assets/img/portfolio/portfolio1_3.png" alt="portfolio">
-                        </div>
-                        <div class="portfolio-details">
-                            <p>Miranda & Malena</p>
-                            <h3><a href="{{ route('portfolio-detail-page', ['slug' => 'Årets bedste ukrudtsrydning']) }}">Årets bedste ukrudtsrydning</a></h3>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

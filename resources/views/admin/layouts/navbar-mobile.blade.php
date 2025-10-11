@@ -49,8 +49,8 @@
 
             <!-- Sidebar component, swap this element with another sidebar if you like -->
             <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-900 dark:bg-base-100 px-6 pb-4 ring-1 ring-white/10">
-                <div class="flex h-16 shrink-0 items-center">
-                    <img class="h-8 w-auto" src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&amp;shade=500" alt="Your Company">
+                <div class="flex h-16 shrink-0 items-center mt-4">
+                    <img class="h-12 w-auto" src="{{ asset('assets/admin/img/logo/logo3.png') }}" alt="Your Company">
                 </div>
                 <x-menu activate-by-route active-bg-color="bg-gray-800 text-white" class="!p-0 !text-white">
 

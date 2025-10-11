@@ -199,12 +199,12 @@ class PowerGridHelper
 
     public static function fieldCreatedAtFormated($row): string
     {
-        return $row->created_at->format('%A, %d %B %Y');
+        return $row->created_at->format('l, d F Y');
     }
 
     public static function fieldUpdatedAtFormated($row): string
     {
-        return $row->updated_at->format('%A, %d %B %Y');
+        return $row->updated_at->format('l, d F Y');
     }
 
     public static function fieldCategoryName($row): string

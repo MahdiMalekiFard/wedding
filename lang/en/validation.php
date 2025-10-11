@@ -207,6 +207,7 @@ return [
         'experience'            => 'Experience',
         'password'              => 'Password',
         'title'                 => 'Title',
+        'subtitle'              => 'SubTitle',
         'address'               => 'Address',
         'is_default'            => 'Default Address',
         'password_confirmation' => 'Password Confirmation',

@@ -1,6 +1,7 @@
 <?php
 
 use App\Enums\CategoryTypeEnum;
+use App\Enums\PageTypeEnum;
 use App\Enums\SeoRobotsMetaEnum;
 
 return [
@@ -125,7 +126,7 @@ return [
             'created_at'  => now(),
             'updated_at'  => now(),
             'languages'   => [
-                'en',
+                'da',
             ],
             'path'        => public_path('test/category/laravel-cat.png'),
         ],
@@ -148,9 +149,34 @@ return [
             'created_at'  => now(),
             'updated_at'  => now(),
             'languages'   => [
-                'en',
+                'da',
             ],
             'path'        => public_path('test/category/laravel.jpg'),
         ],
     ],
+
+    'pages' => [
+        [
+            'title'      => 'Lad os klare opgaven for dig',
+            'body'       => 'Planlægningen af dit bryllup bør være fyldt med glæde, ikke stress. I vores bryllupssalon tager vi os af alle detaljer – fra dekoration og design til koordinering og catering – så du bare kan nyde din særlige dag. Vores dedikerede team sørger for, at alt forløber problemfrit og skaber en atmosfære af skønhed,
+kærlighed og fest. Læn dig tilbage, slap af, og lad os forvandle dine drømme til en uforglemmelig oplevelse.',
+            'slug'       => 'Lad-os-klare-opgaven-for-dig',
+            'view_count' => 10,
+            'type'       => PageTypeEnum::ABOUT_US->value,
+            'languages'  => [
+                'da',
+            ],
+            'seo_options' => [
+                'title'       => 'Lad os klare opgaven for dig',
+                'description' => 'Planlægningen af dit bryllup bør være fyldt med glæde, ikke stress. I vores bryllupssalon tager vi os af alle detaljer – fra dekoration og design til koordinering og catering – så du bare kan nyde din...',
+                'canonical'   => null,
+                'old_url'     => null,
+                'redirect_to' => null,
+                'robots_meta' => SeoRobotsMetaEnum::INDEX_FOLLOW,
+            ],
+            'images'      => [
+                public_path('assets/img/normal/about_4-2.png')
+            ],
+        ],
+    ]
 ];

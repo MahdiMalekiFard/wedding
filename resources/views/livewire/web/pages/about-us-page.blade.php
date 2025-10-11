@@ -12,7 +12,7 @@
                 </div>
                 <div class="col-md-4">
                     <ul class="breadcumb-menu text-md-end">
-                        <li><a href="index.html">Hjem</a></li>
+                        <li><a href="{{ route('home') }}">Hjem</a></li>
                         <li class="active">Om os</li>
                     </ul>
                 </div>

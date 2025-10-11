@@ -1,39 +1,23 @@
 @php
     use App\Enums\BooleanEnum;
-    use \App\Helpers\Constants;
+    use App\Helpers\Constants;
 @endphp
-
-@if ($errors->any())
-    <div class="alert alert-danger" role="alert">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
 <form wire:submit="submit">
     <x-admin.shared.bread-crumbs :breadcrumbs="$breadcrumbs" :breadcrumbs-actions="$breadcrumbsActions"/>
     <div class="grid grid-cols-1 gap-4 lg:grid-cols-3">
         <div class="col-span-2 grid grid-cols-1 gap-4">
             <x-card :title="trans('general.page_sections.data')" shadow separator progress-indicator="submit">
                 <div class="grid grid-cols-1 gap-4">
-                    <x-input :label="trans('validation.attributes.title')"
-                             wire:model.blur="title"
-                             required
+                    <x-input :label="trans('validation.attributes.subtitle')"
+                             wire:model="subtitle"
                     />
-                    <x-admin.shared.tinymce wire:model.blur="body"/>
-                    <x-select
-                        :label="trans('validation.attributes.category')"
-                        wire:model="category_id"
-                        :options="$categories"
-                        required
+                    <x-input :label="trans('validation.attributes.title')"
+                             wire:model="title"
+                    />
+                    <x-textarea :label="trans('validation.attributes.description')"
+                                wire:model="description"
                     />
                 </div>
-            </x-card>
-
-            <x-card :title="trans('general.page_sections.seo_options')" shadow separator progress-indicator="submit">
-                <x-admin.shared.seo-options class="lg:grid-cols-1" has_description="0"/>
             </x-card>
         </div>
 
@@ -42,17 +26,17 @@
                 <x-card :title="trans('general.page_sections.upload_image')" shadow separator progress-indicator="submit" class="">
                     <x-admin.shared.single-file-upload
                         default_image="{{ $model->getFirstMediaUrl('image', Constants::RESOLUTION_100_SQUARE) }}"
+                        crop_after_change="0"
                     />
                 </x-card>
 
                 <x-card :title="trans('general.page_sections.publish_config')" shadow separator progress-indicator="submit" class="mt-5">
                     <div class="grid grid-cols-1 gap-4">
-                        <x-admin.shared.published-config has-published-at="0"/>
+                        <x-toggle :label="trans('datatable.status')" wire:model="published" right/>
                     </div>
                 </x-card>
             </div>
         </div>
-
     </div>
 
     <x-admin.shared.form-actions/>

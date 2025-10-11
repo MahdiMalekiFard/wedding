@@ -12,15 +12,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('portfolios', function (Blueprint $table) {
+        Schema::create('sliders', function (Blueprint $table) {
             $table->id();
 
-            $table->string('slug')->unique()->index();
-            $table->foreignId('category_id')->constrained()->cascadeOnDelete();
-            $table->unsignedBigInteger('view_count')->default(0);
-            $table->boolean('published')->default(BooleanEnum::ENABLE->value);
-            $table->schemalessAttributes('extra_attributes');
+            // translations: title, description
             $table->text('languages')->nullable();
+            $table->boolean('published')->default(BooleanEnum::ENABLE->value);
 
             $table->timestamps();
         });
@@ -31,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('portfolios');
+        Schema::dropIfExists('sliders');
     }
 };

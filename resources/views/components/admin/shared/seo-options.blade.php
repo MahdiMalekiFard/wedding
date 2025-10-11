@@ -1,3 +1,7 @@
+@props([
+    'has_description' => '1',
+])
+
 <div {{$attributes->merge(['class'=>'grid grid-cols-1 gap-4'])}} >
     <x-input :label="trans('validation.attributes.slug')"
              wire:model="slug"
@@ -6,9 +10,11 @@
              wire:model="seo_title"
              class="w-full"
     />
-    <x-input :label="trans('validation.attributes.seo_description')"
-             wire:model="seo_description"
-    />
+    @if($has_description)
+        <x-input :label="trans('validation.attributes.seo_description')"
+                 wire:model="seo_description"
+        />
+    @endif
     <x-input :label="trans('validation.attributes.canonical')"
              wire:model="canonical"
              type="url"
