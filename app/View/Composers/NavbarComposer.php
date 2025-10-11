@@ -4,6 +4,7 @@ namespace App\View\Composers;
 
 use App\Models\Blog;
 use App\Models\Category;
+use App\Models\Opinion;
 use App\Models\Page;
 use App\Models\Portfolio;
 use App\Models\Slider;
@@ -113,6 +114,30 @@ class NavbarComposer
             ],
         ];
 
+        $opinionMgmt = [
+            'icon'     => 's-sparkles',
+            'title'    => trans('_menu.opinion_management'),
+            'access'   => $user->hasAnyPermission(PermissionsService::generatePermissionsByModel(Opinion::class, 'Store', 'Index')),
+            'sub_menu' => [
+                [
+                    'icon'       => 's-list-bullet',
+                    'route_name' => 'admin.opinion.index',
+                    'exact'      => true,
+                    'params'     => [],
+                    'title'      => trans('_menu.opinion.all'),
+                    'access'     => $user->hasAnyPermission(PermissionsService::generatePermissionsByModel(Opinion::class, 'Index')),
+                ],
+                [
+                    'icon'       => 's-plus-circle',
+                    'route_name' => 'admin.opinion.create',
+                    'exact'      => true,
+                    'params'     => [],
+                    'title'      => trans('_menu.opinion.create'),
+                    'access'     => $user->hasAnyPermission(PermissionsService::generatePermissionsByModel(Opinion::class, 'Store')),
+                ],
+            ],
+        ];
+
         $pageMgmt = [
             'icon'     => 'lucide.layers',
             'title'    => trans('_menu.page_management'),
@@ -170,6 +195,7 @@ class NavbarComposer
                     $categoryMgmt,
                     $blogMgmt,
                     $portfolioMgmt,
+                    $opinionMgmt,
                     $pageMgmt,
                     [
                         'icon'       => 's-banknotes',

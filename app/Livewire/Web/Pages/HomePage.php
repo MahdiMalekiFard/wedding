@@ -5,6 +5,7 @@ namespace App\Livewire\Web\Pages;
 use App\Enums\BooleanEnum;
 use App\Enums\PageTypeEnum;
 use App\Models\Blog;
+use App\Models\Opinion;
 use App\Models\Page;
 use App\Models\Portfolio;
 use App\Models\Slider;
@@ -19,12 +20,14 @@ class HomePage extends Component
         $blogs = Blog::where('published', BooleanEnum::ENABLE)->limit(3)->get();
         $aboutUsPage = Page::where('type', PageTypeEnum::ABOUT_US)->first();
         $portfolios = Portfolio::where('published', BooleanEnum::ENABLE)->limit(3)->get();
+        $opinions = Opinion::where('published', BooleanEnum::ENABLE)->orderByDesc('ordering')->get();
 
         return view('livewire.web.pages.home-page', [
             'blogs'       => $blogs ?? [],
             'sliders'     => $sliders ?? [],
             'aboutUsPage' => $aboutUsPage,
             'portfolios'  => $portfolios ?? [],
+            'opinions'    => $opinions ?? [],
         ])
             ->layout('components.layouts.web');
     }

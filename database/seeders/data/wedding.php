@@ -157,13 +157,13 @@ return [
 
     'pages' => [
         [
-            'title'      => 'Lad os klare opgaven for dig',
-            'body'       => 'Planlægningen af dit bryllup bør være fyldt med glæde, ikke stress. I vores bryllupssalon tager vi os af alle detaljer – fra dekoration og design til koordinering og catering – så du bare kan nyde din særlige dag. Vores dedikerede team sørger for, at alt forløber problemfrit og skaber en atmosfære af skønhed,
+            'title'       => 'Lad os klare opgaven for dig',
+            'body'        => 'Planlægningen af dit bryllup bør være fyldt med glæde, ikke stress. I vores bryllupssalon tager vi os af alle detaljer – fra dekoration og design til koordinering og catering – så du bare kan nyde din særlige dag. Vores dedikerede team sørger for, at alt forløber problemfrit og skaber en atmosfære af skønhed,
 kærlighed og fest. Læn dig tilbage, slap af, og lad os forvandle dine drømme til en uforglemmelig oplevelse.',
-            'slug'       => 'Lad-os-klare-opgaven-for-dig',
-            'view_count' => 10,
-            'type'       => PageTypeEnum::ABOUT_US->value,
-            'languages'  => [
+            'slug'        => 'Lad-os-klare-opgaven-for-dig',
+            'view_count'  => 10,
+            'type'        => PageTypeEnum::ABOUT_US->value,
+            'languages'   => [
                 'da',
             ],
             'seo_options' => [
@@ -178,5 +178,103 @@ kærlighed og fest. Læn dig tilbage, slap af, og lad os forvandle dine drømme 
                 public_path('assets/img/normal/about_4-2.png')
             ],
         ],
-    ]
+    ],
+
+    'sliders' => [
+        [
+            'subtitle'    => 'october 9',
+            'title'       => 'David & Mary',
+            'description' => 'skal giftes. Gem datoen',
+            'published'   => true,
+            'languages'   => [
+                'da',
+            ],
+            'image'       => public_path('assets/img/hero/hero_1_1.png'),
+        ],
+        [
+            'subtitle'    => 'december 12',
+            'title'       => 'John & Sara',
+            'description' => 'skal giftes. Gem datoen',
+            'published'   => true,
+            'languages'   => [
+                'da',
+            ],
+            'image'       => public_path('assets/img/hero/hero_1_2.png'),
+        ],
+    ],
+
+    'portfolios' => [
+        [
+            'title'       => 'Årets bedste ukrudtsrydning',
+            'body'        => '
+<p><strong>St&oslash;rste udvikling af marketingstrategi</strong></p>
+<p>Benchmark funktionelle produkter holistisk for fremragende metoder til forbedring. Visualiser problemfrit innovativ parathed under omfattende initiativer. Frig&oslash;r fuldst&aelig;ndigt problemfri data via end-to-end-tjenester. Frig&oslash;r kontinuerligt virtuelle e-mails gennem magnetiske kernevirksomheder. Engager distribuerede elementer interaktivt via fokuserede tilpasninger. Fremstil dynamisk fremragende innovation til fremadrettet teknologi. F&aring; intrinsisk indflydelse p&aring; styrkede scenarier.</p>
+<p><strong>Projektets udfordring</strong></p>
+<p>Interaktiv engagement i distribuerede tilpasninger via fokuserede tilpasninger. Dynamisk fremstilling af fremragende, fremadrettet teknologi. Intrinsisk p&aring;virkning af styrkede scenarier efter omkostningseffektiv outsourcing. Synergistisk produktivering af pandemisk e-handel i stedet for avancerede e-handlere. Frig&oslash;relse af friktionsfri data via tjenester. Kontinuerlig frig&oslash;relse af virtuelle e-handlere gennem magnetiske kernekompetencer.</p>
+',
+            'published'   => true,
+            'slug'        => 'Årets-bedste-ukrudtsrydning',
+            'languages'   => [
+                'da',
+            ],
+            'view_count'  => 3,
+            'seo_options'   => [
+                'title'       => 'Årets bedste ukrudtsrydning',
+                'description' => null,
+                'canonical'   => null,
+                'old_url'     => null,
+                'redirect_to' => null,
+                'robots_meta' => SeoRobotsMetaEnum::NOINDEX_FOLLOW,
+            ],
+            'image'       => public_path('assets/img/portfolio/portfolio1_1.png'),
+        ],
+        [
+            'title'       => 'Årets bedste ukrudtsrydning',
+            'body'        => '
+<p><strong>St&oslash;rste udvikling af marketingstrategi</strong></p>
+<p>Benchmark funktionelle produkter holistisk for fremragende metoder til forbedring. Visualiser problemfrit innovativ parathed under omfattende initiativer. Frig&oslash;r fuldst&aelig;ndigt problemfri data via end-to-end-tjenester. Frig&oslash;r kontinuerligt virtuelle e-mails gennem magnetiske kernevirksomheder. Engager distribuerede elementer interaktivt via fokuserede tilpasninger. Fremstil dynamisk fremragende innovation til fremadrettet teknologi. F&aring; intrinsisk indflydelse p&aring; styrkede scenarier.</p>
+<p><strong>Projektets udfordring</strong></p>
+<p>Interaktiv engagement i distribuerede tilpasninger via fokuserede tilpasninger. Dynamisk fremstilling af fremragende, fremadrettet teknologi. Intrinsisk p&aring;virkning af styrkede scenarier efter omkostningseffektiv outsourcing. Synergistisk produktivering af pandemisk e-handel i stedet for avancerede e-handlere. Frig&oslash;relse af friktionsfri data via tjenester. Kontinuerlig frig&oslash;relse af virtuelle e-handlere gennem magnetiske kernekompetencer.</p>
+',
+            'published'   => true,
+            'slug'        => 'Årets-bedste-ukrudtsrydning-2',
+            'languages'   => [
+                'da',
+            ],
+            'view_count'  => 12,
+            'seo_options'   => [
+                'title'       => 'Årets bedste ukrudtsrydning',
+                'description' => null,
+                'canonical'   => null,
+                'old_url'     => null,
+                'redirect_to' => null,
+                'robots_meta' => SeoRobotsMetaEnum::NOINDEX_FOLLOW,
+            ],
+            'image'       => public_path('assets/img/portfolio/portfolio1_2.png'),
+        ],
+        [
+            'title'       => 'Årets bedste ukrudtsrydning',
+            'body'        => '
+<p><strong>St&oslash;rste udvikling af marketingstrategi</strong></p>
+<p>Benchmark funktionelle produkter holistisk for fremragende metoder til forbedring. Visualiser problemfrit innovativ parathed under omfattende initiativer. Frig&oslash;r fuldst&aelig;ndigt problemfri data via end-to-end-tjenester. Frig&oslash;r kontinuerligt virtuelle e-mails gennem magnetiske kernevirksomheder. Engager distribuerede elementer interaktivt via fokuserede tilpasninger. Fremstil dynamisk fremragende innovation til fremadrettet teknologi. F&aring; intrinsisk indflydelse p&aring; styrkede scenarier.</p>
+<p><strong>Projektets udfordring</strong></p>
+<p>Interaktiv engagement i distribuerede tilpasninger via fokuserede tilpasninger. Dynamisk fremstilling af fremragende, fremadrettet teknologi. Intrinsisk p&aring;virkning af styrkede scenarier efter omkostningseffektiv outsourcing. Synergistisk produktivering af pandemisk e-handel i stedet for avancerede e-handlere. Frig&oslash;relse af friktionsfri data via tjenester. Kontinuerlig frig&oslash;relse af virtuelle e-handlere gennem magnetiske kernekompetencer.</p>
+',
+            'published'   => true,
+            'slug'        => 'Årets-bedste-ukrudtsrydning-3',
+            'languages'   => [
+                'da',
+            ],
+            'view_count'  => 7,
+            'seo_options'   => [
+                'title'       => 'Årets bedste ukrudtsrydning',
+                'description' => null,
+                'canonical'   => null,
+                'old_url'     => null,
+                'redirect_to' => null,
+                'robots_meta' => SeoRobotsMetaEnum::NOINDEX_FOLLOW,
+            ],
+            'image'       => public_path('assets/img/portfolio/portfolio1_3.png'),
+        ],
+    ],
 ];

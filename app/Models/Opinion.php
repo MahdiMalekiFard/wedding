@@ -4,53 +4,47 @@ namespace App\Models;
 
 use App\Enums\BooleanEnum;
 use App\Helpers\Constants;
-use App\Traits\HasCategory;
-use App\Traits\HasSeoOption;
-use App\Traits\HasSlugFromTranslation;
+use App\Traits\CLogsActivity;
+use App\Traits\HasTranslationAuto;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Traits\HasTranslationAuto;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\Activitylog\LogOptions;
 use Spatie\Image\Enums\Fit;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
-use Spatie\SchemalessAttributes\SchemalessAttributes as SchemalessAttributesAlias;
-use Spatie\SchemalessAttributes\SchemalessAttributesTrait;
 
 /**
  * @property string $title
  * @property string $description
  */
-class Portfolio extends Model implements HasMedia
+class Opinion extends Model implements HasMedia
 {
+    use CLogsActivity, InteractsWithMedia, SoftDeletes;
     use HasFactory;
     use HasTranslationAuto;
-    use HasSlugFromTranslation;
-    use HasSeoOption;
-    use HasCategory;
-    use InteractsWithMedia;
-    use SchemalessAttributesTrait;
+
+    public array $translatable = [];
 
     protected $fillable = [
         'published',
-        'languages',
+        'published_at',
+        'ordering',
         'view_count',
-        'category_id',
-        'slug',
+        'company',
+        'user_name',
+        'comment',
     ];
 
     protected $casts = [
-        'published'        => BooleanEnum::class,
-        'languages'        => 'array',
-        'extra_attributes' => 'array',
+        'published'    => BooleanEnum::class,
+        'published_at' => 'datetime',
+        'created_at'   => 'datetime',
+        'updated_at'   => 'datetime',
+        'deleted_at'   => 'datetime',
     ];
 
-    public array $translatable = [
-        'title', 'body',
-    ];
-
-    /**
-     * Model Configuration --------------------------------------------------------------------------
-     */
+    /** Model Configuration -------------------------------------------------------------------------- */
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('image')
@@ -58,33 +52,31 @@ class Portfolio extends Model implements HasMedia
              ->useFallbackUrl('/assets/admin/img/default/user-avatar.png')
              ->registerMediaConversions(function () {
                  $this->addMediaConversion(Constants::RESOLUTION_100_SQUARE)->fit(Fit::Crop, 100, 100);
-                 $this->addMediaConversion(Constants::RESOLUTION_854_480)->fit(Fit::Crop, 854, 480);
-                 $this->addMediaConversion(Constants::RESOLUTION_1280_720)->fit(Fit::Crop, 1280, 720);
+                 $this->addMediaConversion(Constants::RESOLUTION_1280_400)->fit(Fit::Crop, 1280, 400);
              });
     }
 
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()
+                         ->logFillable()
+                         ->logOnlyDirty()
+                         ->dontSubmitEmptyLogs();
+    }
 
     /**
      * Model Relations --------------------------------------------------------------------------
      */
 
-
     /**
      * Model Scope --------------------------------------------------------------------------
      */
-
 
     /**
      * Model Attributes --------------------------------------------------------------------------
      */
 
-
     /**
      * Model Custom Methods --------------------------------------------------------------------------
      */
-    public function extra(): SchemalessAttributesAlias
-    {
-        return SchemalessAttributesAlias::createForModel($this, 'extra_attributes');
-    }
-
 }

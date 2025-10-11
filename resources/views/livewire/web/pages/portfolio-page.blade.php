@@ -1,3 +1,7 @@
+@php
+    use App\Helpers\Constants;
+@endphp
+
 <div>
     <!--==============================
     Breadcrumb
@@ -27,80 +31,22 @@
     <section class="portfolio-page space">
         <div class="container">
             <div class="row gy-4 filter-active mb-60">
-                <div class="col-md-6 col-lg-4 filter-item">
-                    <div class="project-box title-anim">
-                        <div class="project-img global-img">
-                            <img src="assets/img/portfolio/portfolio7_1.png" alt="portfolio">
-                        </div>
-                        <div class="project-card-details">
-                            <p class="subtitle">Miranda & Malena</p>
-                            <h3 class="title"><a href="{{ route('portfolio-detail-page', ['slug' => 'Årets-bedste-ukrudtsrydning']) }}">Årets bedste ukrudtsrydning</a></h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 filter-item">
-                    <div class="project-box title-anim">
-                        <div class="project-img global-img">
-                            <img src="assets/img/portfolio/portfolio7_2.png" alt="portfolio">
-                        </div>
-                        <div class="project-card-details">
-                            <p class="subtitle">Miranda & Malena</p>
-                            <h3 class="title"><a href="{{ route('portfolio-detail-page', ['slug' => 'Årets-bedste-ukrudtsrydning']) }}">Årets bedste ukrudtsrydning</a></h3>
+                @foreach($portfolios as $portfolio)
+                    <div class="col-md-6 col-lg-4 filter-item">
+                        <div class="project-box title-anim">
+                            <div class="project-img global-img">
+                                <img src="{{ $portfolio?->getFirstMediaUrl('image', Constants::RESOLUTION_854_480) }}" alt="portfolio image">
+                            </div>
+                            <div class="project-card-details">
+                                <h3 class="title"><a href="{{ route('portfolio-detail-page', ['slug' => $portfolio?->slug]) }}">{{ $portfolio?->title }}</a></h3>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-4 filter-item">
-                    <div class="project-box title-anim">
-                        <div class="project-img global-img">
-                            <img src="assets/img/portfolio/portfolio7_3.png" alt="portfolio">
-                        </div>
-                        <div class="project-card-details">
-                            <p class="subtitle">Miranda & Malena</p>
-                            <h3 class="title"><a href="{{ route('portfolio-detail-page', ['slug' => 'Årets-bedste-ukrudtsrydning']) }}">Årets bedste ukrudtsrydning</a></h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 filter-item">
-                    <div class="project-box title-anim">
-                        <div class="project-img global-img">
-                            <img src="assets/img/portfolio/portfolio7_4.png" alt="portfolio">
-                        </div>
-                        <div class="project-card-details">
-                            <p class="subtitle">Miranda & Malena</p>
-                            <h3 class="title"><a href="{{ route('portfolio-detail-page', ['slug' => 'Årets-bedste-ukrudtsrydning']) }}">Årets bedste ukrudtsrydning</a></h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 filter-item">
-                    <div class="project-box title-anim">
-                        <div class="project-img global-img">
-                            <img src="assets/img/portfolio/portfolio7_5.png" alt="portfolio">
-                        </div>
-                        <div class="project-card-details">
-                            <p class="subtitle">Miranda & Malena</p>
-                            <h3 class="title"><a href="{{ route('portfolio-detail-page', ['slug' => 'Årets-bedste-ukrudtsrydning']) }}">Årets bedste ukrudtsrydning</a></h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 filter-item">
-                    <div class="project-box title-anim">
-                        <div class="project-img global-img">
-                            <img src="assets/img/portfolio/portfolio7_6.png" alt="portfolio">
-                        </div>
-                        <div class="project-card-details">
-                            <p class="subtitle">Miranda & Malena</p>
-                            <h3 class="title"><a href="{{ route('portfolio-detail-page', ['slug' => 'Årets-bedste-ukrudtsrydning']) }}">Årets bedste ukrudtsrydning</a></h3>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
-            <div class="pagination">
+            <div>
                 <ul>
-                    <li><a href="#">01</a></li>
-                    <li><a href="#">02</a></li>
-                    <li><a href="#">03</a></li>
-                    <li><a href="#">Næste <i class="fas fa-angle-double-right"></i>
-                        </a></li>
+                    {{ $portfolios->onEachSide(1)->links() }}
                 </ul>
             </div>
         </div>

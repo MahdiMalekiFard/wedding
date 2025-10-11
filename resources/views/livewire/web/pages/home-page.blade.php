@@ -318,78 +318,20 @@
         </div>
         <div class="container-fluid p-0">
             <div class="row global-carousel testi-slider1" data-slide-show="3" data-lg-slide-show="2" data-md-slide-show="2">
-                <div class="col-lg-4">
-                    <div class="testi-box title-anim" data-bg-src="/assets/img/testimonial/testi_box-bg.png">
-                        <div class="testi-box_thumb">
-                            <img src="/assets/img/testimonial/testi_1_1.png" alt="img">
+                @foreach($opinions as $opinion)
+                    <div class="col-lg-4">
+                        <div class="testi-box title-anim" data-bg-src="/assets/img/testimonial/testi_box-bg.png">
+                            <div class="testi-box_thumb">
+                                <img src="{{ $opinion?->getFirstMediaUrl('image') }}" alt="img">
+                            </div>
+                            <div class="testi-box_profile">
+                                <h4 class="testi-box_name">{{ $opinion?->user_name }}</h4>
+                                <span class="testi-box_desig">{{ $opinion?->company }}</span>
+                            </div>
+                            <p class="testi-box_text">“{{ $opinion?->comment }}”</p>
                         </div>
-                        <div class="testi-box_profile">
-                            <h4 class="testi-box_name">Marks Daniel</h4>
-                            <span class="testi-box_desig">Forfatter, fotograf, leder</span>
-                        </div>
-                        <p class="testi-box_text">“Laculis primis leo pharetra ac varius diam class odio, turpis nascetur gravida senectus sollicitudin lacus cursus tortor”</p>
                     </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="testi-box title-anim" data-bg-src="assets/img/testimonial/testi_box-bg.png">
-                        <div class="testi-box_thumb">
-                            <img src="/assets/img/testimonial/testi_1_2.png" alt="img">
-                        </div>
-                        <div class="testi-box_profile">
-                            <h4 class="testi-box_name">Louisa Abadie</h4>
-                            <span class="testi-box_desig">Forfatter, fotograf, leder</span>
-                        </div>
-                        <p class="testi-box_text">“Laculis primis leo pharetra ac varius diam class odio, turpis nascetur gravida senectus sollicitudin lacus cursus tortor”</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="testi-box title-anim" data-bg-src="assets/img/testimonial/testi_box-bg.png">
-                        <div class="testi-box_thumb">
-                            <img src="/assets/img/testimonial/testi_1_3.png" alt="img">
-                        </div>
-                        <div class="testi-box_profile">
-                            <h4 class="testi-box_name">Andrew Daniel</h4>
-                            <span class="testi-box_desig">Forfatter, fotograf, leder</span>
-                        </div>
-                        <p class="testi-box_text">“Laculis primis leo pharetra ac varius diam class odio, turpis nascetur gravida senectus sollicitudin lacus cursus tortor”</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="testi-box title-anim" data-bg-src="assets/img/testimonial/testi_box-bg.png">
-                        <div class="testi-box_thumb">
-                            <img src="/assets/img/testimonial/testi_1_1.png" alt="img">
-                        </div>
-                        <div class="testi-box_profile">
-                            <h4 class="testi-box_name">Marks Daniel</h4>
-                            <span class="testi-box_desig">Forfatter, fotograf, leder</span>
-                        </div>
-                        <p class="testi-box_text">“Laculis primis leo pharetra ac varius diam class odio, turpis nascetur gravida senectus sollicitudin lacus cursus tortor”</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="testi-box title-anim" data-bg-src="assets/img/testimonial/testi_box-bg.png">
-                        <div class="testi-box_thumb">
-                            <img src="/assets/img/testimonial/testi_1_2.png" alt="img">
-                        </div>
-                        <div class="testi-box_profile">
-                            <h4 class="testi-box_name">Louisa Abadie</h4>
-                            <span class="testi-box_desig">Forfatter, fotograf, leder</span>
-                        </div>
-                        <p class="testi-box_text">“Laculis primis leo pharetra ac varius diam class odio, turpis nascetur gravida senectus sollicitudin lacus cursus tortor”</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="testi-box title-anim" data-bg-src="assets/img/testimonial/testi_box-bg.png">
-                        <div class="testi-box_thumb">
-                            <img src="/assets/img/testimonial/testi_1_3.png" alt="img">
-                        </div>
-                        <div class="testi-box_profile">
-                            <h4 class="testi-box_name">Andrew Daniel</h4>
-                            <span class="testi-box_desig">Forfatter, fotograf, leder</span>
-                        </div>
-                        <p class="testi-box_text">“Laculis primis leo pharetra ac varius diam class odio, turpis nascetur gravida senectus sollicitudin lacus cursus tortor”</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

@@ -1,32 +1,53 @@
 <?php
 
-namespace App\Livewire\Admin\Pages\Category;
+namespace App\Livewire\Admin\Pages\Opinion;
 
 use App\Enums\BooleanEnum;
 use App\Helpers\PowerGridHelper;
-use App\Models\Category;
+use App\Models\Opinion;
 use App\Traits\PowerGridHelperTrait;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\View\View;
-use Livewire\Attributes\Computed;
 use Jenssegers\Agent\Agent;
+use Livewire\Attributes\Computed;
+use PowerComponents\LivewirePowerGrid\Column;
 use PowerComponents\LivewirePowerGrid\Facades\Filter;
 use PowerComponents\LivewirePowerGrid\Facades\PowerGrid;
 use PowerComponents\LivewirePowerGrid\PowerGridComponent;
 use PowerComponents\LivewirePowerGrid\PowerGridFields;
 
-final class CategoryTable extends PowerGridComponent
+final class OpinionTable extends PowerGridComponent
 {
     use PowerGridHelperTrait;
-    public string $tableName = 'index_category_datatable';
+    public string $tableName     = 'index_opinion_datatable';
     public string $sortDirection = 'desc';
+
+    public function setUp(): array
+    {
+        $setup = [
+            PowerGrid::header()
+                     ->includeViewOnTop('components.admin.shared.bread-crumbs')
+                     ->showToggleColumns()
+                     ->showSearchInput(),
+
+            PowerGrid::footer()
+                     ->showPerPage()
+                     ->showRecordCount(),
+        ];
+
+        if ((new Agent)->isMobile()) {
+            $setup[] = PowerGrid::responsive()->fixedColumns('id', 'user_name', 'actions');
+        }
+
+        return $setup;
+    }
 
     #[Computed(persist: true)]
     public function breadcrumbs(): array
     {
         return [
             ['link' => route('admin.dashboard'), 'icon' => 's-home'],
-            ['label' => trans('general.page.index.title', ['model' => trans('category.model')])],
+            ['label' => trans('general.page.index.title', ['model' => trans('opinion.model')])],
         ];
     }
 
@@ -34,33 +55,13 @@ final class CategoryTable extends PowerGridComponent
     public function breadcrumbsActions(): array
     {
         return [
-            ['link' => route('admin.category.create'), 'icon' => 's-plus', 'label' => trans('general.page.create.title', ['model' => trans('category.model')])],
+            ['link' => route('admin.opinion.create'), 'icon' => 's-plus', 'label' => trans('general.page.create.title', ['model' => trans('opinion.model')])],
         ];
     }
-
-    public function setUp(): array
-    {
-        $setup = [
-            PowerGrid::header()
-                ->includeViewOnTop("components.admin.shared.bread-crumbs")
-                ->showSearchInput(),
-
-            PowerGrid::footer()
-                ->showPerPage()
-                ->showRecordCount(),
-        ];
-
-        if((new Agent())->isMobile()) {
-            $setup[] = PowerGrid::responsive()->fixedColumns('id', 'title', 'actions');
-        }
-
-        return $setup;
-    }
-
 
     public function datasource(): Builder
     {
-        return Category::query();
+        return Opinion::query();
     }
 
     public function relationSearch(): array
@@ -75,19 +76,21 @@ final class CategoryTable extends PowerGridComponent
     public function fields(): PowerGridFields
     {
         return PowerGrid::fields()
-            ->add('id')
-            ->add('title', fn ($row) => PowerGridHelper::fieldTitle($row))
-            ->add('published_formated', fn ($row) => PowerGridHelper::fieldPublishedAtFormated($row))
-            ->add('created_at_formatted', fn ($row) => PowerGridHelper::fieldCreatedAtFormated($row));
+                        ->add('id')
+                        ->add('image', fn ($row) => PowerGridHelper::fieldImage($row))
+                        ->add('published_formated', fn ($row) => PowerGridHelper::fieldPublishedAtFormated($row))
+                        ->add('updated_at_formatted', fn ($row) => $row->updated_at->format('M d, Y'));
     }
 
     public function columns(): array
     {
         return [
             PowerGridHelper::columnId(),
-            PowerGridHelper::columnTitle(),
+            PowerGridHelper::columnImage(),
+            Column::make(trans('datatable.name'), 'user_name'),
+            Column::make(trans('datatable.company'), 'company'),
             PowerGridHelper::columnPublished(),
-            PowerGridHelper::columnCreatedAT(),
+            PowerGridHelper::columnUpdatedAT('updated_at_formatted'),
             PowerGridHelper::columnAction(),
         ];
     }
@@ -101,11 +104,11 @@ final class CategoryTable extends PowerGridComponent
             Filter::datepicker('created_at_formatted', 'created_at')
                   ->params([
                       'maxDate' => now(),
-                  ])
+                  ]),
         ];
     }
 
-    public function actions(Category $row): array
+    public function actions(Opinion $row): array
     {
         return [
             PowerGridHelper::btnToggle($row),
@@ -116,9 +119,8 @@ final class CategoryTable extends PowerGridComponent
 
     public function noDataLabel(): string|View
     {
-        return view('admin.datatable-shared.empty-table',[
-            'link'=>route('admin.category.create')
+        return view('admin.datatable-shared.empty-table', [
+            'link' => route('admin.opinion.create'),
         ]);
     }
-
 }

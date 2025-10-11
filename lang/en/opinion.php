@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'model'         => 'Blog',
+    'model'         => 'Opinion',
     'permissions'   => [
     ],
     'exceptions'    => [
@@ -14,9 +14,5 @@ return [
     'notifications' => [
     ],
     'page'          => [
-    ],
-    'help'          => [
-        'published_at_explanation' => 'Set a future date and time when this :model should be published.',
-        'will_publish_immediately' => 'This :model will be published immediately when saved.',
     ],
 ];

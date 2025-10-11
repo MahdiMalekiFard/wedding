@@ -14,6 +14,7 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 /**
  * @property string $title
  * @property string $description
+ * @property string $subtitle
  */
 class Slider extends Model implements HasMedia
 {

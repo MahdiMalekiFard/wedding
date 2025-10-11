@@ -22,6 +22,8 @@ class DatabaseSeeder extends Seeder
             // fake
             CategorySeeder::class,
             BlogSeeder::class,
+            SliderSeeder::class,
+            PortfolioSeeder::class,
         ]);
     }
 }
