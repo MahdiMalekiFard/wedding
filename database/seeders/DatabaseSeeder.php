@@ -24,6 +24,8 @@ class DatabaseSeeder extends Seeder
             BlogSeeder::class,
             SliderSeeder::class,
             PortfolioSeeder::class,
+            TeamSeeder::class,
+            FaqSeeder::class,
         ]);
     }
 }

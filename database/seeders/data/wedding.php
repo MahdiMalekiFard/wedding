@@ -218,7 +218,7 @@ kærlighed og fest. Læn dig tilbage, slap af, og lad os forvandle dine drømme 
                 'da',
             ],
             'view_count'  => 3,
-            'seo_options'   => [
+            'seo_options' => [
                 'title'       => 'Årets bedste ukrudtsrydning',
                 'description' => null,
                 'canonical'   => null,
@@ -242,7 +242,7 @@ kærlighed og fest. Læn dig tilbage, slap af, og lad os forvandle dine drømme 
                 'da',
             ],
             'view_count'  => 12,
-            'seo_options'   => [
+            'seo_options' => [
                 'title'       => 'Årets bedste ukrudtsrydning',
                 'description' => null,
                 'canonical'   => null,
@@ -266,7 +266,7 @@ kærlighed og fest. Læn dig tilbage, slap af, og lad os forvandle dine drømme 
                 'da',
             ],
             'view_count'  => 7,
-            'seo_options'   => [
+            'seo_options' => [
                 'title'       => 'Årets bedste ukrudtsrydning',
                 'description' => null,
                 'canonical'   => null,
@@ -275,6 +275,206 @@ kærlighed og fest. Læn dig tilbage, slap af, og lad os forvandle dine drømme 
                 'robots_meta' => SeoRobotsMetaEnum::NOINDEX_FOLLOW,
             ],
             'image'       => public_path('assets/img/portfolio/portfolio1_3.png'),
+        ],
+    ],
+
+    'teams' => [
+        [
+            'name'      => 'Javad Nouri',
+            'slug'      => 'javad-nouri',
+            'job'       => 'Teknisk direktør',
+            'special'   => true,
+            'body'      => '
+<p>Javad leder udviklingen af vores digitale infrastruktur og sikrer, at teknologi og strategi går hånd i hånd. Med sin baggrund inden for kunstig intelligens og softwarearkitektur bringer han innovation til hvert projekt.</p>
+',
+            'languages' => ['da'],
+            'config'    => [
+                'social_media' => [
+                    'youtube'  => 'https://youtube.com/@javadnouri',
+                    'facebook' => 'https://facebook.com/javad.nouri',
+                    'twitter'  => 'https://x.com/javad_nouri',
+                    'linkedin' => 'https://linkedin.com/in/javad-nouri',
+                ],
+                'info'         => [
+                    'experience' => '+10 years',
+                    'mobile'     => '9156545665',
+                    'email'      => 'junkbox.483@mailinator.com',
+                ]
+            ],
+            'image'     => public_path('assets/img/team/team2.png'),
+        ],
+        [
+            'name'      => 'Sara Rahimi',
+            'slug'      => 'sara-rahimi',
+            'job'       => 'Projektleder',
+            'special'   => true,
+            'body'      => '
+<p>Sara koordinerer tværfaglige teams og sørger for, at hvert projekt leveres med præcision og passion. Hendes fokus på brugeroplevelse gør hende til bindeleddet mellem kunder og udviklingsteamet.</p>
+',
+            'languages' => ['da'],
+            'config'    => [
+                'social_media' => [
+                    'youtube'  => 'https://youtube.com/@sararproduct',
+                    'facebook' => 'https://facebook.com/sara.rahimi.pm',
+                    'twitter'  => 'https://x.com/sara_product',
+                    'linkedin' => 'https://linkedin.com/in/sara-rahimi',
+                ],
+                'info'         => [
+                    'experience' => '+20 years',
+                    'mobile'     => '9156545665',
+                    'email'      => 'tempuser-2025@yopmail.com',
+                ]
+            ],
+            'image'     => public_path('assets/img/team/team1.png'),
+        ],
+        [
+            'name'      => 'Mehdi Farzad',
+            'slug'      => 'mehdi-farzad',
+            'job'       => 'Backend-udvikler',
+            'special'   => true,
+            'body'      => '
+<p>Mehdi bygger stabile og skalerbare serverløsninger, der håndterer komplekse processer med lethed. Han brænder for ren kode og pålidelighed i hver linje, han skriver.</p>
+',
+            'languages' => ['da'],
+            'config'    => [
+                'social_media' => [
+                    'youtube'  => 'https://youtube.com/@farzadbackend',
+                    'facebook' => 'https://facebook.com/mehdi.farzad.dev',
+                    'twitter'  => 'https://x.com/mehdi_farzad',
+                    'linkedin' => 'https://linkedin.com/in/mehdi-farzad',
+                ],
+                'info'         => [
+                    'experience' => '+15 years',
+                    'mobile'     => '9156545665',
+                    'email'      => 'throwaway.alpha@guerrillamail.com',
+                ]
+            ],
+            'image'     => public_path('assets/img/team/team3.png'),
+        ],
+        [
+            'name'      => 'Elina Moradi',
+            'slug'      => 'elina-moradi',
+            'job'       => 'Frontend-udvikler',
+            'special'   => false,
+            'body'      => '
+<p>Elina skaber smukke og responsive brugergrænseflader med fokus på elegance, ydeevne og tilgængelighed. Hendes designs kombinerer æstetik og funktionalitet på højeste niveau.</p>
+',
+            'languages' => ['da'],
+            'config'    => [
+                'social_media' => [
+                    'youtube'  => 'https://youtube.com/@elinacodes',
+                    'facebook' => 'https://facebook.com/elina.moradi',
+                    'twitter'  => 'https://x.com/elina_moradi',
+                    'linkedin' => 'https://linkedin.com/in/elina-moradi',
+                ],
+                'info'         => [
+                    'experience' => '+13 years',
+                    'mobile'     => '9156545665',
+                    'email'      => 'disposable.test@10minutemail.com',
+                ]
+            ],
+            'image'     => public_path('assets/img/team/team4.png'),
+        ],
+        [
+            'name'      => 'Sofie Andersen',
+            'slug'      => 'Sofie-Andersen',
+            'job'       => 'Mobiludvikler',
+            'special'   => false,
+            'body'      => '
+<p>Sofie udvikler moderne mobilapps med høj ydeevne og brugervenlighed. Hans ekspertise i Flutter sikrer, at vores applikationer fungerer perfekt på både iOS og Android.</p>
+',
+            'languages' => ['da'],
+            'config'    => [
+                'social_media' => [
+                    'youtube'  => 'https://youtube.com/@hosseinflutter',
+                    'facebook' => 'https://facebook.com/hossein.karimi',
+                    'twitter'  => 'https://x.com/hossein_karimi',
+                    'linkedin' => 'https://linkedin.com/in/hossein-karimi',
+                ],
+                'info'         => [
+                    'experience' => '+30 years',
+                    'mobile'     => '9156545665',
+                    'email'      => 'spamcatcher.one@temp-mail.org',
+                ]
+            ],
+            'image'     => public_path('assets/img/team/team5.png'),
+        ],
+        [
+            'name'      => 'Neda Tavakoli',
+            'slug'      => 'neda-tavakoli',
+            'job'       => 'UX/UI Designer',
+            'special'   => false,
+            'body'      => '
+<p>Neda står for den visuelle retning og brugeroplevelsen i vores projekter. Hun kombinerer kreativitet med analytisk tænkning for at skabe intuitive og smukke interfaces.</p>
+',
+            'languages' => ['da'],
+            'config'    => [
+                'social_media' => [
+                    'youtube'  => 'https://youtube.com/@nedadesign',
+                    'facebook' => 'https://facebook.com/neda.tavakoli',
+                    'twitter'  => 'https://x.com/neda_tavakoli',
+                    'linkedin' => 'https://linkedin.com/in/neda-tavakoli',
+                ],
+                'info'         => [
+                    'experience' => '+17 years',
+                    'mobile'     => '9156545665',
+                    'email'      => 'sample+junk001@gmail.com',
+                ]
+            ],
+            'image'     => public_path('assets/img/team/team6.png'),
+        ],
+    ],
+
+    'faqs' => [
+        [
+            'title'        => 'Hvordan kan vi booke bryllupssalen?',
+            'description'  => 'Du kan nemt booke vores bryllupssal via vores online reservationsformular eller ved at kontakte os direkte på telefon eller e-mail. Vi anbefaler at reservere i god tid, da populære datoer hurtigt bliver optaget.',
+            'category_id'  => 2,
+            'favorite'     => true,
+            'ordering'     => 1,
+            'languages'    => ['da'],
+            'published'    => true,
+            'published_at' => now(),
+        ],
+        [
+            'title'        => 'Hvor mange gæster kan salen rumme?',
+            'description'  => 'Vores sal kan komfortabelt rumme op til 250 gæster til middag og op til 350 personer til receptioner. Vi tilbyder også fleksible opsætninger afhængig af arrangementets størrelse.',
+            'category_id'  => 2,
+            'favorite'     => true,
+            'ordering'     => 1,
+            'languages'    => ['da'],
+            'published'    => true,
+            'published_at' => now(),
+        ],
+        [
+            'title'        => 'Er der parkeringsmuligheder for gæsterne?',
+            'description'  => 'Ja, vi har gratis parkering til rådighed for både brudepar og gæster. Der er også mulighed for handicapvenlige parkeringspladser tæt på indgangen.',
+            'category_id'  => 2,
+            'favorite'     => true,
+            'ordering'     => 1,
+            'languages'    => ['da'],
+            'published'    => true,
+            'published_at' => now(),
+        ],
+        [
+            'title'        => 'Kan vi selv medbringe mad og drikke?',
+            'description'  => 'Som udgangspunkt tilbyder vi vores egen professionelle catering, men hvis du ønsker at medbringe egen mad eller drikkevarer, kan dette aftales mod et mindre gebyr og efter godkendelse fra vores team.',
+            'category_id'  => 2,
+            'favorite'     => true,
+            'ordering'     => 1,
+            'languages'    => ['da'],
+            'published'    => true,
+            'published_at' => now(),
+        ],
+        [
+            'title'        => 'Har I samarbejde med fotografer, blomsterdekoratører eller musikere?',
+            'description'  => 'Ja! Vi samarbejder med flere professionelle leverandører, som kan hjælpe med alt fra blomster og musik til foto og video. Vi deler gerne vores anbefalinger med dig.',
+            'category_id'  => 2,
+            'favorite'     => true,
+            'ordering'     => 1,
+            'languages'    => ['da'],
+            'published'    => true,
+            'published_at' => now(),
         ],
     ],
 ];

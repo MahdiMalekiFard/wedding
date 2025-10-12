@@ -119,7 +119,34 @@ All Js File
 
 <!-- Main Js File -->
 <script src="{{ asset('assets/js/main.js') }}"></script>
+<!-- Toast container (top-right) -->
+<div class="position-fixed top-0 end-0 p-3" style="z-index:1080">
+    <div id="reservationToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body" id="reservationToastBody">
+                Tak! Din forespørgsel er sendt. Vi vender tilbage snarest.
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
 @livewireScripts
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Ensure Bootstrap's JS is available (see note below about bundle file)
+        const toastEl = document.getElementById('reservationToast');
+        if (!toastEl || typeof bootstrap === 'undefined' || !bootstrap.Toast) return;
+
+        const toastBody = document.getElementById('reservationToastBody');
+        const toast     = new bootstrap.Toast(toastEl, { delay: 4000 });
+
+        window.addEventListener('reservation-success', (e) => {
+            const msg = e.detail?.message || 'Tak! Din forespørgsel er sendt.';
+            toastBody.textContent = msg;
+            toast.show();
+        });
+    });
+</script>
 </body>
 
 </html>

@@ -27,72 +27,21 @@
     <div class="team-area-1 space overflow-hidden">
         <div class="container">
             <div class="row gy-4 justify-content-lg-between justify-content-center">
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-card title-anim">
-                        <div class="team-card_img global-img">
-                            <img src="/assets/img/team/team-1-1.png" alt="Holdbillede">
-                        </div>
-                        <div class="team-card_content">
-                            <h3 class="team-card_title"><a href="{{ route('team-detail-page', ['slug' => 'Louisa Abadie']) }}">Louisa Abadie</a></h3>
-                            <span class="team-card_desig">Leder</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-card title-anim">
-                        <div class="team-card_img global-img">
-                            <img src="/assets/img/team/team-1-2.png" alt="Holdbillede">
-                        </div>
-                        <div class="team-card_content">
-                            <h3 class="team-card_title"><a href="{{ route('team-detail-page', ['slug' => 'Mike Johnson']) }}">Mike Johnson</a></h3>
-                            <span class="team-card_desig">Leder</span>
+                @foreach($teams as $team)
+                    <div class="col-lg-4 col-md-6">
+                        <div class="team-card title-anim">
+                            <div class="portrait-mask mx-auto">
+                                <a href="{{ route('team-detail-page', ['slug' => $team?->slug]) }}">
+                                    <img src="{{ $team?->getFirstMediaUrl('image') }}" alt="{{ $team?->name }}">
+                                </a>
+                            </div>
+                            <div class="team-card_content">
+                                <h3 class="team-card_title"><a href="{{ route('team-detail-page', ['slug' => $team?->slug]) }}">{{ $team?->name }}</a></h3>
+                                <span class="team-card_desig">{{ $team?->job }}</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-card title-anim">
-                        <div class="team-card_img global-img">
-                            <img src="/assets/img/team/team-1-3.png" alt="Holdbillede">
-                        </div>
-                        <div class="team-card_content">
-                            <h3 class="team-card_title"><a href="{{ route('team-detail-page', ['slug' => 'Amelia Harper']) }}">Amelia Harper</a></h3>
-                            <span class="team-card_desig">Leder</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-card title-anim">
-                        <div class="team-card_img global-img">
-                            <img src="/assets/img/team/team-1-4.png" alt="Holdbillede">
-                        </div>
-                        <div class="team-card_content">
-                            <h3 class="team-card_title"><a href="{{ route('team-detail-page', ['slug' => 'Matthew Taylor']) }}">Matthew Taylor</a></h3>
-                            <span class="team-card_desig">Leder</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-card title-anim">
-                        <div class="team-card_img global-img">
-                            <img src="/assets/img/team/team-1-5.png" alt="Holdbillede">
-                        </div>
-                        <div class="team-card_content">
-                            <h3 class="team-card_title"><a href="{{ route('team-detail-page', ['slug' => 'Sophia Williams']) }}">Sophia Williams</a></h3>
-                            <span class="team-card_desig">Leder</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-card title-anim">
-                        <div class="team-card_img global-img">
-                            <img src="/assets/img/team/team-1-6.png" alt="Holdbillede">
-                        </div>
-                        <div class="team-card_content">
-                            <h3 class="team-card_title"><a href="{{ route('team-detail-page', ['slug' => 'Nicholas White']) }}">Nicholas White</a></h3>
-                            <span class="team-card_desig">Leder</span>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
