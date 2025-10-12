@@ -24,73 +24,32 @@
     <!--==============================
     FAQ Area
     ==============================-->
-    <div class="space">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="accordion-area accordion" id="faqAccordion">
-
-                        <div class="accordion-card active">
-                            <div class="accordion-header" id="collapse-item-1">
-                                <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="true" aria-controls="collapse-1"> Er middelhavsgin god?</button>
-                            </div>
-                            <div id="collapse-1" class="accordion-collapse collapse show" aria-labelledby="collapse-item-1" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p class="faq-text">Aliquam turpis odio varius sagittis et himenaeos, iaculis praesent sed luctus sapien eu potenti, vivamus blandit lobortis vehicula interdum. Ornare himenaeos volutpat posuere conubia augue netus ullamcorper id neque lectus commodo lobortis nullam, nibh sagittis dignissim porta viverra vulputate tellus porttitor euismod parturient senectus ridiculus.</p>
+    @if($faqs->isNotEmpty())
+        <div class="space">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="accordion-area accordion" id="faqAccordion">
+                            @foreach($faqs as $index => $faq)
+                                <div class="accordion-card {{ $index ? '' : 'active' }}">
+                                    <div class="accordion-header" id="collapse-item-{{ $index + 1 }}">
+                                        <button class="accordion-button {{ $index ? 'collapsed' : '' }}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{ $index + 1 }}" aria-expanded="{{ !$index }}" aria-controls="collapse-{{ $index + 1 }}"> {{ $faq?->title }}</button>
+                                    </div>
+                                    <div id="collapse-{{ $index + 1 }}" class="accordion-collapse collapse {{ $index ? '' : 'show' }}" aria-labelledby="collapse-item-{{ $index + 1 }}" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            <p class="faq-text">
+                                                {{ $faq?->description }}
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-
-
-                        <div class="accordion-card ">
-                            <div class="accordion-header" id="collapse-item-2">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2"> Hvilke faciliteter og faciliteter tilbyder jeres virksomhed?</button>
-                            </div>
-                            <div id="collapse-2" class="accordion-collapse collapse " aria-labelledby="collapse-item-2" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p class="faq-text">Aliquam turpis odio varius sagittis et himenaeos, iaculis praesent sed luctus sapien eu potenti, vivamus blandit lobortis vehicula interdum. Ornare himenaeos volutpat posuere conubia augue netus ullamcorper id neque lectus commodo lobortis nullam, nibh sagittis dignissim porta viverra vulputate tellus porttitor euismod parturient senectus ridiculus.</p>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="accordion-card ">
-                            <div class="accordion-header" id="collapse-item-3">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3"> Tilbyder du personlige festtjenester?</button>
-                            </div>
-                            <div id="collapse-3" class="accordion-collapse collapse " aria-labelledby="collapse-item-3" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p class="faq-text">Aliquam turpis odio varius sagittis et himenaeos, iaculis praesent sed luctus sapien eu potenti, vivamus blandit lobortis vehicula interdum. Ornare himenaeos volutpat posuere conubia augue netus ullamcorper id neque lectus commodo lobortis nullam, nibh sagittis dignissim porta viverra vulputate tellus porttitor euismod parturient senectus ridiculus.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-card active">
-                            <div class="accordion-header" id="collapse-item-4">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-4" aria-expanded="true" aria-controls="collapse-4"> Er middelhavsgin god?</button>
-                            </div>
-                            <div id="collapse-4" class="accordion-collapse collapse" aria-labelledby="collapse-item-4" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p class="faq-text">Aliquam turpis odio varius sagittis et himenaeos, iaculis praesent sed luctus sapien eu potenti, vivamus blandit lobortis vehicula interdum. Ornare himenaeos volutpat posuere conubia augue netus ullamcorper id neque lectus commodo lobortis nullam, nibh sagittis dignissim porta viverra vulputate tellus porttitor euismod parturient senectus ridiculus.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-card ">
-                            <div class="accordion-header" id="collapse-item-5">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-5" aria-expanded="false" aria-controls="collapse-5"> Tilbyder du personlige festtjenester?</button>
-                            </div>
-                            <div id="collapse-5" class="accordion-collapse collapse " aria-labelledby="collapse-item-5" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p class="faq-text">Aliquam turpis odio varius sagittis et himenaeos, iaculis praesent sed luctus sapien eu potenti, vivamus blandit lobortis vehicula interdum. Ornare himenaeos volutpat posuere conubia augue netus ullamcorper id neque lectus commodo lobortis nullam, nibh sagittis dignissim porta viverra vulputate tellus porttitor euismod parturient senectus ridiculus.</p>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    @endif
 
     <!--==============================
     Blog Area 03
@@ -98,8 +57,6 @@
     <section class="blog-area-3 space-bottom">
         <div class="container">
             <div class="title-area text-center title-anim">
-                <span class="sub-title style2">Blogindlæg
-                </span>
                 <h2 class="sec-title">Seneste nyt fra vores tidsskrift</h2>
             </div>
 

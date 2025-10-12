@@ -7,7 +7,7 @@
             <div class="row justify-content-between align-items-center">
                 <div class="col-md-8">
                     <div class="breadcumb-content">
-                        <h1 class="breadcumb-title">Årets bedste ukrudtsrydning</h1>
+                        <h1 class="breadcumb-title">{{ $artGallery?->title }}</h1>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -22,71 +22,27 @@
     </div>
 
     <!--==============================
-    Portfolio Area
+    Galleries Area
     ==============================-->
     <section class="portfolio-page-2">
+        @php
+            $images = $artGallery?->getMedia('images')->reject(function ($media) use ($artGallery) {
+                // reject if this image is linked as a video poster
+                return $artGallery->getMedia('videos')->contains(function ($video) use ($media) {
+                    return $video->getCustomProperty('poster_media_id') === $media->id;
+                });
+            });
+        @endphp
         <div class="container-fluid p-0">
             <div class="row gy-4 masonary-active">
-                <div class="col-xl-6 filter-item">
-                    <div class="portfolio-thumb fade_left">
-                        <a class="popup-image icon-btn" href="/assets/img/gallery/gallery-detail2.png"><i class="far fa-eye"></i></a>
-                        <img src="/assets/img/gallery/gallery-detail2.png" alt="portfolio">
+                @foreach($images as $image)
+                    <div class="col-xl-6 filter-item">
+                        <div class="portfolio-thumb fade_left">
+                            <a class="popup-image icon-btn" href="{{ $image?->getUrl() }}"><i class="far fa-eye"></i></a>
+                            <img src="{{ $image?->getUrl() }}" alt="gallery">
+                        </div>
                     </div>
-                </div>
-                <div class="col-xl-6 filter-item">
-                    <div class="portfolio-thumb fade_left">
-                        <a class="popup-image icon-btn" href="/assets/img/gallery/gallery-detail3.png"><i class="far fa-eye"></i></a>
-                        <img src="/assets/img/gallery/gallery-detail3.png" alt="portfolio">
-                    </div>
-                </div>
-                <div class="col-xxl-auto col-xl-6 filter-item">
-                    <div class="portfolio-thumb fade_left">
-                        <a class="popup-image icon-btn" href="/assets/img/gallery/gallery-detail6.png"><i class="far fa-eye"></i></a>
-                        <img src="/assets/img/gallery/gallery-detail6.png" alt="portfolio">
-                    </div>
-                </div>
-                <div class="col-xxl-auto col-xl-6 filter-item">
-                    <div class="portfolio-thumb fade_left">
-                        <a class="popup-image icon-btn" href="/assets/img/gallery/gallery-detail5.png"><i class="far fa-eye"></i></a>
-                        <img src="/assets/img/gallery/gallery-detail5.png" alt="portfolio">
-                    </div>
-                </div>
-                <div class="col-xxl-auto col-xl-6 filter-item">
-                    <div class="portfolio-thumb fade_left">
-                        <a class="popup-image icon-btn" href="/assets/img/gallery/gallery-detail7.png"><i class="far fa-eye"></i></a>
-                        <img src="/assets/img/gallery/gallery-detail7.png" alt="portfolio">
-                    </div>
-                </div>
-                <div class="col-xl-6 filter-item">
-                    <div class="portfolio-thumb fade_left">
-                        <a class="popup-image icon-btn" href="/assets/img/gallery/gallery-detail4.png"><i class="far fa-eye"></i></a>
-                        <img src="/assets/img/gallery/gallery-detail4.png" alt="portfolio">
-                    </div>
-                </div>
-                <div class="col-xl-6 filter-item">
-                    <div class="portfolio-thumb fade_left">
-                        <a class="popup-image icon-btn" href="/assets/img/gallery/gallery-detail1.png"><i class="far fa-eye"></i></a>
-                        <img src="/assets/img/gallery/gallery-detail1.png" alt="portfolio">
-                    </div>
-                </div>
-                <div class="col-xxl-auto col-xl-6 filter-item">
-                    <div class="portfolio-thumb fade_left">
-                        <a class="popup-image icon-btn" href="/assets/img/gallery/gallery-detail8.png"><i class="far fa-eye"></i></a>
-                        <img src="/assets/img/gallery/gallery-detail8.png" alt="portfolio">
-                    </div>
-                </div>
-                <div class="col-xxl-auto col-xl-6 filter-item">
-                    <div class="portfolio-thumb fade_left">
-                        <a class="popup-image icon-btn" href="/assets/img/gallery/gallery-detail9.png"><i class="far fa-eye"></i></a>
-                        <img src="/assets/img/gallery/gallery-detail9.png" alt="portfolio">
-                    </div>
-                </div>
-                <div class="col-xxl-auto col-xl-6 filter-item">
-                    <div class="portfolio-thumb fade_left">
-                        <a class="popup-image icon-btn" href="/assets/img/gallery/gallery-detail10.png"><i class="far fa-eye"></i></a>
-                        <img src="/assets/img/gallery/gallery-detail10.png" alt="portfolio">
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

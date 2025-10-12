@@ -40,41 +40,81 @@
                                 </span>
                                 <h2 class="sec-title">Foretag reservation</h2>
                             </div>
-                            <form action="mail.php" method="POST" class="reservation-form ajax-contact">
+                            <form wire:submit.prevent="submit" class="reservation-form">
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group style-4 form-icon-left">
                                             <i class="far fa-user"></i>
-                                            <input type="text" class="form-control style-border" name="name" id="name" placeholder="Indtast fulde navn">
+                                            <input type="text"
+                                                   class="form-control style-border @error('name') is-invalid @enderror"
+                                                   wire:model.defer="name"
+                                                   id="name"
+                                                   placeholder="Indtast fulde navn"
+                                                   autocomplete="name"
+                                            >
                                         </div>
+                                        @error('name') <small class="text-danger">{{ $message }}</small> @enderror
                                     </div>
+
                                     <div class="col-lg-6">
                                         <div class="form-group style-4 form-icon-left">
                                             <i class="far fa-envelope"></i>
-                                            <input type="text" class="form-control style-border" name="email" id="email" placeholder="E-mailadresse">
+                                            <input type="email"
+                                                   class="form-control style-border @error('email') is-invalid @enderror"
+                                                   wire:model.defer="email"
+                                                   id="email"
+                                                   placeholder="E-mailadresse"
+                                                   autocomplete="email"
+                                            >
                                         </div>
+                                        @error('email') <small class="text-danger">{{ $message }}</small> @enderror
                                     </div>
+
                                     <div class="col-lg-6">
                                         <div class="form-group style-4 form-icon-left">
                                             <i class="fas fa-users"></i>
-                                            <input type="text" class="form-control style-border" name="guest" id="guest" placeholder="Antal gæster">
+                                            <input type="number"
+                                                   min="10"
+                                                   class="form-control style-border @error('guest') is-invalid @enderror"
+                                                   wire:model.defer="guest"
+                                                   id="guest"
+                                                   placeholder="Antal gæster"
+                                            >
                                         </div>
+                                        @error('guest') <small class="text-danger">{{ $message }}</small> @enderror
                                     </div>
+
                                     <div class="col-lg-6">
                                         <div class="form-group style-4 form-icon-left">
                                             <i class="far fa-calendar-alt"></i>
-                                            <input type="date" class="form-control style-border" name="date" id="date">
+                                            <input type="date"
+                                                   class="form-control style-border @error('date') is-invalid @enderror"
+                                                   wire:model.defer="date"
+                                                   id="date"
+                                                   min="{{ now()->toDateString() }}"
+                                            >
                                         </div>
+                                        @error('date') <small class="text-danger">{{ $message }}</small> @enderror
                                     </div>
+
                                     <div class="col-lg-12">
                                         <div class="form-group style-4 form-icon-left">
                                             <i class="fas fa-box"></i>
-                                            <input type="text" class="form-control style-border" name="message" id="event" placeholder="Vælg begivenhed">
+                                            <input type="text"
+                                                   class="form-control style-border @error('description') is-invalid @enderror"
+                                                   wire:model.defer="description"
+                                                   id="description"
+                                                   placeholder="Tilføj beskrivelse"
+                                            >
                                         </div>
+                                        @error('description') <small class="text-danger">{{ $message }}</small> @enderror
                                     </div>
                                 </div>
                                 <div class="form-btn col-12 text-center">
-                                    <button type="submit" class="btn">FORETAG RESERVATION</button>
+                                    <button type="submit" class="btn" wire:loading.attr="disabled">
+                                        <span wire:loading.remove>FORETAG RESERVATION</span>
+                                        <span wire:loading>Sender...</span>
+                                    </button>
                                 </div>
                             </form>
                         </div>

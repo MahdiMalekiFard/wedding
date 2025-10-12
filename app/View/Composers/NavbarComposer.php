@@ -2,8 +2,11 @@
 
 namespace App\View\Composers;
 
+use App\Enums\CategoryTypeEnum;
+use App\Models\ArtGallery;
 use App\Models\Blog;
 use App\Models\Category;
+use App\Models\Faq;
 use App\Models\Opinion;
 use App\Models\Page;
 use App\Models\Portfolio;
@@ -138,6 +141,38 @@ class NavbarComposer
             ],
         ];
 
+        $faqMgmt = [
+            'icon'     => 's-question-mark-circle',
+            'title'    => trans('_menu.faq_management'),
+            'access'   => $user->hasAnyPermission(PermissionsService::generatePermissionsByModel(Faq::class, 'Store', 'Index')),
+            'sub_menu' => [
+                [
+                    'icon'       => 's-list-bullet',
+                    'route_name' => 'admin.faq.index',
+                    'exact'      => true,
+                    'params'     => [],
+                    'title'      => trans('_menu.faq.all'),
+                    'access'     => $user->hasAnyPermission(PermissionsService::generatePermissionsByModel(Faq::class, 'Index')),
+                ],
+                [
+                    'icon'       => 's-plus-circle',
+                    'route_name' => 'admin.faq.create',
+                    'exact'      => true,
+                    'params'     => [],
+                    'title'      => trans('_menu.faq.create'),
+                    'access'     => $user->hasAnyPermission(PermissionsService::generatePermissionsByModel(Faq::class, 'Store')),
+                ],
+                [
+                    'icon'       => 's-plus-circle',
+                    'route_name' => 'admin.category.create',
+                    'exact'      => true,
+                    'params'     => ['type' => CategoryTypeEnum::FAQ->value],
+                    'title'      => trans('_menu.category.create'),
+                    'access'     => $user->hasAnyPermission(PermissionsService::generatePermissionsByModel(Category::class, 'Store')),
+                ],
+            ],
+        ];
+
         $pageMgmt = [
             'icon'     => 'lucide.layers',
             'title'    => trans('_menu.page_management'),
@@ -196,12 +231,19 @@ class NavbarComposer
                     $blogMgmt,
                     $portfolioMgmt,
                     $opinionMgmt,
+                    $faqMgmt,
                     $pageMgmt,
                     [
                         'icon'       => 's-banknotes',
                         'title'      => trans('_menu.sliders'),
                         'access'     => $user->hasAnyPermission(PermissionsService::generatePermissionsByModel(Slider::class, 'Store', 'Index')),
                         'route_name' => 'admin.slider.index',
+                    ],
+                    [
+                        'icon'       => 's-photo',
+                        'title'      => trans('_menu.galleries'),
+                        'access'     => $user->hasAnyPermission(PermissionsService::generatePermissionsByModel(ArtGallery::class, 'Store', 'Index')),
+                        'route_name' => 'admin.art-gallery.index',
                     ],
                 ],
             ],

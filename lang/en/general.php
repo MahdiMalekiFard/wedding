@@ -93,6 +93,7 @@ return [
 
     'page_sections' => [
         'data'                 => 'Information',
+        'settings'             => 'Settings',
         'social'               => 'Social Media',
         'ordering'             => 'Order Settings',
         'seo_options'          => 'SEO Settings',
