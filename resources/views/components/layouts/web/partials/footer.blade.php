@@ -57,14 +57,15 @@
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <div class="widget footer-widget">
-                        <h3 class="widget_title">Abonner nu</h3>
-                        <p class="footer-text">Bare rolig, vi spammer ikke din e-mail</p>
-                        <form class="newsletter-form">
-                            <div class="form-group">
-                                <input class="form-control" type="email" placeholder="E-mailadresse" required="">
-                            </div>
-                            <button type="submit" class="btn">ABONNER</button>
-                        </form>
+                        <div class="widget-contact">
+                            <h3 class="widget_title">Åbningstider</h3>
+                            <ul class="contact-info-list">
+                                <li>Mandag - Torsdag: 16:00 - 22:00</li>
+                                <li>Fredag: 16:00 - 24:00</li>
+                                <li>Lørdag: 14:00 - 24:00</li>
+                                <li>Søndag: 14:00 - 22:00</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
