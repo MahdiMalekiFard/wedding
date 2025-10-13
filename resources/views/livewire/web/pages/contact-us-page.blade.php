@@ -2,7 +2,7 @@
     <!--==============================
     Breadcrumb
     ============================== -->
-    <div class="breadcumb-wrapper" data-bg-src="/assets/img/bg/breadcrumb-bg.png">
+    <div class="breadcumb-wrapper" data-bg-src="/assets/img/bg/breadcrumb-bg.png" wire:ignore>
         <!-- bg animated image/ -->
         <div class="container">
             <div class="row justify-content-between align-items-center">
@@ -22,9 +22,9 @@
     </div>
 
     <!--==============================
-        Contact Area
+        Contact Info Area
     ==============================-->
-    <div class="contact-area space" data-bg-src="/assets/img/bg/contact-page-bg.png">
+    <div class="contact-area space" data-bg-src="/assets/img/bg/contact-page-bg.png" wire:ignore>
         <div class="container">
             <div class="row gy-4 justify-content-center">
                 <div class="col-lg-4 col-md-6">
@@ -69,7 +69,7 @@
     </div>
 
     <!--==============================
-    Contact Area
+    Contact Form Area
     ==============================-->
     <div class="space" >
         <div class="container">

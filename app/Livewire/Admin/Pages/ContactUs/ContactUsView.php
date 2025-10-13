@@ -4,9 +4,10 @@ namespace App\Livewire\Admin\Pages\ContactUs;
 
 use App\Livewire\Admin\BaseAdminComponent;
 use App\Models\ContactUs;
+use Livewire\Component;
 use Livewire\Attributes\Computed;
 
-final class ContactUsView extends BaseAdminComponent
+final class ContactUsView extends Component
 {
     public ContactUs $contactUs;
     public bool $wasUnread = false;
@@ -34,6 +35,6 @@ final class ContactUsView extends BaseAdminComponent
 
     public function render()
     {
-        return view('livewire.admin.pages.contactUs.contact-us-view');
+        return view('livewire.admin.pages.contact-us.contact-us-view');
     }
 }

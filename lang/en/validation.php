@@ -209,6 +209,8 @@ return [
         'title'                 => 'Title',
         'subtitle'              => 'SubTitle',
         'address'               => 'Address',
+        'guest'                 => 'Guest',
+        'date'                  => 'Date',
         'is_default'            => 'Default Address',
         'password_confirmation' => 'Password Confirmation',
         'slug'                  => 'Slug',

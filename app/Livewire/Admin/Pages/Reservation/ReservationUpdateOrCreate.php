@@ -14,26 +14,33 @@ class ReservationUpdateOrCreate extends Component
     use Toast;
 
     public Reservation   $model;
-    public string $title       = '';
+    public string $name       = '';
+    public string $email       = '';
+    public string $guest       = '';
+    public string $date       = '';
     public string $description = '';
-    public bool   $published   = false;
 
     public function mount(Reservation $reservation): void
     {
         $this->model = $reservation;
+
         if ($this->model->id) {
-            $this->title = $this->model->title;
+            $this->name = $this->model->name;
+            $this->email = $this->model->email;
+            $this->guest = $this->model->guest;
+            $this->date = $this->model->date;
             $this->description = $this->model->description;
-            $this->published = $this->model->published->value;
         }
     }
 
     protected function rules(): array
     {
         return [
-            'title'       => 'required|string',
-            'description' => 'required|string',
-            'published'   => 'required'
+            'name'       => 'required|string|max:255',
+            'email'       => 'required|string|email|max:255',
+            'guest'       => 'required|integer|min:10',
+            'date'       => 'required|date|after_or_equal:today',
+            'description' => 'nullable|string|max:5000',
         ];
     }
 

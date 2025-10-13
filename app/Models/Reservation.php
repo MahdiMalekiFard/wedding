@@ -23,6 +23,7 @@ class Reservation extends Model
         'date'       => 'datetime',
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
+        'date'       => 'datetime',
     ];
 
     /**

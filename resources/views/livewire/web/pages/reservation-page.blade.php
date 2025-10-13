@@ -2,7 +2,7 @@
     <!--==============================
     Breadcrumb
     ============================== -->
-    <div class="breadcumb-wrapper" data-bg-src="/assets/img/bg/breadcrumb-bg.png">
+    <div class="breadcumb-wrapper" data-bg-src="/assets/img/bg/breadcrumb-bg.png" wire:ignore>
         <!-- bg animated image/ -->
         <div class="container">
             <div class="row justify-content-between align-items-center">
@@ -55,8 +55,8 @@
                                                    placeholder="Indtast fulde navn"
                                                    autocomplete="name"
                                             >
+                                            @error('name') <small class="text-danger">{{ $message }}</small> @enderror
                                         </div>
-                                        @error('name') <small class="text-danger">{{ $message }}</small> @enderror
                                     </div>
 
                                     <div class="col-lg-6">
@@ -69,8 +69,8 @@
                                                    placeholder="E-mailadresse"
                                                    autocomplete="email"
                                             >
+                                            @error('email') <small class="text-danger">{{ $message }}</small> @enderror
                                         </div>
-                                        @error('email') <small class="text-danger">{{ $message }}</small> @enderror
                                     </div>
 
                                     <div class="col-lg-6">
@@ -83,8 +83,8 @@
                                                    id="guest"
                                                    placeholder="Antal gæster"
                                             >
+                                            @error('guest') <small class="text-danger">{{ $message }}</small> @enderror
                                         </div>
-                                        @error('guest') <small class="text-danger">{{ $message }}</small> @enderror
                                     </div>
 
                                     <div class="col-lg-6">
@@ -96,8 +96,8 @@
                                                    id="date"
                                                    min="{{ now()->toDateString() }}"
                                             >
+                                            @error('date') <small class="text-danger">{{ $message }}</small> @enderror
                                         </div>
-                                        @error('date') <small class="text-danger">{{ $message }}</small> @enderror
                                     </div>
 
                                     <div class="col-lg-12">
@@ -109,8 +109,8 @@
                                                    id="description"
                                                    placeholder="Tilføj beskrivelse"
                                             >
+                                            @error('description') <small class="text-danger">{{ $message }}</small> @enderror
                                         </div>
-                                        @error('description') <small class="text-danger">{{ $message }}</small> @enderror
                                     </div>
                                 </div>
                                 <div class="form-btn col-12 text-center">

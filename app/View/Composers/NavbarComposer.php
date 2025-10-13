@@ -209,6 +209,14 @@ class NavbarComposer
             ],
 
             [
+                'icon'       => 's-wrench-screwdriver',
+                'params'     => [],
+                'exact'      => true,
+                'title'      => trans('_menu.reservations', locale: app()->getFallbackLocale()),
+                'route_name' => 'admin.reservation.index',
+            ],
+
+            [
                 'icon'     => 's-chat-bubble-left-right',
                 'title'    => trans('_menu.contact_us_management'),
                 'access'   => $user->hasAnyPermission(PermissionsService::generatePermissionsByModel(ContactUs::class, 'Index')),

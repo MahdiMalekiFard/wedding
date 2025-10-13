@@ -16,7 +16,7 @@ return new class extends Migration {
             $table->string('name');
             $table->string('email');
             $table->unsignedInteger('guest');
-            $table->date('date');
+            $table->timestamp('date');
             $table->text('description')->nullable();
             $table->schemalessAttributes('extra_attributes');
 

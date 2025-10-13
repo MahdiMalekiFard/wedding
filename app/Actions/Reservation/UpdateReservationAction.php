@@ -14,16 +14,18 @@ class UpdateReservationAction
     use AsAction;
 
     public function __construct(
-        private readonly SyncTranslationAction $syncTranslationAction,
     ) {}
 
 
     /**
      * @param Reservation $reservation
      * @param array{
-     *     title:string,
-     *     description:string
-     * }               $payload
+     *     name:string,
+     *     email:string,
+     *     guest:string,
+     *     date:string,
+     *     description?:string,
+     * } $payload
      * @return Reservation
      * @throws Throwable
      */
@@ -31,7 +33,6 @@ class UpdateReservationAction
     {
         return DB::transaction(function () use ($reservation, $payload) {
             $reservation->update($payload);
-            $this->syncTranslationAction->handle($reservation, Arr::only($payload, ['title', 'description']));
 
             return $reservation->refresh();
         });

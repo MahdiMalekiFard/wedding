@@ -370,8 +370,8 @@
                                             wire:model.defer="name"
                                             autocomplete="name"
                                         >
+                                        @error('name') <small class="text-danger">{{ $message }}</small> @enderror
                                     </div>
-                                    @error('name') <small class="text-danger">{{ $message }}</small> @enderror
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group form-icon-left">
@@ -383,8 +383,8 @@
                                             wire:model.defer="email"
                                             autocomplete="email"
                                         >
+                                        @error('email') <small class="text-danger">{{ $message }}</small> @enderror
                                     </div>
-                                    @error('email') <small class="text-danger">{{ $message }}</small> @enderror
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group form-icon-left">
@@ -396,8 +396,8 @@
                                             id="guest"
                                             placeholder="Antal gæster"
                                         >
+                                        @error('guest') <small class="text-danger">{{ $message }}</small> @enderror
                                     </div>
-                                    @error('guest') <small class="text-danger">{{ $message }}</small> @enderror
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group form-icon-left">
@@ -421,8 +421,8 @@
                                             id="description"
                                             placeholder="Tilføj beskrivelse"
                                         >
+                                        @error('description') <small class="text-danger">{{ $message }}</small> @enderror
                                     </div>
-                                    @error('description') <small class="text-danger">{{ $message }}</small> @enderror
                                 </div>
                             </div>
 

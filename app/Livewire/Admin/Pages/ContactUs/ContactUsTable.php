@@ -104,7 +104,7 @@ final class ContactUsTable extends PowerGridComponent
                             Unread
                         </span>';
             })
-            ->add('created_at_formatted', fn ($row) => $row->created_at->format('M d, Y H:i'));
+            ->add('created_at_formatted', fn ($row) => PowerGridHelper::fieldCreatedAtFormated($row));
     }
 
     public function columns(): array
@@ -116,7 +116,7 @@ final class ContactUsTable extends PowerGridComponent
             Column::make('Phone', 'phone'),
             Column::make('Subject', 'subject'),
             Column::make('Status', 'is_read_badge'),
-            Column::make('Created At', 'created_at_formatted'),
+            PowerGridHelper::columnCreatedAT(),
             PowerGridHelper::columnAction(),
         ];
     }

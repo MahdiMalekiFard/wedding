@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 return [
     'dashboard'                 => 'Dashboard',
+    'reservations'              => 'Reservations',
     'profile'                   => 'Profile',
     'data_management'           => 'Data management',
     'users'                     => 'Users',

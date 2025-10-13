@@ -13,6 +13,7 @@ use Illuminate\View\View;
 use Livewire\Attributes\Computed;
 use Jenssegers\Agent\Agent;
 use PowerComponents\LivewirePowerGrid\Facades\Filter;
+use PowerComponents\LivewirePowerGrid\Column;
 use PowerComponents\LivewirePowerGrid\Facades\PowerGrid;
 use PowerComponents\LivewirePowerGrid\PowerGridComponent;
 use PowerComponents\LivewirePowerGrid\PowerGridFields;
@@ -78,18 +79,20 @@ final class ReservationTable extends PowerGridComponent
     {
         return PowerGrid::fields()
             ->add('id')
-            ->add('title', fn ($row) => PowerGridHelper::fieldTitle($row))
-            ->add('published_formated', fn ($row) => PowerGridHelper::fieldPublishedAtFormated($row))
-            ->add('created_at_formatted', fn ($row) => PowerGridHelper::fieldCreatedAtFormated($row));
+            ->add('name', fn ($row) => $row->name)
+            ->add('email', fn ($row) => $row->email)
+            ->add('guest', fn ($row) => $row->guest)
+            ->add('date_formatted', fn ($row) => $row->date->format('l, d F Y'));
     }
 
     public function columns(): array
     {
         return [
             PowerGridHelper::columnId(),
-            PowerGridHelper::columnTitle(),
-            PowerGridHelper::columnPublished(),
-            PowerGridHelper::columnCreatedAT(),
+            Column::make('Name', 'name'),
+            Column::make('Email', 'email'),
+            Column::make('Guest Number', 'guest'),
+            Column::make('Date', 'date_formatted'),
             PowerGridHelper::columnAction(),
         ];
     }
@@ -110,8 +113,6 @@ final class ReservationTable extends PowerGridComponent
     public function actions(Reservation $row): array
     {
         return [
-            PowerGridHelper::btnTranslate($row),
-            PowerGridHelper::btnToggle($row),
             PowerGridHelper::btnEdit($row),
             PowerGridHelper::btnDelete($row),
         ];
