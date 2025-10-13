@@ -68,7 +68,7 @@
             <div class="p-5">
                 <div class="flex flex-wrap gap-3">
                     <a
-                        href="#"
+                        href="{{ route('admin.contact-us.index') }}?filters[is_read]=0"
                         class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-amber-500 text-white font-medium hover:bg-amber-600 active:translate-y-[1px] transition"
                     >
                         <i class="fas fa-eye"></i>
@@ -76,7 +76,7 @@
                     </a>
 
                     <a
-                        href="#"
+                        href="{{ route('admin.contact-us.index') }}"
                         class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 active:translate-y-[1px] transition"
                     >
                         <i class="fas fa-list"></i>
