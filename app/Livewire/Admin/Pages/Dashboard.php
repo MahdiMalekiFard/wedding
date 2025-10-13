@@ -16,6 +16,12 @@ class Dashboard extends Component
             'today'  => ContactUs::whereDate('created_at', today())->count(),
         ];
 
-        return view('livewire.admin.pages.dashboard', compact('contactStats'));
+        // Get recent unread contact messages (limit to 5 for dashboard)
+        $unreadMessages = ContactUs::unread()
+            ->latest()
+            ->limit(10)
+            ->get();
+
+        return view('livewire.admin.pages.dashboard', compact('contactStats', 'unreadMessages'));
     }
 }
