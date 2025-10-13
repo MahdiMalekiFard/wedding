@@ -477,4 +477,37 @@ kærlighed og fest. Læn dig tilbage, slap af, og lad os forvandle dine drømme 
             'published_at' => now(),
         ],
     ],
+
+    'opinions' => [
+        [
+            'user_name'      => 'Freja Mikkelsen',
+            'company'      => 'Apple Inc.',
+            'published'    => true,
+            'published_at' => now(),
+            'view_count'   => 100,
+            'ordering'     => 1,
+            'comment'      => 'Vi holdt vores bryllupsfest her, og det var helt magisk! Personalet var utroligt hjælpsomme, og lokalet var pyntet præcis som vi ønskede. Maden var fantastisk – alle gæsterne roste den!',
+            'image'        => public_path('assets/img/testimonial/testi_1_1.png'),
+        ],
+        [
+            'user_name'      => 'Sofie & Mads Andersen',
+            'company'      => 'Google Inc.',
+            'published'    => true,
+            'published_at' => now(),
+            'view_count'   => 44,
+            'ordering'     => 2,
+            'comment'      => 'Alt fungerede bare perfekt fra start til slut. Planlægningen var nem, og teamet hjalp os med alle detaljer. Vi følte os trygge hele vejen igennem og kan varmt anbefale stedet!',
+            'image'        => public_path('assets/img/testimonial/testi_1_2.png'),
+        ],
+        [
+            'user_name'      => 'Emma Rasmussen',
+            'company'      => 'Amazon Inc.',
+            'published'    => true,
+            'published_at' => now(),
+            'view_count'   => 66,
+            'ordering'     => 3,
+            'comment'      => 'Et smukt lokale med en romantisk stemning. Belysningen, blomsterne og musikken skabte en uforglemmelig atmosfære. Tak til hele holdet for at gøre vores dag helt speciel!',
+            'image'        => public_path('assets/img/testimonial/testi_1_3.png'),
+        ],
+    ],
 ];

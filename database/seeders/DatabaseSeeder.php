@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
             PortfolioSeeder::class,
             TeamSeeder::class,
             FaqSeeder::class,
+            OpinionSeeder::class,
         ]);
     }
 }

@@ -40,7 +40,10 @@
                                 </span>
                                 <h2 class="sec-title">Foretag reservation</h2>
                             </div>
-                            <form wire:submit.prevent="submit" class="reservation-form">
+                            @if($successMessage)
+                                <div class="alert alert-success text-start" wire:poll.4s="clearSuccess">{{ $successMessage }}</div>
+                            @endif
+                            <form wire:submit.prevent="submit" class="reservation-form" wire:loading.attr="data-loading" wire:target="submit">
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group style-4 form-icon-left">

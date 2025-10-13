@@ -4,7 +4,7 @@
     <!--==============================
     Hero Area
     ==============================-->
-    <div class="hero-wrapper hero-1" id="hero">
+    <div class="hero-wrapper hero-1" id="hero" wire:ignore>
         <div class="global-carousel" id="heroSlider1" data-fade="true" data-slide-show="1" data-lg-slide-show="1" data-md-slide-show="1" data-sm-slide-show="1" data-xs-slide-show="1" data-arrows="false">
             @foreach($sliders as $slider)
                 <div class="hero-slider" data-bg-src="assets/img/hero/hero_bg_1_1.png">
@@ -79,7 +79,7 @@
     <!--==============================
     Service Area 01
     ==============================-->
-    <div class="service-area-1 overflow-hidden">
+    <div class="service-area-1 overflow-hidden" wire:ignore>
         <div class="service-shape1_1 shape-mockup jump d-lg-block d-none" data-top="0" data-left="-5%">
             <img src="/assets/img/normal/service_1-1.png" alt="img">
         </div>
@@ -137,7 +137,7 @@
     <!--==============================
     Video Area
     ==============================-->
-    <div class="video-area-1 space-top overflow-hidden">
+    <div class="video-area-1 space-top overflow-hidden" wire:ignore>
         <div class="container">
             <div class="title-area text-center title-anim">
                 <span class="sub-title style2">NYD VORES ØJEBLIKKE</span>
@@ -166,7 +166,7 @@
     <!--==============================
     Counter Area
     ==============================-->
-    <div class="counter-area-1" data-bg-src="assets/img/bg/counter-1-bg.png">
+    <div class="counter-area-1" data-bg-src="assets/img/bg/counter-1-bg.png" wire:ignore>
         <div class="counter-wrap1 space counter-item">
             <div class="container">
                 <div class="row gy-40 justify-content-lg-between justify-content-center">
@@ -218,7 +218,7 @@
     <!--==============================
     Blog Area
     ==============================-->
-    <section class="blog-area space">
+    <section class="blog-area space" wire:ignore>
         <div class="container">
             <div class="title-area text-center title-anim">
                 <span class="sub-title style2">Vores blogindlæg
@@ -275,7 +275,7 @@
     <!--==============================
     Portfolio Area
     ==============================-->
-    <div class="portfolio-area-1 space overflow-hidden" data-bg-src="assets/img/bg/portfolio-1-bg.png">
+    <div class="portfolio-area-1 space overflow-hidden" data-bg-src="assets/img/bg/portfolio-1-bg.png" wire:ignore>
         <div class="portfolio-shape1_1 shape-mockup jump d-lg-block d-none" data-top="0%" data-right="-10%">
             <img src="/assets/img/normal/portfolio-shape_1-1.png" alt="img">
         </div>
@@ -309,7 +309,7 @@
     <!--==============================
     Testimonial Area
     ==============================-->
-    <div class="testimonial-area-1 space-top space-bottom overflow-hidden">
+    <div class="testimonial-area-1 space-top space-bottom overflow-hidden" wire:ignore>
         <div class="container">
             <div class="title-area title-anim">
                 <span class="sub-title style2">Feedbacks</span>
@@ -337,9 +337,9 @@
     </div>
 
     <!--==============================
-    Contact Area
+    Reservation Area
     ==============================-->
-    <div class="contact-area-1 space overflow-hidden" data-bg-src="/assets/img/bg/contact-1-bg.png">
+    <div class="contact-area-1 space overflow-hidden" style="background-image:url('/assets/img/bg/contact-1-bg.png'); background-size:cover; background-position:center;">
         <div class="contact-shape1_1 shape-mockup jump d-lg-block d-none" data-top="0%" data-right="-8%">
             <img src="/assets/img/normal/contact-shape_1-1.png" alt="img">
         </div>
@@ -355,42 +355,82 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <form action="mail.php" method="POST" class="contact-form ajax-contact">
+                        @if($successMessage)
+                            <div class="alert alert-success text-start" wire:poll.4s="clearSuccess">{{ $successMessage }}</div>
+                        @endif
+                        <form wire:submit.prevent="submit" class="contact-form" data-livewire-form="1" wire:loading.attr="data-loading" wire:target="submit">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group form-icon-left">
                                         <i class="far fa-user"></i>
-                                        <input type="text" class="form-control style-border" name="name" id="name" placeholder="Indtast det fulde navn">
+                                        <input type="text" 
+                                            class="form-control style-border @error('name') is-invalid @enderror" 
+                                            id="name" 
+                                            placeholder="Indtast fulde navn"
+                                            wire:model.defer="name"
+                                            autocomplete="name"
+                                        >
                                     </div>
+                                    @error('name') <small class="text-danger">{{ $message }}</small> @enderror
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group form-icon-left">
                                         <i class="far fa-envelope"></i>
-                                        <input type="text" class="form-control style-border" name="email" id="email" placeholder="Indtast e-mailadresse">
+                                        <input type="text" 
+                                            class="form-control style-border @error('email') is-invalid @enderror" 
+                                            id="email" 
+                                            placeholder="E-mailadresse"
+                                            wire:model.defer="email"
+                                            autocomplete="email"
+                                        >
+                                    </div>
+                                    @error('email') <small class="text-danger">{{ $message }}</small> @enderror
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group form-icon-left">
+                                        <i class="far fa-calendar"></i>
+                                        <input type="number"
+                                            min="10"
+                                            class="form-control style-border @error('guest') is-invalid @enderror"
+                                            wire:model.defer="guest"
+                                            id="guest"
+                                            placeholder="Antal gæster"
+                                        >
+                                    </div>
+                                    @error('guest') <small class="text-danger">{{ $message }}</small> @enderror
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group form-icon-left">
+                                        <i class="far fa-calendar"></i>
+                                        <input type="date"
+                                            class="form-control style-border @error('date') is-invalid @enderror"
+                                            wire:model.defer="date"
+                                            id="date"
+                                            placeholder="Dato"
+                                            min="{{ now()->toDateString() }}"
+                                        >
+                                        @error('date') <small class="text-danger">{{ $message }}</small> @enderror
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group form-icon-left">
                                         <i class="far fa-calendar"></i>
-                                        <input type="date" class="form-control style-border" name="date" id="date">
+                                        <input type="text"
+                                            class="form-control style-border @error('description') is-invalid @enderror"
+                                            wire:model.defer="description"
+                                            id="description"
+                                            placeholder="Tilføj beskrivelse"
+                                        >
                                     </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="form-group form-icon-left">
-                                        <i class="far fa-calendar"></i>
-                                        <input type="text" class="form-control style-border" name="number" id="number" placeholder="Antal gæster">
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="form-group form-icon-left">
-                                        <i class="far fa-calendar"></i>
-                                        <input type="text" class="form-control style-border" name="message" id="meal" placeholder="Måltidspræference">
-                                    </div>
+                                    @error('description') <small class="text-danger">{{ $message }}</small> @enderror
                                 </div>
                             </div>
 
                             <div class="form-btn col-12 text-center">
-                                <button type="submit" class="btn">FORETAG RESERVATION</button>
+                                <button type="submit" class="btn" wire:loading.attr="disabled">
+                                    <span wire:loading.remove>FORETAG RESERVATION</span>
+                                    <span wire:loading>Sender...</span>
+                                </button>
                             </div>
                         </form>
                     </div>

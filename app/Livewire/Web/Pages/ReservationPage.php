@@ -15,6 +15,7 @@ class ReservationPage extends Component
     public int     $guest       = 10;
     public string  $date        = '';
     public ?string $description = '';
+    public ?string $successMessage = null;
 
     public function rules(): array
     {
@@ -50,7 +51,12 @@ class ReservationPage extends Component
         $this->reset(['name','email','guest','date','description']);
         $this->guest = 10;
 
-        $this->dispatch('reservation-success', message: 'Tak! Din forespørgsel er sendt. Vi vender tilbage snarest.');
+        $this->successMessage = 'Tak! Din forespørgsel er sendt. Vi vender tilbage snarest.';
+    }
+
+    public function clearSuccess(): void
+    {
+        $this->successMessage = null;
     }
 
     public function render(): View
