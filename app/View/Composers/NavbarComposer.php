@@ -6,6 +6,7 @@ use App\Enums\CategoryTypeEnum;
 use App\Models\ArtGallery;
 use App\Models\Blog;
 use App\Models\Category;
+use App\Models\ContactUs;
 use App\Models\Faq;
 use App\Models\Opinion;
 use App\Models\Page;
@@ -205,6 +206,30 @@ class NavbarComposer
                 'exact'      => true,
                 'title'      => trans('_menu.dashboard', locale: app()->getFallbackLocale()),
                 'route_name' => 'admin.dashboard',
+            ],
+
+            [
+                'icon'     => 's-chat-bubble-left-right',
+                'title'    => trans('_menu.contact_us_management'),
+                'access'   => $user->hasAnyPermission(PermissionsService::generatePermissionsByModel(ContactUs::class, 'Index')),
+                'sub_menu' => [
+                    [
+                        'icon'       => 's-list-bullet',
+                        'route_name' => 'admin.contact-us.index',
+                        'exact'      => true,
+                        'params'     => [],
+                        'title'      => trans('_menu.contact_us.all'),
+                    ],
+                    [
+                        'icon'          => 's-eye-slash',
+                        'route_name'    => 'admin.contact-us.index',
+                        'exact'         => false,
+                        'params'        => ['filters' => ['is_read' => 0]],
+                        'title'         => trans('_menu.contact_us.unread'),
+                        'badge'         => ContactUs::unread()->count() > 0 ? ContactUs::unread()->count() : null,
+                        'badge_classes' => 'bg-red-500 text-white text-xs px-2 py-1 rounded-full',
+                    ],
+                ],
             ],
 
             // Folder: People
