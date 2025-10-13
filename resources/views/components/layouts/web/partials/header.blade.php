@@ -75,8 +75,8 @@ Mobile Menu
                 <div class="col-auto d-none d-lg-block">
                     <div class="header-links">
                         <ul>
-                            <li><i class="far fa-clock"></i>Arbejder: 8.00am - 5.00pm</li>
-                            <li><i class="far fa-envelope"></i><a href="mailto:info@uranus-partyhouse.dk">info@uranus-partyhouse.dk</a></li>
+                            <li><i class="fas fa-phone"></i><a href="tel:4550712559">+45 50 71 25 59</a></li>
+                            <li><i class="fas fa-envelope"></i><a href="mailto:info@uranus-partyhouse.dk">info@uranus-partyhouse.dk</a></li>
                         </ul>
                     </div>
                 </div>
