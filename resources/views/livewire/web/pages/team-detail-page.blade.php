@@ -27,7 +27,7 @@
     <div class="team-details-area space">
         <div class="container">
             <div class="single-team-details">
-                <div class="team-about-card" data-bg-src="/assets/img/bg/team-details-bg.png">
+                <div class="team-about-card" data-bg-src="/assets/img/bg/portfolio-1-bg.png">
                     <div class="row g-lg-0">
                         <div class="col-xl-5">
                             <div class="team-about-card_img ratio ratio-1x1" style="width:320px; max-width:100%;">
@@ -57,7 +57,7 @@
                                             <p><span>Telefon </span> {{ $team?->extra()->get('extra_info.mobile') ?? '+(45) 50 71 25 59' }}</p>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="team-about-card_info">
                                             <span class="icon"><i class="fas fa-envelope"></i></span>
                                             <p><span>Email </span> {{ $team?->extra()->get('extra_info.email') ?? 'info@uranus-partyhouse.dk' }}</p>
@@ -68,8 +68,12 @@
                         </div>
                     </div>
                 </div>
-                <h3 class="page-subtitle">Om {{ $team?->name }}</h3>
-                {!! $team?->body !!}
+                <div class="team-about-content">
+                    <h3 class="page-subtitle">Om {{ $team?->name }}</h3>
+                    <div class="team-about-text">
+                        {!! $team?->body !!}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
