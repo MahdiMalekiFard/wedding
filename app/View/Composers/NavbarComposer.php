@@ -209,7 +209,7 @@ class NavbarComposer
             ],
 
             [
-                'icon'       => 's-wrench-screwdriver',
+                'icon'       => 's-bookmark',
                 'params'     => [],
                 'exact'      => true,
                 'title'      => trans('_menu.reservations', locale: app()->getFallbackLocale()),
