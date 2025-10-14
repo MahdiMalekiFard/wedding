@@ -311,7 +311,7 @@
     ==============================-->
     <div class="testimonial-area-1 space-top space-bottom overflow-hidden" wire:ignore>
         <div class="container">
-            <div class="title-area title-anim">
+            <div class="title-area text-center title-anim">
                 <span class="sub-title style2">Feedbacks</span>
                 <h2 class="sec-title">Vores udtalelser</h2>
             </div>
