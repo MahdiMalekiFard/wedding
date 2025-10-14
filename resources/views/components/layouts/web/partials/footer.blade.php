@@ -15,10 +15,10 @@
                 </div>
                 <div class="col-sm-auto">
                     <div class="social-btn style2">
-                        <a href="https://facebook.com/#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://twitter.com/#"><i class="fab fa-twitter"></i></a>
-                        <a href="https://behance.com/#"><i class="fab fa-behance"></i></a>
-                        <a href="https://www.youtube.com/#"><i class="fab fa-youtube"></i></a>
+                        <a href="https://facebook.com/#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/#" target="_blank"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
             </div>

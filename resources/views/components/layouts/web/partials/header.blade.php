@@ -86,10 +86,10 @@ Mobile Menu
                             <li>
                                 <div class="social-links">
                                     <span class="me-2">Besøg os:</span>
-                                    <a href="https://www.facebook.com/#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="https://www.twitter.com/#"><i class="fab fa-twitter"></i></a>
-                                    <a href="https://www.linkedin.com/#"><i class="fab fa-linkedin-in"></i></a>
-                                    <a href="https://www.instagram.com/#"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://facebook.com/#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="https://x.com/#" target="_blank"><i class="fab fa-twitter"></i></a>
+                                    <a href="https://www.instagram.com/#" target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://www.youtube.com/#" target="_blank"><i class="fab fa-youtube"></i></a>
                                 </div>
                             </li>
                         </ul>
