@@ -186,7 +186,7 @@
                                 <h3 class="counter-card_number">
                                     <span class="odometer" data-odometer-final="28">.</span>
                                 </h3>
-                                <p class="counter-card_text">År med fest</p>
+                                <p class="counter-card_text">År i branchen</p>
                             </div>
                         </div>
                     </div>
@@ -196,7 +196,7 @@
                                 <h3 class="counter-card_number">
                                     <span class="odometer" data-odometer-final="1369">.</span>
                                 </h3>
-                                <p class="counter-card_text">Blomsterbuket</p>
+                                <p class="counter-card_text">Tilfredse par</p>
                             </div>
                         </div>
                     </div>
@@ -206,7 +206,7 @@
                                 <h3 class="counter-card_number">
                                     <span class="odometer" data-odometer-final="256">.</span>
                                 </h3>
-                                <p class="counter-card_text">Solrige dage om året</p>
+                                <p class="counter-card_text">Gæster om året</p>
                             </div>
                         </div>
                     </div>
