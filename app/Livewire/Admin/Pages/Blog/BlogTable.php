@@ -11,6 +11,7 @@ use Illuminate\View\View;
 use Jenssegers\Agent\Agent;
 use Livewire\Attributes\Computed;
 use PowerComponents\LivewirePowerGrid\Facades\Filter;
+use PowerComponents\LivewirePowerGrid\Column;
 use PowerComponents\LivewirePowerGrid\Facades\PowerGrid;
 use PowerComponents\LivewirePowerGrid\PowerGridComponent;
 use PowerComponents\LivewirePowerGrid\PowerGridFields;
@@ -76,7 +77,7 @@ final class BlogTable extends PowerGridComponent
         return PowerGrid::fields()
                         ->add('id')
                         ->add('title', fn ($row) => PowerGridHelper::fieldTitle($row))
-                        ->add('user_name', fn ($row) => PowerGridHelper::fieldUserName($row))
+                        ->add('category_formatted', fn ($row) => $row->category->title)
                         ->add('published_formated', fn ($row) => PowerGridHelper::fieldPublishedAtFormated($row));
     }
 
@@ -85,7 +86,7 @@ final class BlogTable extends PowerGridComponent
         return [
             PowerGridHelper::columnId(),
             PowerGridHelper::columnTitle(),
-            PowerGridHelper::columnUserName(),
+            Column::make('Category', 'category_formatted'),
             PowerGridHelper::columnPublished(),
             PowerGridHelper::columnUpdatedAT('updated_at'),
             PowerGridHelper::columnAction(),

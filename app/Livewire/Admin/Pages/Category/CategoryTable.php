@@ -11,6 +11,7 @@ use Illuminate\View\View;
 use Livewire\Attributes\Computed;
 use Jenssegers\Agent\Agent;
 use PowerComponents\LivewirePowerGrid\Facades\Filter;
+use PowerComponents\LivewirePowerGrid\Column;
 use PowerComponents\LivewirePowerGrid\Facades\PowerGrid;
 use PowerComponents\LivewirePowerGrid\PowerGridComponent;
 use PowerComponents\LivewirePowerGrid\PowerGridFields;
@@ -78,6 +79,7 @@ final class CategoryTable extends PowerGridComponent
             ->add('id')
             ->add('title', fn ($row) => PowerGridHelper::fieldTitle($row))
             ->add('published_formated', fn ($row) => PowerGridHelper::fieldPublishedAtFormated($row))
+            ->add('type_formatted', fn ($row) => $row->type->title())
             ->add('created_at_formatted', fn ($row) => PowerGridHelper::fieldCreatedAtFormated($row));
     }
 
@@ -86,6 +88,7 @@ final class CategoryTable extends PowerGridComponent
         return [
             PowerGridHelper::columnId(),
             PowerGridHelper::columnTitle(),
+            Column::make('Type', 'type_formatted'),
             PowerGridHelper::columnPublished(),
             PowerGridHelper::columnCreatedAT(),
             PowerGridHelper::columnAction(),

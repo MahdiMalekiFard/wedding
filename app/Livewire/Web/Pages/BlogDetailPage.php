@@ -19,8 +19,8 @@ class BlogDetailPage extends Component
 
     public function render(): View
     {
-        $recentBlogs = Blog::latest()->whereNot('id', $this->blog?->id)->limit(3)->get() ?? [];
-        $categories = Category::where('type', CategoryTypeEnum::BLOG)->limit(8)->get() ?? [];
+        $recentBlogs = Blog::latest()->whereNot('id', $this->blog?->id)->where('published', true)->limit(3)->get() ?? [];
+        $categories = Category::where('type', CategoryTypeEnum::BLOG)->where('published', true)->limit(8)->get() ?? [];
 
         return view('livewire.web.pages.blog-detail-page', [
             'blog'        => $this->blog,

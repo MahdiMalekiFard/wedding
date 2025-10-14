@@ -27,8 +27,8 @@
     <div class="contact-area space" data-bg-src="/assets/img/bg/contact-page-bg.png" wire:ignore>
         <div class="container">
             <div class="row gy-4 justify-content-center">
-                <div class="col-lg-4 col-md-6">
-                    <div class="contact-info">
+                <div class="col-lg-4 col-md-6 d-flex">
+                    <div class="contact-info w-100 h-100">
                         <div class="contact-icon">
                             <img src="/assets/img/icon/location-icon.svg" alt="icon">
                         </div>
@@ -40,8 +40,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="contact-info">
+                <div class="col-lg-4 col-md-6 d-flex">
+                    <div class="contact-info w-100 h-100">
                         <div class="contact-icon">
                             <img src="/assets/img/icon/envelope.svg" alt="icon">
                         </div>
@@ -52,8 +52,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="contact-info">
+                <div class="col-lg-4 col-md-6 d-flex">
+                    <div class="contact-info w-100 h-100">
                         <div class="contact-icon">
                             <img src="/assets/img/icon/phone.svg" alt="icon">
                         </div>

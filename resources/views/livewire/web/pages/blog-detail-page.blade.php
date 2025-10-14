@@ -61,7 +61,10 @@
                             <ul>
                                 @foreach($categories as $category)
                                     <li>
-                                        <a href="{{ route('blog-page', ['category_id' => $category?->id]) }}">{{ $category?->title }}</a>
+                                        <a href="{{ route('blog-page', ['category_id' => $category?->id]) }}" 
+                                           class="{{ $blog->category_id == $category->id ? 'active' : '' }}">
+                                           {{ $category?->title }}
+                                        </a>
                                     </li>
                                 @endforeach
                             </ul>
@@ -81,7 +84,7 @@
                                             </div>
                                             <h4 class="post-title">
                                                 <a class="text-inherit" href="{{ route('blog-detail-page', ['slug' => $recentBlog?->slug]) }}">
-                                                    {{ \Illuminate\Support\Str::words($recentBlog?->title, 6) }}
+                                                    {{ \Illuminate\Support\Str::limit($recentBlog?->title, 30) }}
                                                 </a>
                                             </h4>
                                         </div>

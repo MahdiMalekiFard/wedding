@@ -22,13 +22,14 @@ class BlogPage extends Component
 
     public function render(): View
     {
-        $categories = Category::where('type', CategoryTypeEnum::BLOG)->limit(8)->get() ?? [];
+        $categories = Category::where('type', CategoryTypeEnum::BLOG)->where('published', true)->limit(8)->get() ?? [];
         $blogs = Blog::query()
                      ->where('published', true)
                      ->when($this->tag, fn ($query) => $query->withAnyTags([$this->tag]))
                      ->when($this->category_id, fn ($query) => $query->where('category_id', $this->category_id))
+                     ->orderByDesc('id')
                      ->paginate(4);
-        $recentBlogs = Blog::latest()->limit(3)->get() ?? [];
+        $recentBlogs = Blog::latest()->where('published', true)->limit(3)->get() ?? [];
         $blogTagIds = DB::table('taggables')->where('taggable_type', Blog::class)->pluck('tag_id')->toArray();
         $tags = Tag::whereIn('id', $blogTagIds)->get();
 

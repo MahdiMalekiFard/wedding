@@ -40,8 +40,8 @@
                                         </div>
                                         <div class="post-contents with-thum-img blog-content">
                                             <div class="post-meta-item blog-meta">
-                                                <a href="#">{{ $blog?->updated_at->format('d M, Y') }}</a>
-                                                <a href="#">VED {{ strtoupper($blog?->user->name ?? 'ADMIN') }}</a>
+                                                <span>{{ $blog?->updated_at->format('d M, Y') }} - </span>
+                                                <span>VED {{ strtoupper($blog?->user->name ?? 'ADMIN') }}</span>
                                             </div>
                                             <h3 class="post-title blog-title">
                                                 <a href="{{ route('blog-detail-page', ['slug' => $blog?->slug]) }}">
@@ -77,52 +77,22 @@
 
                 <div class="col-xxl-4 col-lg-5 sidebar-widget-area">
                     <aside class="sidebar-sticky-area sidebar-area">
-                        <div class="widget widget_search">
-                            <form class="search-form">
-                                <input type="text" placeholder="Søg her">
-                                <button type="submit"><i class="fas fa-search"></i></button>
-                            </form>
-                        </div>
-
                         <div class="widget widget_categories">
                             <h3 class="widget_title">Kategorier</h3>
                             <ul>
                                 @foreach($categories as $category)
                                     <li>
-                                        <a href="{{ route('blog-page', ['category_id' => $category?->id]) }}">{{ $category?->title }}</a>
+                                        <a href="{{ route('blog-page', ['category_id' => $category?->id]) }}" class="{{ request('category_id') == $category->id ? 'active' : '' }}">{{ $category?->title }}</a>
                                     </li>
                                 @endforeach
                             </ul>
-                        </div>
-
-                        <div class="widget">
-                            <h3 class="widget_title">Seneste indlæg</h3>
-                            <div class="recent-post-wrap">
-                                @foreach($recentBlogs as $recentBlog)
-                                    <div class="recent-post">
-                                        <div class="media-img">
-                                            <img src="{{ $recentBlog?->getFirstMediaUrl('image', Constants::RESOLUTION_100_SQUARE) }}" alt="tommelfingerbillede">
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="recent-post-meta">
-                                                <span><i class="far fa-clock"></i> {{ $recentBlog?->updated_at->format('d M, Y') }}</span>
-                                            </div>
-                                            <h4 class="post-title">
-                                                <a class="text-inherit" href="{{ route('blog-detail-page', ['slug' => $recentBlog?->slug]) }}">
-                                                    {{ \Illuminate\Support\Str::words($recentBlog?->title, 6) }}
-                                                </a>
-                                            </h4>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
                         </div>
 
                         <div class="widget widget_tag_cloud">
                             <h3 class="widget_title">Populære tags</h3>
                             <div class="tagcloud">
                                 @foreach($tags as $tag)
-                                    <a href="{{ route('blog-page', ['tag' => $tag?->name]) }}">{{ $tag?->name }}</a>
+                                    <a href="{{ route('blog-page', ['tag' => $tag?->name]) }}" class="{{ request('tag') === $tag?->name ? 'active' : '' }}" style="{{ request('tag') === $tag?->name ? 'background-color: var(--theme-color, #ff5a5f); color: #fff; border-color: var(--theme-color, #ff5a5f); text-decoration: none;' : '' }}">{{ $tag?->name }}</a>
                                 @endforeach
                             </div>
                         </div>

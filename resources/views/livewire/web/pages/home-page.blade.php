@@ -77,7 +77,7 @@
     </div>
 
     <!--==============================
-    Service Area 01
+    Service Area
     ==============================-->
     <div class="service-area-1 overflow-hidden" wire:ignore>
         <div class="service-shape1_1 shape-mockup jump d-lg-block d-none" data-top="0" data-left="-5%">

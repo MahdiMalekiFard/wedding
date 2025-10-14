@@ -35,7 +35,9 @@
                     <div class="col-md-6 col-lg-4 filter-item">
                         <div class="project-box title-anim">
                             <div class="project-img global-img">
-                                <img src="{{ $portfolio?->getFirstMediaUrl('image', Constants::RESOLUTION_854_480) }}" alt="portfolio image">
+                                <a href="{{ route('portfolio-detail-page', ['slug' => $portfolio?->slug]) }}">
+                                    <img src="{{ $portfolio?->getFirstMediaUrl('image', Constants::RESOLUTION_854_480) }}" alt="portfolio image">   
+                                </a>
                             </div>
                             <div class="project-card-details">
                                 <h3 class="title"><a href="{{ route('portfolio-detail-page', ['slug' => $portfolio?->slug]) }}">{{ $portfolio?->title }}</a></h3>
